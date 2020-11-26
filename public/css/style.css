@@ -86,10 +86,8 @@ nav .nav-item {
 
 /* FOOTER */
 footer {
-    border-top: 2px solid #008be6;
     padding: 2em 0;
     color: #FFF;
-    background-color: #008be6;
 }
 
 footer .info {
