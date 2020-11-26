@@ -16,7 +16,7 @@
 
     <h2 class="text-primary">Aree di intervento</h2>
 
-    <div class="card-deck">
+    <div class="card-deck show-on-scroll">
         <div class="card text-white bg-primary">
             <div class="card-header">Fobie</div>
             <div class="card-body">
@@ -47,7 +47,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <img src="../public/images/profile.png" alt="foto Andrea Costacurta">
+            <img src="../public/images/profile.png" alt="foto Andrea Costacurta" class="show-on-scroll">
         </div>
         <div class="col-lg-6">
             <h2 class="text-primary float-lg-right">Lo psichiatra</h2>
@@ -61,3 +61,5 @@
     </div>
 
 </div>
+
+<script src="../public/js/show-on-scroll.js"></script>
