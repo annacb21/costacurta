@@ -1,6 +1,6 @@
-<footer class="footer mt-auto py-auto text-center fixed-bottom bg-primary">
+<footer class="footer mt-auto py-auto fixed-bottom bg-primary">
     <div class="row">
-        <div class="col-lg">
+        <div class="col-lg text-center">
             <p class="font-weight-bold h5">Dott. Andrea Costacurta</p>
             <p>Psichiatra Psicoterapeuta</p>
         </div>
