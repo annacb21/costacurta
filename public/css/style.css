@@ -63,3 +63,22 @@ nav .nav-item {
 #areas .card-deck {
     margin-top: 3%;
 }
+
+/* PROFILO */
+#mainProfile {
+    margin-top: 10%;
+}
+
+#mainProfile h2 {
+    padding-bottom: 1.5em;
+}
+
+.subtitle {
+    color: #26293A;
+    font-size: 3em;
+    font-weight: 600;
+}
+
+#mainProfile img {
+    max-width: 50%;
+}
