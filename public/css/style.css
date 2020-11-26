@@ -67,6 +67,7 @@ nav .nav-item {
 /* PROFILO */
 #mainProfile {
     margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 #mainProfile h2 {
@@ -81,4 +82,20 @@ nav .nav-item {
 
 #mainProfile img {
     max-width: 50%;
+}
+
+/* FOOTER */
+footer {
+    border-top: 2px solid #008be6;
+    padding: 2em 0;
+}
+
+footer .info {
+    display: inline-block;
+    padding-left: 1.5em;
+}
+
+footer .fas {
+    font-size: 1.5em;
+    color: #008be6;
 }
