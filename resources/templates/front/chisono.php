@@ -1,8 +1,8 @@
 <div id="chisono" class="pb-5">
     <h1 class="subtitle">Dott. Andrea Costacurta</h1>
-    <div class="row">
+    <div class="row pt-5">
         <div class="col-lg-4">
-            <img src="../public/images/profile2.jpg" alt="Foto Andrea Costacurta" class="float-lg-left mw-100">
+            <img src="../public/images/profile2.png" alt="Foto Andrea Costacurta" class="float-lg-left mw-100">
         </div>
         <div class="col-lg-8">
             <p class="text-justify">Tanti anni di esperienza nel campo della psicoterapia hanno continuato ad alimentare l’entusiasmo che provo per il mio lavoro. 
