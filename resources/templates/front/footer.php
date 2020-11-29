@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-auto fixed-bottom bg-primary">
+<footer class="footer mt-auto py-auto bg-primary">
     <div class="row">
         <div class="col-lg text-center">
             <p class="font-weight-bold h5">Dott. Andrea Costacurta</p>

@@ -26,11 +26,14 @@
     </head>
     <body>
 
-        <!-- NAVBAR -->
-        <?php include(TEMPLATE_FRONT . DS . "navbar.php"); ?>
+        <div id="main">
 
-        <!-- MAIN CONTENT -->
-        <?php show_main_content() ?>
+            <!-- NAVBAR -->
+            <?php include(TEMPLATE_FRONT . DS . "navbar.php"); ?>
+
+            <!-- MAIN CONTENT -->
+            <?php show_main_content() ?>
+        </div>
 
         <!-- FOOTER -->
         <?php include(TEMPLATE_FRONT . DS . "footer.php"); ?>

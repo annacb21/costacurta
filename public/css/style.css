@@ -1,7 +1,10 @@
 body {
     background-color: #F8F9FB;
-    padding: 3% 5%;
     font-family: 'Montserrat' !important;
+}
+
+#main {
+    padding: 3% 10%;
 }
 
 /* GENERAL TAGS */
