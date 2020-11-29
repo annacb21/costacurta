@@ -1,46 +1,36 @@
+/* GENERAL TAGS */
+
 body {
     background-color: #F8F9FB;
     font-family: 'Montserrat' !important;
 }
 
+/* padding on the central content of every page */
 #main {
     padding: 3% 10%;
 }
 
-/* GENERAL TAGS */
-
 /* h1 */
-body h1 {
+.title {
     font-weight: 600;
     font-size: 4rem;
     line-height: 1.5;
 }
 
-/* h2 */
-body h2 {
-    font-size: 1.5em;
-    text-transform: uppercase;
-}
-
 /* NAVBAR */
 
-body .navbar {
-    padding: 0 0 5rem 0;
-}
-
+/* navbar brand or logo */
 nav .navbar-brand {
     font-weight: 500;
     font-size: 2rem;
 }
 
-nav .nav-item {
-    padding: 0 1rem;
-}
-
+/* nav item when active */
 .active {
     font-weight: 500;
 }
 
+/* login icon */
 .fa-user {
     color: #8D919E;
 }
@@ -49,33 +39,9 @@ nav .nav-item {
 
 #header {
     color: #26293A;
-    margin-bottom: 10%;
-}
-
-#header img {
-    max-width: 90%;
-    animation-name: delay;
-    animation-duration: 4s;
-}
-
-#header button {
-    margin-top: 10%;
-}
-
-/* AREE DI INTEVENTO */
-#areas .card-deck {
-    margin-top: 3%;
 }
 
 /* PROFILO */
-#mainProfile {
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-#mainProfile h2 {
-    padding-bottom: 1.5em;
-}
 
 .subtitle {
     color: #26293A;
@@ -83,27 +49,11 @@ nav .nav-item {
     font-weight: 600;
 }
 
-#mainProfile img {
-    max-width: 50%;
-}
-
 /* FOOTER */
-footer {
-    padding: 2em 0;
-    color: #FFF;
-}
 
-footer .info {
-    display: inline-block;
-    padding-left: 1.5em;
-}
-
+/* phone and email icons */
 footer .fas {
     font-size: 1.5em;
     color: #FFF;
 }
 
-/* CHI SONO */
-#chisono img {
-    max-width: 20%;
-}

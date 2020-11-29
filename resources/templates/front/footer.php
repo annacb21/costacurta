@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-auto bg-primary">
+<footer class="footer mt-auto py-5 bg-primary text-white">
     <div class="row">
         <div class="col-lg text-center">
             <p class="font-weight-bold h5">Dott. Andrea Costacurta</p>
@@ -10,10 +10,10 @@
         </div>
         <div class="col-lg">
             <div>
-                <i class="fas fa-phone-square"></i><p class="info">049 7967235</p>
+                <i class="fas fa-phone-square"></i><p class="d-inline-block pl-4">049 7967235</p>
             </div>
             <div>
-                <i class="fas fa-envelope-square"></i><p class="info">andreacostacurta@gmail.com</p>
+                <i class="fas fa-envelope-square"></i><p class="d-inline-block pl-4">andreacostacurta@gmail.com</p>
             </div>
         </div>
     </div>

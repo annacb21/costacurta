@@ -1,20 +1,20 @@
 <!-- HEADER -->
-<div class="row" id="header">
+<div class="row py-5" id="header">
 
     <div class="col-lg-6">
-        <h1>Chiedere aiuto <br> è il primo passo <br> per stare meglio.</h1>
-        <button type="button" class="btn btn-primary btn-lg">Prenota appuntamento</button>
+        <h1 class="title">Chiedere aiuto <br> è il primo passo <br> per stare meglio.</h1>
+        <button type="button" class="btn btn-primary btn-lg mt-5">Prenota appuntamento</button>
     </div>
     <div class="col-lg-6 animate__animated animate__fadeInLeft">
-        <img src="../public/images/studio1.png" alt="foto studio Padova">
+        <img src="../public/images/studio1.png" alt="foto studio Padova" class="mw-100">
     </div>
 
 </div>
 
 <!-- AREE DI INTERVENTO -->
-<div id="areas">
+<div id="areas" class="my-5">
 
-    <h2 class="text-primary">Aree di intervento</h2>
+    <h2 class="text-primary text-uppercase h4 mb-5">Aree di intervento</h2>
 
     <div class="card-deck show-on-scroll">
         <div class="card text-white bg-primary">
@@ -43,14 +43,14 @@
 </div>
 
 <!-- PROFILE -->
-<div id="mainProfile">
+<div id="mainProfile" class="py-5">
 
     <div class="row">
         <div class="col-lg-6">
-            <img src="../public/images/profile.png" alt="foto Andrea Costacurta" class="show-on-scroll">
+            <img src="../public/images/profile.png" alt="foto Andrea Costacurta" class="show-on-scroll w-75">
         </div>
         <div class="col-lg-6">
-            <h2 class="text-primary float-lg-right">Lo psichiatra</h2>
+            <h2 class="text-primary float-lg-right text-uppercase h4 pb-4">Lo psichiatra</h2>
             <p class="float-lg-right subtitle">Dott. Andrea Costacurta</p>
             <p class="float-lg-right text-justify">Tanti anni di esperienza nel campo della psicoterapia hanno continuato ad alimentare l’entusiasmo che provo per il mio lavoro. 
                 Il lavoro con le persone, le emozioni ed i sentimenti mi hanno da sempre dato grandi soddisfazioni.
