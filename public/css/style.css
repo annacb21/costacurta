@@ -27,7 +27,8 @@ nav .navbar-brand {
 
 /* nav item when active */
 .active {
-    font-weight: 500;
+    font-weight: 500 !important;
+    color: #008be6 !important;
 }
 
 /* login icon */
@@ -56,4 +57,6 @@ footer .fas {
     font-size: 1.5em;
     color: #FFF;
 }
+
+/* MEDIA QUERY */
 

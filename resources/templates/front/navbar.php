@@ -11,8 +11,8 @@
     <!-- navbar items on the right -->
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active px-3">
-                <a href="../public/index.php" class="nav-link text-primary">Home</a>
+            <li class="nav-item px-3">
+                <a href="../public/index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item px-3">
                 <a href="../public/index.php?chisono" class="nav-link">Chi sono</a>
@@ -35,3 +35,5 @@
         </ul>
     </div>
 </nav>
+
+<script src="../public/js/active.js"></script>
