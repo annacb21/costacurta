@@ -17,7 +17,7 @@
     <h2 class="text-primary text-uppercase h4 mb-5">Aree di intervento</h2>
 
     <div class="card-deck show-on-scroll">
-        <div class="card text-white bg-primary">
+        <div class="card">
             <div class="card-header">Fobie</div>
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
