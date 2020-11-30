@@ -6,7 +6,7 @@
         <button type="button" class="btn btn-primary btn-lg mt-5">Prenota appuntamento</button>
     </div>
     <div class="col-lg-6 animate__animated animate__fadeInLeft">
-        <img src="../public/images/studio1.png" alt="foto studio Padova" class="mw-100">
+        <img src="../public/images/studio1.png" alt="foto studio Padova" class="mw-100 float-lg-right">
     </div>
 
 </div>
@@ -46,10 +46,10 @@
 <div id="mainProfile" class="py-5">
 
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-5">
             <img src="../public/images/profile.png" alt="foto Andrea Costacurta" class="show-on-scroll w-75">
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-7">
             <h2 class="text-primary float-lg-right text-uppercase h4 pb-4">Lo psichiatra</h2>
             <p class="float-lg-right subtitle">Dott. Andrea Costacurta</p>
             <p class="float-lg-right text-justify">Tanti anni di esperienza nel campo della psicoterapia hanno continuato ad alimentare l’entusiasmo che provo per il mio lavoro. 
