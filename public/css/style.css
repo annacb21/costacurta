@@ -19,6 +19,10 @@ body {
 
 /* NAVBAR */
 
+.navbar {
+    padding: 0 !important;
+}
+
 /* navbar brand or logo */
 nav .navbar-brand {
     font-weight: 500;

@@ -29,7 +29,7 @@
             <li class="nav-item px-3">
                 <a href="../public/index.php?contatti" class="nav-link">Contatti</a>
             </li>
-            <li class="nav-item px-3">
+            <li class="nav-item">
                 <a href="../public/index.php?login" class="nav-link"><i class="fas fa-user"></i></a>
             </li>
         </ul>
