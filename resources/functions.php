@@ -1,8 +1,8 @@
 <?php
-/*
+
 use PHPMailer\PHPMailer\PHPMailer;
 require '../vendor/autoload.php';
-*/
+
 
 //*************************** SYSTEM FUNCTIONS ****************************
 // fa una query al database
@@ -92,27 +92,24 @@ function send_email() {
         $message = $_POST['message'];
         $toEmail = "annacb21@gmail.com";
 
-        $headers = "Da: {$name} {$email}";
-
-        $result = mail($toEmail, "Nuovo messaggio", $message, $headers);
-
-        if(!$result) {
-            echo "error";
-        }
-        else {
-            echo "sent";
-        }
-
-        /*
         $mail = new PHPMailer();
 
+        /*
+        Host: smtp.mailtrap.io
+        Port: 25 or 465 or 587 or 2525
+        Username: 7118daa26bcca3
+        Password: d35b5a76b761b8
+        Auth: PLAIN, LOGIN and CRAM-MD5
+        TLS: Optional (STARTTLS on all ports)
+        */
+
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
+        $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Username = 'annacb21@gmail.com';
-        $mail->Password = 'blajintroia';
+        $mail->Username = '7118daa26bcca3';
+        $mail->Password = 'd35b5a76b761b8';
         $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+        $mail->Port = 2525;
 
         $mail->setFrom($email, $name);
         $mail->addAddress('annacb21@gmail.com', 'Anna');
@@ -126,7 +123,7 @@ function send_email() {
         else {
             $errorMessage = 'Oops, something went wrong. Mailer Error: ' . $mail->ErrorInfo;
         }
-        */
+        
 
     }
 
