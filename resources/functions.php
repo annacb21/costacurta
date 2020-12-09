@@ -1,4 +1,8 @@
 <?php
+/*
+use PHPMailer\PHPMailer\PHPMailer;
+require '../vendor/autoload.php';
+*/
 
 //*************************** SYSTEM FUNCTIONS ****************************
 // fa una query al database
@@ -77,5 +81,57 @@ function show_main_content() {
     }
 
 }
+
+// manda una email dal form della pagina dei contatti
+function send_email() {
+
+    if(isset($_POST['submit'])) {
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+        $toEmail = "annacb21@gmail.com";
+
+        $headers = "Da: {$name} {$email}";
+
+        $result = mail($toEmail, "Nuovo messaggio", $message, $headers);
+
+        if(!$result) {
+            echo "error";
+        }
+        else {
+            echo "sent";
+        }
+
+        /*
+        $mail = new PHPMailer();
+
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'annacb21@gmail.com';
+        $mail->Password = 'blajintroia';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+
+        $mail->setFrom($email, $name);
+        $mail->addAddress('annacb21@gmail.com', 'Anna');
+        $mail->Subject = 'New message from your website';
+        $mail->isHTML(true);
+        $mail->Body = $message;
+
+        if($mail->send()) {
+            echo "inviata";
+        } 
+        else {
+            $errorMessage = 'Oops, something went wrong. Mailer Error: ' . $mail->ErrorInfo;
+        }
+        */
+
+    }
+
+}
+
+
 
 ?>
