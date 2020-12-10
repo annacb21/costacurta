@@ -23,7 +23,7 @@
         <div class="col-lg-6 pl-5 pt-4">
             <p class="font-weight-bold">Studio di Padova: <span class="font-weight-normal">Via Siracusa 63, CAP 35142</span></p>
             <p class="font-weight-bold">Studio di Thiene (VI): <span class="font-weight-normal">Via San Vincenzo 53,  CAP 36016</span></p>
-            <p class="font-weight-bold">Email: <span class="font-weight-normal">andreacostacurta@gmail.com</span></p>
+            <p class="font-weight-bold">Email: <span class="font-weight-normal">costacurta.andrea@gmail.com</span></p>
             <p class="font-weight-bold">Telefono: <span class="font-weight-normal">049 7967235</span></p>
         </div>
     </div>

@@ -13,7 +13,7 @@
                 <i class="fas fa-phone-square"></i><p class="d-inline-block pl-4">049 7967235</p>
             </div>
             <div>
-                <i class="fas fa-envelope-square"></i><p class="d-inline-block pl-4">andreacostacurta@gmail.com</p>
+                <i class="fas fa-envelope-square"></i><p class="d-inline-block pl-4">costacurta.andrea@gmail.com</p>
             </div>
         </div>
     </div>
