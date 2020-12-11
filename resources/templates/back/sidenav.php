@@ -2,22 +2,22 @@
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item pb-3">
-                <a class="nav-link" href="../index.php"><i class="fas fa-chart-line"></i>Dashboard</a>
+                <a class="nav-link" href="../admin/index.php"><i class="fas fa-chart-line"></i>Dashboard</a>
             </li>
             <li class="nav-item pb-3">
-                <a class="nav-link" href="../index.php?account"><i class="fas fa-user-circle"></i>Account</a>
+                <a class="nav-link" href="../admin/index.php?account"><i class="fas fa-user-circle"></i>Account</a>
             </li>
             <li class="nav-item pb-3">
-                <a class="nav-link" href="../index.php?edit_profile"><i class="fas fa-user-edit"></i>Modifica profilo</a>
+                <a class="nav-link" href="../admin/index.php?edit_profile"><i class="fas fa-user-edit"></i>Modifica profilo</a>
             </li>
             <li class="nav-item pb-3">
-                <a class="nav-link" href="../index.php?edit_area"><i class="fas fa-list"></i>Modifica aree di intervento</a>
+                <a class="nav-link" href="../admin/index.php?edit_area"><i class="fas fa-list"></i>Modifica aree di intervento</a>
             </li>
             <li class="nav-item pb-3">
-                <a class="nav-link" href="../index.php?gallery"><i class="far fa-images"></i>Gallery foto</a>
+                <a class="nav-link" href="../admin/index.php?gallery"><i class="far fa-images"></i>Gallery foto</a>
             </li>
             <li class="nav-item pb-3">
-                <a class="nav-link" href="../index.php?articles"><i class="far fa-newspaper"></i>Gestisci articoli</a>
+                <a class="nav-link" href="../admin/index.php?articles"><i class="far fa-newspaper"></i>Gestisci articoli</a>
             </li>
         </ul>
     </div>

@@ -21,6 +21,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <!-- Fontawesome icons -->
         <script src="https://kit.fontawesome.com/8284f330c3.js" crossorigin="anonymous"></script>
+        <style type="text/css">
+            /* Chart.js */
+            @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+        </style>
     </head>
     <body>
 
@@ -32,6 +36,22 @@
 
                 <!-- SIDENAV -->
                 <?php include(TEMPLATE_BACK . DS . "sidenav.php"); ?>
+
+                <!-- MAIN CONTENT -->
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div class="chartjs-size-monitor">
+                        <div class="chartjs-size-monitor-expand">
+                            <div class></div>
+                        </div>
+                        <div class="chartjs-size-monitor-shrink">
+                            <div class></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2"><?php get_admin_h1(); ?></h1>
+                    </div>
+                    <?php show_admin_content() ?>
+                </main>
 
             </div>
         </div>
