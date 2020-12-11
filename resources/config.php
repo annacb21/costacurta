@@ -9,7 +9,7 @@ defined("DS") ? null : define("DS", DIRECTORY_SEPARATOR);
 
 defined("TEMPLATE_FRONT") ? null : define("TEMPLATE_FRONT", __DIR__ . DS . "templates/front");
 
-defined("TEMPLATE_ADMIN") ? null : define("TEMPLATE_ADMIN", __DIR__ . DS . "templates/admin");
+defined("TEMPLATE_BACK") ? null : define("TEMPLATE_BACK", __DIR__ . DS . "templates/back");
 
 //defined("UPLOADS") ? null : define("UPLOADS", __DIR__ . DS . "uploads");
 

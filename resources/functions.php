@@ -5,6 +5,46 @@ require '../vendor/autoload.php';
 
 
 //*************************** SYSTEM FUNCTIONS ****************************
+
+// redirect to a page
+function redirect($location) {
+
+    return header("Location: $location ");
+
+}
+
+// crea un messaggio
+function set_message($msg) {
+
+    if(!empty($msg)) {
+        $_SESSION['message'] = $msg;
+    }
+    else {
+        $msg = "";
+    }
+
+}
+
+// mostra un messaggio
+function display_message() {
+
+if(isset($_SESSION['message'])) {
+    
+$alert = <<<DELIMETER
+
+<div class="alert alert-danger w-50 mx-auto text-center" role="alert">
+    {$_SESSION['message']}
+</div>
+
+DELIMETER;
+
+echo $alert;
+
+unset($_SESSION['message']);
+}
+
+}
+
 // fa una query al database
 function query($sql){
 
@@ -124,6 +164,29 @@ function send_email() {
             $errorMessage = 'Oops, something went wrong. Mailer Error: ' . $mail->ErrorInfo;
         }
         
+
+    }
+
+}
+
+// fa il login dell'admin
+function login() {
+
+    if(isset($_POST['submit'])) {
+
+        $username = escape_string($_POST['username']);
+        $psw = escape_string($_POST['psw']);
+
+        $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$psw}' LIMIT 1");
+        confirm($query);
+
+        if(mysqli_num_rows($query) == 0) {
+            set_message("La tua password o il tuo username sono sbagliati");
+            redirect("../public/index.php?login");
+        }
+        else {
+            redirect("admin");
+        }
 
     }
 
