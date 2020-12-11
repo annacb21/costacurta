@@ -1,7 +1,7 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-require '../vendor/autoload.php';
+//require '../vendor/autoload.php';
 
 
 //*************************** SYSTEM FUNCTIONS ****************************
