@@ -14,13 +14,15 @@ function redirect($location) {
 }
 
 // crea un messaggio
-function set_message($msg) {
+function set_message($msg, $alert_type) {
 
     if(!empty($msg)) {
         $_SESSION['message'] = $msg;
+        $_SESSION['alert'] = $alert_type;
     }
     else {
         $msg = "";
+        $alert_type = "";
     }
 
 }
@@ -28,11 +30,11 @@ function set_message($msg) {
 // mostra un messaggio
 function display_message() {
 
-if(isset($_SESSION['message'])) {
+if(isset($_SESSION['message']) && isset($_SESSION['alert'])) {
     
 $alert = <<<DELIMETER
 
-<div class="alert alert-danger w-50 mx-auto text-center" role="alert">
+<div class="alert {$_SESSION['alert']} w-50 mx-auto text-center" role="alert">
     {$_SESSION['message']}
 </div>
 
@@ -158,12 +160,12 @@ function send_email() {
         $mail->Body = $message;
 
         if($mail->send()) {
-            echo "inviata";
+            set_message("La tua email è stata inviata con successo", "alert-success");
         } 
         else {
-            $errorMessage = 'Oops, something went wrong. Mailer Error: ' . $mail->ErrorInfo;
+            set_message("Oops, qualcosa è andato storto: " . $mail->ErrorInfo, "alert-danger");  
         }
-        
+        redirect("../public/index.php?contatti");
 
     }
 
@@ -181,7 +183,7 @@ function login() {
         confirm($query);
 
         if(mysqli_num_rows($query) == 0) {
-            set_message("La tua password o il tuo username sono sbagliati");
+            set_message("La tua password o il tuo username sono sbagliati", "alert-danger");
             redirect("../public/index.php?login");
         }
         else {

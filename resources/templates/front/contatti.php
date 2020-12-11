@@ -1,6 +1,6 @@
 <div id="contatti" class="pb-5">
     <h1 class="subtitle pb-4">Contatti</h1>
-
+    <?php display_message(); ?>
     <div class="row">
         <div class="col-lg-6">
             <form action="" method="POST">
