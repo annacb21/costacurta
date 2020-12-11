@@ -3,6 +3,7 @@
 body {
     background-color: #F8F9FB;
     font-family: 'Montserrat' !important;
+    min-height: 100%;
 }
 
 /* padding on the central content of every page */
@@ -55,6 +56,10 @@ nav .navbar-brand {
 }
 
 /* FOOTER */
+
+footer {
+    margin-top: 11em;
+}
 
 /* phone and email icons */
 footer .fas {
