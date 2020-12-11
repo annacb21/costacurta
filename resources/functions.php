@@ -194,6 +194,68 @@ function login() {
 
 }
 
+//*************************** BACK FUNCTIONS ****************************
 
+// mostra il contenuto del body della pagina dinamicamente
+function show_admin_content() {
+
+    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
+        include(TEMPLATE_BACK . "/dashboard.php");
+    }
+
+    if(isset($_GET['account'])) {
+        include(TEMPLATE_BACK . "/account.php");
+    }
+
+    if(isset($_GET['edit_area'])) {
+        include(TEMPLATE_BACK . "/edit_area.php");
+    }
+
+    if(isset($_GET['edit_profile'])) {
+        include(TEMPLATE_BACK . "/edit_profile.php");
+    }
+
+    if(isset($_GET['gallery'])) {
+        include(TEMPLATE_BACK . "/gallery.php");
+    }
+
+    if(isset($_GET['articles'])) {
+        include(TEMPLATE_BACK . "/articles.php");
+    }
+
+}
+
+// mostra il contenuto del body della pagina dinamicamente
+function get_admin_h1() {
+
+    $title = "";
+
+    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
+        $title = "Dashboard";
+    }
+
+    if(isset($_GET['account'])) {
+        $title = "Account";
+    }
+
+    if(isset($_GET['edit_area'])) {
+        $title = "Modifica aree di intervento";
+    }
+
+    if(isset($_GET['edit_profile'])) {
+        $title = "Modifica profilo e curriculum";
+    }
+
+    if(isset($_GET['gallery'])) {
+        $title = "Gallery foto";
+    }
+
+    if(isset($_GET['articles'])) {
+        $title = "Gestisci articoli";
+    }
+
+    echo $title;
+
+}
 
 ?>
