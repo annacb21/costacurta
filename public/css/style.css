@@ -69,6 +69,10 @@ footer .fas {
 
 /* ADMIN */
 
+.feedback {
+    color: red;
+}
+
 /* SIDEBAR */
 .sidebar {
     position: fixed;

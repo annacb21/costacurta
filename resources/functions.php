@@ -182,12 +182,15 @@ function login() {
         $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$psw}' LIMIT 1");
         confirm($query);
 
+        $row = fetch_array($query);
+
         if(mysqli_num_rows($query) == 0) {
             set_message("La tua password o il tuo username sono sbagliati", "alert-danger");
             redirect("../public/index.php?login");
         }
         else {
-            redirect("admin");
+            $_SESSION['user'] = $row['user_id'];
+            redirect("admin/");
         }
 
     }
@@ -223,6 +226,10 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/articles.php");
     }
 
+    if(isset($_GET['edit_account'])) {
+        include(TEMPLATE_BACK . "/edit_account.php");
+    }
+
 }
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -254,7 +261,66 @@ function get_admin_h1() {
         $title = "Gestisci articoli";
     }
 
+    if(isset($_GET['edit_account'])) {
+        $title = "Modifica dati account";
+    }
+
     echo $title;
+
+}
+
+// getter per i dati dell'admin
+function get_admin_data() {
+
+    $query = query("SELECT * FROM users WHERE user_id = '{$_SESSION['user']}' ");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
+// modifica account admin
+function update_account() {
+
+    if(isset($_POST['update'])) {
+
+        $username = escape_string($_POST['username']);
+        $email = escape_string($_POST['email']);
+
+        $query = query("UPDATE users SET username = '{$username}', email = '{$email}' WHERE user_id = '{$_SESSION['user']}' ");
+        confirm($query);
+
+        redirect("../../public/admin/index.php?account");
+
+    }
+
+}
+
+// modifica password admin
+function update_password($psw) {
+
+    if(isset($_POST['updatePsw'])) {
+
+        $current_psw = escape_string($_POST['current_psw']);
+        $new_psw = escape_string($_POST['new_psw']);
+
+        if($current_psw == $psw) {
+
+            $query = query("UPDATE users SET password = '{$new_psw}' WHERE user_id = '{$_SESSION['user']}' ");
+            confirm($query);
+
+            redirect("../../public/admin/index.php?account");
+
+        }
+        else {
+            
+            set_message("Password attuale non corretta", "alert-danger");
+            redirect("../../public/admin/index.php?edit_account");
+
+        }
+
+    }
 
 }
 
