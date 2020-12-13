@@ -199,7 +199,7 @@ function login() {
 // mostra il contenuto del body della pagina dinamicamente
 function show_admin_content() {
 
-    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
+    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin/" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
         include(TEMPLATE_BACK . "/dashboard.php");
     }
 
@@ -230,7 +230,7 @@ function get_admin_h1() {
 
     $title = "";
 
-    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
+    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin/" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
         $title = "Dashboard";
     }
 
