@@ -408,17 +408,13 @@ function add_slide() {
         $img_loc = escape_string($_FILES['file']['tmp_name']);
         $studio = escape_string($_POST['study']);
 
-        if(!empty($img)) {
+        move_uploaded_file($img_loc, UPLOADS . DS . $img);
 
-            move_uploaded_file($img_loc, UPLOADS . DS . $img);
+        $query = query("INSERT INTO slides(slide_title, slide_image, studio_id) VALUES ('{$title}', '{$img}', '{$studio}') ");
+        confirm($query);
 
-            $query = query("INSERT INTO slides(slide_title, slide_image, studio_id) VALUES ('{$title}', '{$img}', '{$studio}') ");
-            confirm($query);
-
-            set_message("Foto aggiunta correttamente", "alert-success");
-            redirect("../../public/admin/index.php?gallery");
-
-        }
+        set_message("Foto aggiunta correttamente", "alert-success");
+        redirect("../../public/admin/index.php?gallery");
 
     }
 
