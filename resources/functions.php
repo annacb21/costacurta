@@ -377,7 +377,7 @@ echo $slide;
 // getter per le slide (foto) degli studi
 function get_slides($studio) {
 
-$query = query("SELECT * FROM slides WHERE studio_id = '{$studio}'");
+$query = query("SELECT * FROM slides WHERE studio_id = '{$studio}' AND slide_id NOT IN (SELECT MAX(slide_id) FROM slides WHERE studio_id = '{$studio}' ORDER BY slide_id DESC) ORDER BY slide_id DESC");
 confirm($query);
 
 while($row = fetch_array($query)) {
