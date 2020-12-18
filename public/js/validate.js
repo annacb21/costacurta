@@ -35,3 +35,16 @@ function validatePassword() {
 function formReset(id) {
     document.getElementById(id).reset();
 }
+
+function checkFile() {
+    var output = true;
+    var file = document.slideForm.file;
+
+    if(!file.value) {
+        file.focus();
+        document.getElementById("file_msg").innerHTML = "Seleziona una foto da caricare";
+        output = false;
+    }
+
+    return output;
+}

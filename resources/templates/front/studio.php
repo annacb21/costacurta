@@ -5,33 +5,10 @@
             <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselIndicators" data-slide-to="1"></li>
             <li data-target="#carouselIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselIndicators" data-slide-to="4"></li>
-            <li data-target="#carouselIndicators" data-slide-to="5"></li>
-            <li data-target="#carouselIndicators" data-slide-to="6"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../public/images/car1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../public/images/car2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../public/images/car3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../public/images/car4.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../public/images/car5.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../public/images/car6.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../public/images/car7.jpg" class="d-block w-100" alt="...">
-            </div>
+            <?php get_active_slide(); ?>
+            <?php get_slides(); ?>
         </div>
         <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

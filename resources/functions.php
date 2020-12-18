@@ -85,7 +85,7 @@ function fetch_array($result){
 // ritorna il path per le immagini
 function display_image($image) {
 
-    return "images" . DS . $image;
+    return "uploads" . DS . $image;
 
 }
 
@@ -323,5 +323,78 @@ function update_password($psw) {
     }
 
 }
+
+// ritorna la slide (foto) corrente
+function get_active_slide() {
+
+$query = query("SELECT * FROM slides ORDER BY slide_id DESC LIMIT 1");
+confirm($query);
+
+$row = fetch_array($query);
+
+$img = display_image($row['slide_image']);
+
+$slide = <<<DELIMETER
+
+<div class="carousel-item active">
+    <img src="../resources/{$img}" class="d-block w-100" alt="{$row['slide_title']}">
+</div>
+
+DELIMETER;
+
+echo $slide;
+
+
+}
+
+// getter per le slide (foto) degli studi
+function get_slides() {
+
+$query = query("SELECT * FROM slides");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['slide_image']);
+
+$slides = <<<DELIMETER
+
+<div class="carousel-item">
+    <img src="../resources/{$img}" class="d-block w-100" alt="{$row['slide_title']}">
+</div>
+
+DELIMETER;
+
+echo $slides;
+    
+}
+
+}
+
+// aggiunge una slide (foto)
+function add_slide() {
+
+    if(isset($_POST['upload'])) {
+
+        $title = escape_string($_POST['title']);
+        $img = escape_string($_FILES['file']['name']);
+        $img_loc = escape_string($_FILES['file']['tmp_name']);
+
+        if(!empty($img)) {
+
+            move_uploaded_file($img_loc, UPLOADS . DS . $img);
+
+            $query = query("INSERT INTO slides(slide_title, slide_image) VALUES ('{$title}', '{$img}') ");
+            confirm($query);
+
+            set_message("Foto aggiunta correttamente", "alert-success");
+            redirect("../../public/admin/index.php?gallery");
+
+        }
+
+    }
+
+}
+
 
 ?>
