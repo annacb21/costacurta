@@ -1,4 +1,5 @@
 <?php require_once("../resources/config.php"); ?>
+<?php $studi = get_studi(); ?>
 
 <!DOCTYPE html>
 <html>
