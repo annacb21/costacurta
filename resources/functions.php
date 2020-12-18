@@ -197,6 +197,17 @@ function login() {
 
 }
 
+// getter per i dati degli studi
+function get_studi() {
+
+    $query = query("SELECT * FROM studi");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
 //*************************** BACK FUNCTIONS ****************************
 
 // mostra il contenuto del body della pagina dinamicamente
