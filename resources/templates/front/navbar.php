@@ -20,8 +20,15 @@
             <li class="nav-item px-3">
                 <a href="../public/index.php?aree" class="nav-link">Aree di intervento</a>
             </li>
-            <li class="nav-item px-3">
-                <a href="../public/index.php?studio" class="nav-link">Lo studio</a>
+            <li class="nav-item dropdown px-3">
+                <a href="#" class="nav-link dropdown-toggle" id="studioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lo studio</a>
+                <ul class="dropdown-menu" aria-labelledby="studioDropdown">
+                    <?php
+                        for($i = 0; $i < count($studi); $i++) {
+                            echo "<li><a class='dropdown-item' href='../public/index.php?studio&id={$studi[$i]['studio_id']}'>{$studi[$i]['city']}</a></li>";
+                        }
+                     ?>
+                </ul>
             </li>
             <li class="nav-item px-3">
                 <a href="../public/index.php?articoli" class="nav-link">Articoli</a>
