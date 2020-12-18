@@ -43,5 +43,8 @@
 </form>
 
 <h3 class="my-5 ml-3">Foto presenti</h3>
+<div class="row">
+    <?php get_slides_thumbnails(); ?>
+</div>
 
 <script src="../../public/js/validate.js"></script>

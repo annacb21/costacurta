@@ -420,5 +420,29 @@ function add_slide() {
 
 }
 
+// mostra i thumbnails delle slide
+function get_slides_thumbnails() {
+
+$query = query("SELECT * FROM slides ORDER BY slide_id ASC");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['slide_image']);
+
+$slides_thumb = <<<DELIMETER
+
+<div class="col-xs-6 col-md-3">
+    <img src="../../resources/{$img}" alt="{$row['slide_title']}" class="img-thumbnail img-fluid">
+</div>
+
+DELIMETER;
+
+echo $slides_thumb;
+    
+}
+
+}
+
 
 ?>
