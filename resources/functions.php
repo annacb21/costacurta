@@ -203,8 +203,13 @@ function get_studi() {
     $query = query("SELECT * FROM studi");
     confirm($query);
 
-    $row = fetch_array($query);
-    return $row;
+    $studi = [];
+
+    while($row = fetch_array($query)) {
+        array_push($studi, $row);
+    }
+
+    return $studi;
 
 }
 
