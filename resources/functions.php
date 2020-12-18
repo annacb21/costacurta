@@ -34,7 +34,7 @@ if(isset($_SESSION['message']) && isset($_SESSION['alert'])) {
     
 $alert = <<<DELIMETER
 
-<div class="alert {$_SESSION['alert']} w-50 mx-auto text-center" role="alert">
+<div class="alert {$_SESSION['alert']} w-50 text-center" role="alert">
     {$_SESSION['message']}
 </div>
 

@@ -9,6 +9,7 @@
         <div class="form-group">
             <label for="title" class="form-label">Nome foto</label>
             <input type="text" name="title" placeholder="Nome foto" class="form-control" id="title" required data-validation-required-message="Dare un nome alla foto">
+            <div id="title_msg" class="feedback"></div>
         </div>
 
         <div class="form-group">

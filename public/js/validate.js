@@ -39,10 +39,17 @@ function formReset(id) {
 function checkFile() {
     var output = true;
     var file = document.slideForm.file;
+    var file = document.slideForm.title;
 
     if(!file.value) {
         file.focus();
         document.getElementById("file_msg").innerHTML = "Seleziona una foto da caricare";
+        output = false;
+    }
+
+    if(!title.value) {
+        title.focus();
+        document.getElementById("title_msg").innerHTML = "Dai un nome alla foto";
         output = false;
     }
 
