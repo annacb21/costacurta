@@ -40,6 +40,7 @@ function checkFile() {
     var output = true;
     var file = document.slideForm.file;
     var file = document.slideForm.title;
+    var studio = document.slideForm.study;
 
     if(!file.value) {
         file.focus();
@@ -50,6 +51,12 @@ function checkFile() {
     if(!title.value) {
         title.focus();
         document.getElementById("title_msg").innerHTML = "Dai un nome alla foto";
+        output = false;
+    }
+
+    if(!studio.value) {
+        studio.focus();
+        document.getElementById("studio_msg").innerHTML = "Scegli uno studio";
         output = false;
     }
 

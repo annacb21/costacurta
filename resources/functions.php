@@ -214,9 +214,9 @@ function get_studi() {
 }
 
 // getter per i dati dello studio
-function get_studio_data() {
+function get_studio_data($id) {
 
-    $query = query("SELECT * FROM studi WHERE studio_id = '{$_GET['id']}' ");
+    $query = query("SELECT * FROM studi WHERE studio_id = '{$id}' ");
     confirm($query);
 
     $row = fetch_array($query);
@@ -352,9 +352,9 @@ function update_password($psw) {
 }
 
 // ritorna la slide (foto) corrente
-function get_active_slide() {
+function get_active_slide($studio) {
 
-$query = query("SELECT * FROM slides ORDER BY slide_id DESC LIMIT 1");
+$query = query("SELECT * FROM slides WHERE studio_id = '{$studio}' ORDER BY slide_id DESC LIMIT 1");
 confirm($query);
 
 $row = fetch_array($query);
@@ -375,9 +375,9 @@ echo $slide;
 }
 
 // getter per le slide (foto) degli studi
-function get_slides() {
+function get_slides($studio) {
 
-$query = query("SELECT * FROM slides");
+$query = query("SELECT * FROM slides WHERE studio_id = '{$studio}'");
 confirm($query);
 
 while($row = fetch_array($query)) {
@@ -406,12 +406,13 @@ function add_slide() {
         $title = escape_string($_POST['title']);
         $img = escape_string($_FILES['file']['name']);
         $img_loc = escape_string($_FILES['file']['tmp_name']);
+        $studio = escape_string($_POST['study']);
 
         if(!empty($img)) {
 
             move_uploaded_file($img_loc, UPLOADS . DS . $img);
 
-            $query = query("INSERT INTO slides(slide_title, slide_image) VALUES ('{$title}', '{$img}') ");
+            $query = query("INSERT INTO slides(slide_title, slide_image, studio_id) VALUES ('{$title}', '{$img}', '{$studio}') ");
             confirm($query);
 
             set_message("Foto aggiunta correttamente", "alert-success");
