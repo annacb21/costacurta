@@ -1,8 +1,10 @@
+<?php $studi = get_studi(); ?>
 <div id="contatti" class="pb-5">
     <h1 class="subtitle pb-4">Contatti</h1>
     <?php display_message(); ?>
     <div class="row">
         <div class="col-lg-6">
+            <h3 class="pb-4">Invia una email</h3>
             <form action="" method="POST">
                 <?php send_email(); ?>
                 <div class="mb-3">
@@ -20,9 +22,13 @@
                 <button name="submit" type="submit" class="btn btn-primary">Invia</button>
             </form>
         </div>
-        <div class="col-lg-6 pl-5 pt-4">
-            <p class="font-weight-bold">Studio di Padova: <span class="font-weight-normal">Via Siracusa 63, CAP 35142</span></p>
-            <p class="font-weight-bold">Studio di Thiene (VI): <span class="font-weight-normal">Via San Vincenzo 53,  CAP 36016</span></p>
+        <div class="col-lg-6 pl-5">
+            <h3 class="pb-5">Recapiti</h3>
+            <?php
+                for($i = 0; $i < count($studi); $i++) {
+                    echo "<p class='font-weight-bold'>Studio di {$studi[$i]['city']}: <span class='font-weight-normal'>{$studi[$i]['adress']}, CAP {$studi[$i]['cap']}</span></p>";
+                }
+            ?>
             <p class="font-weight-bold">Email: <span class="font-weight-normal">costacurta.andrea@gmail.com</span></p>
             <p class="font-weight-bold">Telefono: <span class="font-weight-normal">049 7967235</span></p>
         </div>
