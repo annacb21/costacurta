@@ -5,8 +5,11 @@
             <p>Psichiatra Psicoterapeuta</p>
         </div>
         <div class="col-lg-4 col-sm-12">
-            <p><span class="h6 font-weight-bold">PADOVA:</span>  Via Siracusa 63, CAP 35142</p>
-            <p><span class="h6 font-weight-bold">THIENE:</span>  Via San Vincenzo 53,  CAP 36016</p>
+            <?php
+                for($i = 0; $i < count($studi); $i++) {
+                    echo "<p><span class='h6 font-weight-bold text-uppercase'>{$studi[$i]['city']}:</span>  {$studi[$i]['adress']}, CAP {$studi[$i]['cap']}</p>";
+                }
+            ?>
         </div>
         <div class="col-lg-4 col-sm-12">
             <div>
