@@ -444,5 +444,16 @@ echo $slides_thumb;
 
 }
 
+// ritorna il numero di slide
+function get_tot_slides($studio) {
+
+    $query = query("SELECT COUNT(*) as total FROM slides WHERE studio_id = '{$studio}' ");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
 
 ?>
