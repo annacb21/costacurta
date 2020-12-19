@@ -12,9 +12,6 @@
                 <span class="font-weight-bold">Email: </span><?php echo $data['email']; ?>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                Password
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a class="btn btn-outline-warning btn-lg" href="../../public/admin/index.php?edit_account">Modifica</a>
             </li>
         </ul>
