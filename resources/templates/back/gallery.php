@@ -1,7 +1,7 @@
 <?php $studi = get_studi(); ?>
 <?php display_message(); ?>
 <div class="card">
-    <div class="card-header h3">Aggiungi foto</div>
+    <div class="card-header h4">Aggiungi foto</div>
     <div class="card-body">
         <form name="slideForm" id="slideForm" action="" method="POST" enctype="multipart/form-data" onSubmit="return checkFile();" novalidate>
 
@@ -44,7 +44,7 @@
 </div>
 
 <h3 class="my-5 ml-3">Foto presenti</h3>
-<div class="row">
+<div class="row mb-5">
     <?php get_slides_thumbnails(); ?>
 </div>
 

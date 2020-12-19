@@ -257,6 +257,10 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/edit_account.php");
     }
 
+    if(isset($_GET['delete_slide'])) {
+        include(TEMPLATE_BACK . "/delete_slide.php");
+    }
+
 }
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -423,7 +427,7 @@ function add_slide() {
 // mostra i thumbnails delle slide
 function get_slides_thumbnails() {
 
-$query = query("SELECT * FROM slides ORDER BY slide_id ASC");
+$query = query("SELECT * FROM slides ORDER BY slide_id DESC");
 confirm($query);
 
 while($row = fetch_array($query)) {
@@ -432,8 +436,28 @@ $img = display_image($row['slide_image']);
 
 $slides_thumb = <<<DELIMETER
 
-<div class="col-xs-6 col-md-3">
+<div class="col-xs-6 col-md-3 mb-3">
     <img src="../../resources/{$img}" alt="{$row['slide_title']}" class="img-thumbnail img-fluid">
+    
+    <button type="button" class="btn btn-danger close-modal" data-toggle="modal" data-target="#deleteModal">X</button>
+
+    <div class="modal fade" role="dialog" id="deleteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Elimina foto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <p>Sei sicuro di voler eliminare questa foto?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                <a href="../../public/admin/index.php?delete_slide&id={$row['slide_id']}&img={$row['slide_image']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
+            </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 DELIMETER;
