@@ -237,12 +237,8 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/account.php");
     }
 
-    if(isset($_GET['edit_area'])) {
-        include(TEMPLATE_BACK . "/edit_area.php");
-    }
-
-    if(isset($_GET['edit_profile'])) {
-        include(TEMPLATE_BACK . "/edit_profile.php");
+    if(isset($_GET['areas'])) {
+        include(TEMPLATE_BACK . "/areas.php");
     }
 
     if(isset($_GET['gallery'])) {
@@ -276,8 +272,8 @@ function get_admin_h1() {
         $title = "Account";
     }
 
-    if(isset($_GET['edit_area'])) {
-        $title = "Modifica aree di intervento";
+    if(isset($_GET['areas'])) {
+        $title = "Aree di intervento";
     }
 
     if(isset($_GET['edit_profile'])) {
@@ -289,7 +285,7 @@ function get_admin_h1() {
     }
 
     if(isset($_GET['articles'])) {
-        $title = "Gestisci articoli";
+        $title = "Articoli";
     }
 
     if(isset($_GET['edit_account'])) {
@@ -483,6 +479,8 @@ function get_tot_slides($studio) {
     return $row['total'];
 
 }
+
+
 
 
 ?>
