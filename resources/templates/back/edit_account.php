@@ -1,29 +1,34 @@
 <?php $data = get_admin_data(); ?>
 
-<form id="accountForm" action="" method="POST">
+<div class="card">
+    <div class="card-header h5">Modifica username e email</div>
+    <div class="card-body">
+        <form id="accountForm" action="" method="POST">
 
-    <?php update_account(); ?>
+            <?php update_account(); ?>
 
-    <div class="col-md-6">
+            <div class="col-md-6">
 
-        <div class="form-group">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" name="username" class="form-control" id="username" value="<?php echo $data['username']; ?>" autocomplete="off"> 
-        </div>
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" value="<?php echo $data['username']; ?>" autocomplete="off"> 
+                </div>
 
-        <div class="form-group">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="email" value="<?php echo $data['email']; ?>">    
-        </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" value="<?php echo $data['email']; ?>">    
+                </div>
 
-        <div class="form-group">
-            <button name="update" type="submit" class="btn btn-warning">Modifica</button> 
-            <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('accountForm')">Cancella</button>           
-        </div> 
+                <div class="form-group">
+                    <button name="update" type="submit" class="btn btn-warning">Modifica</button> 
+                    <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('accountForm')">Cancella</button>           
+                </div> 
 
+            </div>
+
+        </form>
     </div>
-
-</form>
+</div>
 
 <?php display_message(); ?>
 

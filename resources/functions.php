@@ -325,6 +325,11 @@ function update_account() {
         redirect("../../public/admin/index.php?account");
 
     }
+    else {
+
+        redirect("../../public/admin/index.php?edit_account");
+
+    }
 
 }
 
@@ -438,7 +443,7 @@ $slides_thumb = <<<DELIMETER
 
 <div class="col-xs-6 col-md-3 mb-3">
     <img src="../../resources/{$img}" alt="{$row['slide_title']}" class="img-thumbnail img-fluid">
-    
+
     <button type="button" class="btn btn-danger close-modal" data-toggle="modal" data-target="#deleteModal">X</button>
 
     <div class="modal fade" role="dialog" id="deleteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
