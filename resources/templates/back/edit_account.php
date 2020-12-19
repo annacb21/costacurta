@@ -32,40 +32,45 @@
 
 <?php display_message(); ?>
 
-<form name="updateForm" id="pswForm" action="" method="POST" onSubmit="return validatePassword();" novalidate>
+<div class="card">
+    <div class="card-header h5">Modifica password</div>
+    <div class="card-body">
+        <form name="updateForm" id="pswForm" action="" method="POST" onSubmit="return validatePassword();" novalidate>
 
-    <?php update_password($data['password']); ?>
+            <?php update_password($data['password']); ?>
 
-    <div class="col-md-6">
+            <div class="col-md-6">
 
-        <h3 class="py-3">Password</h3>
+                <h3 class="py-3">Password</h3>
 
-        <div class="form-group">
-            <label for="current_psw" class="form-label">Password attuale</label>
-            <input type="password" name="current_psw" class="form-control" id="current_psw" required>
-            <div id="current_psw_msg" class="feedback"></div>
-        </div>
+                <div class="form-group">
+                    <label for="current_psw" class="form-label">Password attuale</label>
+                    <input type="password" name="current_psw" class="form-control" id="current_psw" required>
+                    <div id="current_psw_msg" class="feedback"></div>
+                </div>
 
-        <div class="form-group">
-            <label for="new_psw" class="form-label">Nuova password</label>
-            <input type="password" name="new_psw" class="form-control" id="new_psw" required>
-            <div id="new_psw_msg" class="feedback"></div>
-        </div>
+                <div class="form-group">
+                    <label for="new_psw" class="form-label">Nuova password</label>
+                    <input type="password" name="new_psw" class="form-control" id="new_psw" required>
+                    <div id="new_psw_msg" class="feedback"></div>
+                </div>
 
-        <div class="form-group">
-            <label for="confirm_psw" class="form-label">Conferma nuova password</label>
-            <input type="password" name="confirm_psw" class="form-control" id="confirm_psw" required>
-            <div id="confirm_psw_msg" class="feedback"></div>
-        </div>
+                <div class="form-group">
+                    <label for="confirm_psw" class="form-label">Conferma nuova password</label>
+                    <input type="password" name="confirm_psw" class="form-control" id="confirm_psw" required>
+                    <div id="confirm_psw_msg" class="feedback"></div>
+                </div>
 
-        <div class="form-group">
-            <button name="updatePsw" type="submit" class="btn btn-warning">Modifica</button> 
-            <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('pswForm')">Cancella</button>           
-        </div> 
+                <div class="form-group">
+                    <button name="updatePsw" type="submit" class="btn btn-warning">Modifica</button> 
+                    <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('pswForm')">Cancella</button>           
+                </div> 
 
+            </div>
+
+        </form>
     </div>
-
-</form>
+</div>
 
 <a class="btn btn-dark btn-lg my-5 ml-3" href="../../public/admin/index.php?account" role="button">Indietro</a>
 
