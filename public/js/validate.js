@@ -62,3 +62,23 @@ function checkFile() {
 
     return output;
 }
+
+function checkAreaForm() {
+    var output = true;
+    var nome = document.areaForm.name_area;
+    var desc = document.areaForm.desc;
+
+    if(!nome.value) {
+        nome.focus();
+        document.getElementById("name_msg").innerHTML = "Dai un nome all'area di intervento";
+        output = false;
+    }
+
+    if(!desc.value) {
+        desc.focus();
+        document.getElementById("desc_msg").innerHTML = "Scrivi una breve descrizione dell'area di intervento";
+        output = false;
+    }
+
+    return output;
+}

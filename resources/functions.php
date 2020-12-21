@@ -257,6 +257,14 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/delete_slide.php");
     }
 
+    if(isset($_GET['delete_area'])) {
+        include(TEMPLATE_BACK . "/delete_area.php");
+    }
+
+    if(isset($_GET['edit_area'])) {
+        include(TEMPLATE_BACK . "/edit_area.php");
+    }
+
 }
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -276,10 +284,6 @@ function get_admin_h1() {
         $title = "Aree di intervento";
     }
 
-    if(isset($_GET['edit_profile'])) {
-        $title = "Modifica profilo e curriculum";
-    }
-
     if(isset($_GET['gallery'])) {
         $title = "Gallery foto";
     }
@@ -290,6 +294,10 @@ function get_admin_h1() {
 
     if(isset($_GET['edit_account'])) {
         $title = "Modifica dati account";
+    }
+
+    if(isset($_GET['edit_area'])) {
+        $title = "Modifica area di intervento";
     }
 
     echo $title;
@@ -319,11 +327,6 @@ function update_account() {
         confirm($query);
 
         redirect("../../public/admin/index.php?account");
-
-    }
-    else {
-
-        redirect("../../public/admin/index.php?edit_account");
 
     }
 
@@ -480,7 +483,83 @@ function get_tot_slides($studio) {
 
 }
 
+// aggiunge un'area di intervento
+function add_area() {
 
+    if(isset($_POST['add'])) {
+
+        $name = escape_string($_POST['name_area']);
+        $desc = escape_string($_POST['desc']);
+
+        $query = query("INSERT INTO aree(area_name, area_desc) VALUES ('{$name}', '{$desc}') ");
+        confirm($query);
+
+        set_message("Area aggiunta correttamente", "alert-success");
+        redirect("../../public/admin/index.php?areas");
+
+    }
+
+}
+
+// ritorna la lista delle aree di intervento
+function get_areas() {
+
+$query = query("SELECT * FROM aree");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$aree = <<<DELIMETER
+
+<li class="list-group-item d-flex justify-content-between align-items-center">
+    <p class="pr-5">{$row['area_name']}</p>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <a href="../../public/admin/index.php?edit_area&id={$row['area_id']}" role="button" class="btn btn-warning">Modifica</a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAreaModal">Elimina</button>
+    </div>
+</li>
+<div class="modal fade" role="dialog" id="deleteAreaModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Elimina area di intervento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <p>Sei sicuro di voler eliminare l'area di intervento?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+            <a href="../../public/admin/index.php?delete_area&id={$row['area_id']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $aree;
+    
+}
+
+}
+
+// modifica area di intervento
+function update_area() {
+
+    if(isset($_POST['update'])) {
+
+        $name = escape_string($_POST['name_area']);
+        $desc = escape_string($_POST['desc']);
+
+        $query = query("UPDATE aree SET area_name = '{$name}', area_desc = '{$desc}' WHERE area_id = " . escape_string($_GET['id']) . " ");
+        confirm($query);
+
+        redirect("../../public/admin/index.php?areas");
+
+    }
+
+}
 
 
 ?>
