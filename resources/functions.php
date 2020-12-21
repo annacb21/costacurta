@@ -561,5 +561,16 @@ function update_area() {
 
 }
 
+// ritorna il numero di aree 
+function get_tot_areas() {
+
+    $query = query("SELECT COUNT(*) as total FROM aree");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
 
 ?>

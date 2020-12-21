@@ -5,6 +5,7 @@
     for($i = 0; $i < count($sedi); $i++) {
         $tot_foto += get_tot_slides($sedi[0]['studio_id']);
     }
+    $tot_aree = get_tot_areas();
 ?>
 
 <div class="row">
@@ -32,6 +33,20 @@
             <div class="card-body">
                 <p class="pb-1">Hai<br><span class="h4 font-weight-bold"><?php echo $tot_foto; ?></span><br>attualmente caricate nella gallery.</p>
                 <a class="btn btn-info btn-lg mt-4" href="../../public/admin/index.php?gallery">Visualizza gallery</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header h5">Aree di intervento</div>
+            <div class="card-body">
+                <p class="pb-1">Hai<br><span class="h4 font-weight-bold"><?php echo $tot_aree; ?></span><br>aree di intervento in totale nel sito.</p>
+                <a class="btn btn-info btn-lg mt-4" href="../../public/admin/index.php?areas">Visualizza aree</a>
             </div>
         </div>
     </div>
