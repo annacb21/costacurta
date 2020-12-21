@@ -673,5 +673,16 @@ function update_art() {
 
 }
 
+// ritorna il numero di articoli
+function get_tot_art() {
+
+    $query = query("SELECT COUNT(*) as total FROM articoli");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
 
 ?>
