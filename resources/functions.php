@@ -265,6 +265,14 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/edit_area.php");
     }
 
+    if(isset($_GET['edit_art'])) {
+        include(TEMPLATE_BACK . "/edit_art.php");
+    }
+
+    if(isset($_GET['delete_art'])) {
+        include(TEMPLATE_BACK . "/delete_art.php");
+    }
+
 }
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -298,6 +306,10 @@ function get_admin_h1() {
 
     if(isset($_GET['edit_area'])) {
         $title = "Modifica area di intervento";
+    }
+
+    if(isset($_GET['edit_art'])) {
+        $title = "Modifica articolo";
     }
 
     echo $title;
@@ -569,6 +581,95 @@ function get_tot_areas() {
 
     $row = fetch_array($query);
     return $row['total'];
+
+}
+
+// aggiunge un articolo
+function add_article() {
+
+    if(isset($_POST['publish'])) {
+
+        $autore = escape_string($_POST['autore']);
+        $titolo = escape_string($_POST['titolo']);
+        $desc = escape_string($_POST['desc']);
+        $articolo = escape_string($_POST['articolo']);
+        $foto = escape_string($_FILES['foto']['name']);
+        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
+
+        move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
+
+        $query = query("INSERT INTO articoli(autore, titolo, short_desc, corpo, art_data, foto) VALUES ('{$autore}', '{$titolo}', '{$desc}', '{$articolo}', now(), '{$foto}') ");
+        confirm($query);
+
+        set_message("Articolo pubblicato correttamente", "alert-success");
+        redirect("../../public/admin/index.php?articles");
+
+    }
+    
+}
+
+// ritorna lista di articoli
+function get_articles() {
+
+$query = query("SELECT * FROM articoli ORDER BY art_data DESC");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['foto']);
+$data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
+
+$art_thumb = <<<DELIMETER
+
+<div class="col-xs-6 col-md-3 mb-3">
+    <div class="card" style="width: 18rem;">
+        <a href="../../public/admin/index.php?edit_art&id={$row['art_id']}"><img src="../../resources/{$img}" class="card-img-top" alt=""></a>
+        <div class="card-body">
+            <h5 class="card-title">{$row['titolo']}</h5>
+            <p class="card-text">{$row['short_desc']}</p>
+            <p class="card-text"><small class="text-muted">{$data}</small></p>
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $art_thumb;
+    
+}    
+
+}
+
+// modifica l'articolo
+function update_art() {
+
+    if(isset($_POST['update'])) {
+
+        $autore = escape_string($_POST['autore']);
+        $titolo = escape_string($_POST['titolo']);
+        $desc = escape_string($_POST['desc']);
+        $articolo = escape_string($_POST['articolo']);
+        $foto = escape_string($_FILES['foto']['name']);
+        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
+
+        if(empty($foto)) {
+
+            $get_foto = query("SELECT foto FROM articoli WHERE art_id = " . escape_string($_GET['id']) . " ");
+            confirm($get_foto);
+
+            $result = fetch_array($get_foto);
+            $foto = $result['foto'];
+
+        }
+
+        move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
+
+        $query = query("UPDATE articoli SET autore = '{$autore}', titolo = '{$titolo}', short_desc = '{$desc}', corpo = '{$articolo}', foto = '{$foto}' WHERE art_id = " . escape_string($_GET['id']) . " ");
+        confirm($query);
+
+        redirect("../../public/admin/index.php?articles");
+
+    }
 
 }
 

@@ -82,3 +82,44 @@ function checkAreaForm() {
 
     return output;
 }
+
+function checkArt() {
+    var output = true;
+    var autore = document.artForm.autore;
+    var titolo = document.artForm.titolo;
+    var desc = document.artForm.desc;
+    var articolo = document.artForm.articolo;
+    var foto = document.artForm.foto;
+
+    if(!autore.value) {
+        autore.focus();
+        document.getElementById("autore_msg").innerHTML = "Inserire l'autore dell'articolo";
+        output = false;
+    }
+
+    if(!titolo.value) {
+        titolo.focus();
+        document.getElementById("titolo_msg").innerHTML = "Inserire un titolo per l'articolo";
+        output = false;
+    }
+
+    if(!desc.value) {
+        desc.focus();
+        document.getElementById("desc_msg").innerHTML = "Scrivi una breve descrizione dell'articolo";
+        output = false;
+    }
+
+    if(!articolo.value) {
+        articolo.focus();
+        document.getElementById("art_msg").innerHTML = "Inserisci il testo dell'articolo";
+        output = false;
+    }
+
+    if(!foto.value) {
+        foto.focus();
+        document.getElementById("foto_msg").innerHTML = "Inserisci una foto per l'articolo";
+        output = false;
+    }
+
+    return output;
+}
