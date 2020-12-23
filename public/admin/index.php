@@ -1,4 +1,11 @@
 <?php require_once("../../resources/config.php"); ?>
+<?php
+
+    if(!isset($_SESSION['user'])) {
+        redirect("../../public/index.php");
+    }
+
+?>
 
 <!DOCTYPE html>
 <html>

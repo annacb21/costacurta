@@ -174,17 +174,17 @@ function send_email() {
 // fa il login dell'admin
 function login() {
 
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['login'])) {
 
         $username = escape_string($_POST['username']);
         $psw = escape_string($_POST['psw']);
 
-        $query = query("SELECT * FROM users WHERE username = '{$username}' AND password = '{$psw}' LIMIT 1");
+        $query = query("SELECT * FROM users WHERE username = '{$username}' LIMIT 1");
         confirm($query);
 
         $row = fetch_array($query);
 
-        if(mysqli_num_rows($query) == 0) {
+        if(mysqli_num_rows($query) == 0 || password_verify($psw, $row['password']) === false) {
             set_message("La tua password o il tuo username sono sbagliati", "alert-danger");
             redirect("../public/index.php?login");
         }
@@ -279,6 +279,10 @@ function show_admin_content() {
 
     if(isset($_GET['edit_profile'])) {
         include(TEMPLATE_BACK . "/edit_profile.php");
+    }
+
+    if(isset($_GET['logout'])) {
+        include(TEMPLATE_BACK . "/logout.php");
     }
 
 }

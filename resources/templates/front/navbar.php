@@ -37,7 +37,16 @@
                 <a href="../public/index.php?contatti" class="nav-link">Contatti</a>
             </li>
             <li class="nav-item">
-                <a href="../public/index.php?login" class="nav-link"><i class="fas fa-user"></i></a>
+            <?php
+
+                if(isset($_SESSION['user'])) {
+                    echo "<a href='../public/admin/' class='nav-link'><i class='fas fa-user-cog'></i></a>";
+                }
+                else {
+                    echo "<a href='../public/index.php?login' class='nav-link'><i class='fas fa-user'></i></a>";
+                }
+
+            ?>
             </li>
         </ul>
     </div>
