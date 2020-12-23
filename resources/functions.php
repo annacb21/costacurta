@@ -237,6 +237,10 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/account.php");
     }
 
+    if(isset($_GET['profile'])) {
+        include(TEMPLATE_BACK . "/profile.php");
+    }
+
     if(isset($_GET['areas'])) {
         include(TEMPLATE_BACK . "/areas.php");
     }
@@ -286,6 +290,10 @@ function get_admin_h1() {
 
     if(isset($_GET['account'])) {
         $title = "Account";
+    }
+
+    if(isset($_GET['profile'])) {
+        $title = "Profilo";
     }
 
     if(isset($_GET['areas'])) {

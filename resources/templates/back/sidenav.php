@@ -8,6 +8,9 @@
                 <a class="nav-link" href="../admin/index.php?account"><i class="fas fa-user-circle"></i>Account</a>
             </li>
             <li class="nav-item pb-3">
+                <a class="nav-link" href="../admin/index.php?profile"><i class="fas fa-id-card"></i>Profilo</a>
+            </li>
+            <li class="nav-item pb-3">
                 <a class="nav-link" href="../admin/index.php?areas"><i class="fas fa-list"></i>Aree di intervento</a>
             </li>
             <li class="nav-item pb-3">
