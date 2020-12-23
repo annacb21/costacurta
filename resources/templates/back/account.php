@@ -3,7 +3,6 @@
 <div class="card">
     <div class="card-header">Dati personali</div>
     <div class="card-body">
-        <h5 class="card-title">Andrea Costacurta</h5>
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <span class="font-weight-bold">Username: </span><?php echo $data['username']; ?>

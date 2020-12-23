@@ -277,6 +277,10 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/delete_art.php");
     }
 
+    if(isset($_GET['edit_profile'])) {
+        include(TEMPLATE_BACK . "/edit_profile.php");
+    }
+
 }
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -318,6 +322,10 @@ function get_admin_h1() {
 
     if(isset($_GET['edit_art'])) {
         $title = "Modifica articolo";
+    }
+
+    if(isset($_GET['edit_profile'])) {
+        $title = "Modifica profilo";
     }
 
     echo $title;
@@ -689,6 +697,60 @@ function get_tot_art() {
 
     $row = fetch_array($query);
     return $row['total'];
+
+}
+
+// getter per i dati del profilo
+function get_profile() {
+
+    $query = query("SELECT * FROM profilo ORDER BY pro_id DESC LIMIT 1");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
+// modifica il profilo
+function update_profile() {
+
+    if(isset($_POST['update'])) {
+
+        $desc = escape_string($_POST['desc']);
+        $foto = escape_string($_FILES['foto']['name']);
+        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
+        $cv = escape_string($_FILES['cv']['name']);
+        $cv_loc = escape_string($_FILES['cv']['tmp_name']);
+
+        if(empty($foto)) {
+
+            $get_foto = query("SELECT pro_foto FROM profilo ORDER BY pro_id DESC LIMIT 1");
+            confirm($get_foto);
+
+            $result = fetch_array($get_foto);
+            $foto = $result['pro_foto'];
+
+        }
+
+        if(empty($cv)) {
+
+            $get_cv = query("SELECT pro_cv FROM profilo ORDER BY pro_id DESC LIMIT 1");
+            confirm($get_cv);
+
+            $result = fetch_array($get_cv);
+            $cv = $result['pro_cv'];
+
+        }
+
+        move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
+        move_uploaded_file($cv_loc, UPLOADS . DS . $cv);
+
+        $query = query("UPDATE profilo SET pro_desc = '{$desc}', pro_foto = '{$foto}', pro_cv = '{$cv}' ORDER BY pro_id DESC LIMIT 1");
+        confirm($query);
+
+        redirect("../../public/admin/index.php?profile");
+
+    }
 
 }
 
