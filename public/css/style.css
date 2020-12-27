@@ -11,6 +11,11 @@ body {
     padding: 3% 10%;
 }
 
+.bottom-div {
+    position: absolute;
+    bottom: 0;
+}
+
 /* h1 */
 .title {
     font-weight: 600;
@@ -63,7 +68,7 @@ nav .navbar-brand {
 /* FOOTER */
 
 footer {
-    margin-top: 11em;
+    margin-top: 5em;
 }
 
 /* phone and email icons */

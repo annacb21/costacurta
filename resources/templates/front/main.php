@@ -1,9 +1,9 @@
 <!-- HEADER -->
-<div class="row py-5" id="header">
+<div class="row py-5 mb-5" id="header">
 
     <div class="col-lg-6">
         <h1 class="title">Chiedere aiuto <br> è il primo passo <br> per stare meglio.</h1>
-        <a role="button" href="../public/index.php?contatti" class="btn btn-primary btn-lg mt-5">Prenota appuntamento</a>
+        <a role="button" href="../public/index.php?contatti" class="btn btn-primary btn-lg bottom-div">Prenota appuntamento</a>
     </div>
     <div class="col-lg-6 animate__animated animate__fadeInLeft">
         <img src="../public/images/studio1.png" alt="foto studio Padova" class="mw-100 float-lg-right">
@@ -12,11 +12,11 @@
 </div>
 
 <!-- PROFILE -->
-<div id="mainProfile" class="py-5">
+<div id="mainProfile" class="py-5 my-5">
 
     <div class="row">
         <div class="col-lg-5">
-            <img src="../public/images/profile.png" alt="foto Andrea Costacurta" class="w-75">
+            <img src="../public/images/profile.png" alt="foto Andrea Costacurta" class="w-75 h-auto">
         </div>
         <div class="col-lg-7">
             <div class="row">
@@ -33,7 +33,7 @@
                 </p>
             </div>
             <div class="row">
-                <a role="button" href="../public/index.php?chisono" class="btn btn-outline-primary btn-lg">Approfondisci</a>
+                <a role="button" href="../public/index.php?chisono" class="btn btn-outline-primary btn-lg bottom-div">Approfondisci</a>
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
 </div>
 
 <!-- AREE DI INTERVENTO -->
-<div id="areas" class="py-5">
+<div id="areas" class="pt-5">
 
     <h2 class="text-primary text-uppercase h4 mb-5">Aree di intervento</h2>
 
