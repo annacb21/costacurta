@@ -180,6 +180,17 @@ function get_profile() {
 
 }
 
+// getter articolo
+function get_article($id) {
+
+    $query = query("SELECT * FROM articoli WHERE art_id = $id");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
 //*************************** FRONT FUNCTIONS ****************************
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -203,6 +214,10 @@ function show_main_content() {
 
     if(isset($_GET['articoli'])) {
         include(TEMPLATE_FRONT . "/articoli.php");
+    }
+
+    if(isset($_GET['art_detail'])) {
+        include(TEMPLATE_FRONT . "/art_detail.php");
     }
 
     if(isset($_GET['contatti'])) {
