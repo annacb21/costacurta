@@ -87,7 +87,6 @@ function checkArt() {
     var output = true;
     var autore = document.artForm.autore;
     var titolo = document.artForm.titolo;
-    var desc = document.artForm.desc;
     var articolo = document.artForm.articolo;
     var foto = document.artForm.foto;
 
@@ -100,12 +99,6 @@ function checkArt() {
     if(!titolo.value) {
         titolo.focus();
         document.getElementById("titolo_msg").innerHTML = "Inserire un titolo per l'articolo";
-        output = false;
-    }
-
-    if(!desc.value) {
-        desc.focus();
-        document.getElementById("desc_msg").innerHTML = "Scrivi una breve descrizione dell'articolo";
         output = false;
     }
 
