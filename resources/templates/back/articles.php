@@ -1,4 +1,5 @@
 <?php display_message(); ?>
+
 <div class="card">
     <div class="card-header h4">Pubblica nuovo articolo</div>
     <div class="card-body">
@@ -21,13 +22,12 @@
                         <div id="titolo_msg" class="feedback"></div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="desc" class="form-label">Descrizione articolo</label>
-                        <textarea class="form-control" name="desc" id="desc" rows="5" required data-validation-required-message="Scrivi una breve descrizione dell'articolo"></textarea>
-                        <div id="desc_msg" class="feedback"></div>
+                    <div class="form-group py-4">
+                        <input type="file" id="foto" name="foto">
+                        <div id="foto_msg" class="feedback"></div>
                     </div>
 
-                    <div class="form-group mt-5">
+                    <div class="form-group">
                         <button name="publish" type="submit" class="btn btn-warning">Pubblica</button> 
                         <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('artForm')">Cancella</button>           
                     </div> 
@@ -39,11 +39,6 @@
                         <label for="articolo" class="form-label">Articolo</label>
                         <textarea class="form-control" name="articolo" id="articolo" rows="10" cols="40" required data-validation-required-message="Inserisci il testo dell'articolo"></textarea>
                         <div id="art_msg" class="feedback"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="file" id="foto" name="foto">
-                        <div id="foto_msg" class="feedback"></div>
                     </div>
 
                 </div>

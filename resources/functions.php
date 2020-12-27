@@ -308,6 +308,50 @@ echo $area_thumb;
     
 }
 
+// mostra l'anteprima di un testo
+function anteprima($txt, $lung_max) {
+
+    return (count($words = explode(' ', $txt)) > $lung_max) ? implode(' ', array_slice($words, 0, $lung_max)) . "..." : $txt;
+
+}
+
+// mostra gli articoli in lista
+function get_articles_list() {
+
+$query = query("SELECT * FROM articoli ORDER BY art_data DESC");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['foto']);
+$data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
+$ant = anteprima($row['corpo'], 150);
+    
+$arts = <<<DELIMETER
+
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <a href="../public/index.php?art_detail&id={$row['art_id']}"><img src="../resources/{$img}" class="card-img" alt=""></a>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{$row['titolo']}</h5>
+                <p class="card-text">{$ant}</p>
+                <p class="card-text"><small class="text-muted">{$data}</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $arts;
+    
+}
+    
+}
+
 //*************************** BACK FUNCTIONS ****************************
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -662,14 +706,13 @@ function add_article() {
 
         $autore = escape_string($_POST['autore']);
         $titolo = escape_string($_POST['titolo']);
-        $desc = escape_string($_POST['desc']);
         $articolo = escape_string($_POST['articolo']);
         $foto = escape_string($_FILES['foto']['name']);
         $foto_loc = escape_string($_FILES['foto']['tmp_name']);
 
         move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
 
-        $query = query("INSERT INTO articoli(autore, titolo, short_desc, corpo, art_data, foto) VALUES ('{$autore}', '{$titolo}', '{$desc}', '{$articolo}', now(), '{$foto}') ");
+        $query = query("INSERT INTO articoli(autore, titolo, corpo, art_data, foto) VALUES ('{$autore}', '{$titolo}', '{$articolo}', now(), '{$foto}') ");
         confirm($query);
 
         set_message("Articolo pubblicato correttamente", "alert-success");
@@ -689,6 +732,7 @@ while($row = fetch_array($query)) {
 
 $img = display_image($row['foto']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
+$ant = anteprima($row['corpo'], 20);
 
 $art_thumb = <<<DELIMETER
 
@@ -697,7 +741,7 @@ $art_thumb = <<<DELIMETER
         <a href="../../public/admin/index.php?edit_art&id={$row['art_id']}"><img src="../../resources/{$img}" class="card-img-top" alt=""></a>
         <div class="card-body">
             <h5 class="card-title">{$row['titolo']}</h5>
-            <p class="card-text">{$row['short_desc']}</p>
+            <p class="card-text">{$ant}</p>
             <p class="card-text"><small class="text-muted">{$data}</small></p>
         </div>
     </div>
@@ -718,7 +762,6 @@ function update_art() {
 
         $autore = escape_string($_POST['autore']);
         $titolo = escape_string($_POST['titolo']);
-        $desc = escape_string($_POST['desc']);
         $articolo = escape_string($_POST['articolo']);
         $foto = escape_string($_FILES['foto']['name']);
         $foto_loc = escape_string($_FILES['foto']['tmp_name']);
@@ -735,7 +778,7 @@ function update_art() {
 
         move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
 
-        $query = query("UPDATE articoli SET autore = '{$autore}', titolo = '{$titolo}', short_desc = '{$desc}', corpo = '{$articolo}', foto = '{$foto}' WHERE art_id = " . escape_string($_GET['id']) . " ");
+        $query = query("UPDATE articoli SET autore = '{$autore}', titolo = '{$titolo}', corpo = '{$articolo}', foto = '{$foto}' WHERE art_id = " . escape_string($_GET['id']) . " ");
         confirm($query);
 
         redirect("../../public/admin/index.php?articles");

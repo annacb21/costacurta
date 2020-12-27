@@ -10,12 +10,11 @@
         $id = $row['art_id'];
         $autore = $row['autore'];
         $titolo = $row['titolo'];
-        $desc = $row['short_desc'];
         $articolo = $row['corpo'];
         $data = $row['art_data'];
         $foto = $row['foto'];
         $foto_img = display_image($row['foto']);
-
+        
     }
 
 ?>
@@ -40,14 +39,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="desc" class="form-label">Descrizione articolo</label>
-                        <textarea class="form-control" name="desc" id="desc" rows="5" required data-validation-required-message="Scrivi una breve descrizione dell'articolo"><?php echo $desc; ?></textarea>
+                        <input type="file" id="foto" name="foto"></br>
+                        <img width="200" src="../../resources/<?php echo $foto_img; ?>" alt="" class="pt-3">
                     </div>
-
-                    <div class="form-group mt-5">
-                        <button name="update" type="submit" class="btn btn-warning">Modifica</button> 
-                        <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('artForm')">Cancella</button>           
-                    </div> 
 
                 </div>
                 <div class="col-lg-6">
@@ -57,10 +51,10 @@
                         <textarea class="form-control" name="articolo" id="articolo" rows="10" cols="40" required data-validation-required-message="Inserisci il testo dell'articolo"><?php echo $articolo; ?></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <input type="file" id="foto" name="foto">
-                        <img width="200" src="../../resources/<?php echo $foto_img; ?>" alt="">
-                    </div>
+                    <div class="form-group mt-5">
+                        <button name="update" type="submit" class="btn btn-warning">Modifica</button> 
+                        <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('artForm')">Cancella</button>           
+                    </div> 
 
                 </div>
             </div>
@@ -69,7 +63,7 @@
     </div>
 </div>
 
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteArtModal">Elimina articolo</button>
+<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteArtModal">Elimina articolo</button>
 
 <div class="modal fade" role="dialog" id="deleteArtModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
