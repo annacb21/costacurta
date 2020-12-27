@@ -1,3 +1,5 @@
+<?php $profile = get_profile(); ?>
+
 <!-- HEADER -->
 <div class="row py-5 mb-5" id="header">
 
@@ -26,11 +28,7 @@
                 <p class="float-lg-right subtitle">Dott. Andrea Costacurta</p>
             </div>
             <div class="row">
-                <p class="float-lg-right text-justify">Sono Psichiatra, Psicoanalista e Dottore di Ricerca in Scienze Psichiatriche. 
-                Le competenze ad ampio raggio e la lunga esperienza clinica mi consentono di trattare sia i disturbi emotivi più comuni sia le patologie psichiche più gravi con progetti di cura personalizzati.
-                Mi occupo di formazione psicoanalitica e psicoterapeutica, conduco supervisioni e gruppi di intervisione.
-                Mi appassiona da sempre la relazione tra psichiatria, psicoanalisi e cinema.
-                </p>
+                <p class="float-lg-right text-justify"><?php echo $profile['pro_desc']; ?></p>
             </div>
             <div class="row">
                 <a role="button" href="../public/index.php?chisono" class="btn btn-outline-primary btn-lg bottom-div">Approfondisci</a>
