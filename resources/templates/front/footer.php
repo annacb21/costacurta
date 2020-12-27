@@ -1,3 +1,5 @@
+<?php $profile = get_profile(); ?>
+
 <footer class="footer h-auto py-5 bg-primary text-white">
     <div class="row mx-0">
         <div class="col-lg-4 col-sm-12 text-center">
@@ -13,10 +15,10 @@
         </div>
         <div class="col-lg-4 col-sm-12">
             <div>
-                <i class="fas fa-phone-square"></i><p class="d-inline-block pl-4">049 7967235</p>
+                <i class="fas fa-phone-square"></i><p class="d-inline-block pl-4"><?php echo $profile['pro_tel']; ?></p>
             </div>
             <div>
-                <i class="fas fa-envelope-square"></i><p class="d-inline-block pl-4">costacurta.andrea@gmail.com</p>
+                <i class="fas fa-envelope-square"></i><p class="d-inline-block pl-4"><?php echo $profile['pro_email']; ?></p>
             </div>
         </div>
     </div>

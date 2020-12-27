@@ -14,6 +14,16 @@
                         <textarea class="form-control" name="desc" id="desc" rows="10" cols="40" required data-validation-required-message="Scrivi una breve descrizione per il profilo"><?php echo $profile['pro_desc']; ?></textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email di contatto</label>
+                        <input type="email" name="email" class="form-control" id="email" value="<?php echo $profile['pro_email']; ?>">    
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tel" class="form-label">Recapito telefonico</label>
+                        <input type="text" name="tel" class="form-control" id="tel" value="<?php echo $profile['pro_tel']; ?>"> 
+                    </div>
+
                     <div class="form-group mt-5">
                         <button name="update" type="submit" class="btn btn-warning">Modifica</button> 
                         <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('proForm')">Cancella</button>           

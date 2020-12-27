@@ -750,6 +750,8 @@ function update_profile() {
     if(isset($_POST['update'])) {
 
         $desc = escape_string($_POST['desc']);
+        $email = escape_string($_POST['email']);
+        $tel = escape_string($_POST['tel']);
         $foto = escape_string($_FILES['foto']['name']);
         $foto_loc = escape_string($_FILES['foto']['tmp_name']);
         $cv = escape_string($_FILES['cv']['name']);
@@ -778,7 +780,7 @@ function update_profile() {
         move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
         move_uploaded_file($cv_loc, UPLOADS . DS . $cv);
 
-        $query = query("UPDATE profilo SET pro_desc = '{$desc}', pro_foto = '{$foto}', pro_cv = '{$cv}' ORDER BY pro_id DESC LIMIT 1");
+        $query = query("UPDATE profilo SET pro_desc = '{$desc}', pro_foto = '{$foto}', pro_cv = '{$cv}', pro_email = '{$email}', pro_tel = '{$tel}' ORDER BY pro_id DESC LIMIT 1");
         confirm($query);
 
         redirect("../../public/admin/index.php?profile");
