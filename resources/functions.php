@@ -89,6 +89,90 @@ function display_image($image) {
 
 }
 
+//*************************** GETTERS ****************************
+
+// getter per i dati degli studi
+function get_studi() {
+
+    $query = query("SELECT * FROM studi");
+    confirm($query);
+
+    $studi = [];
+
+    while($row = fetch_array($query)) {
+        array_push($studi, $row);
+    }
+
+    return $studi;
+
+}
+
+// getter per i dati dello studio
+function get_studio_data($id) {
+
+    $query = query("SELECT * FROM studi WHERE studio_id = '{$id}' ");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
+// getter per i dati dell'admin
+function get_admin_data() {
+
+    $query = query("SELECT * FROM users WHERE user_id = '{$_SESSION['user']}' ");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
+// ritorna il numero di slide
+function get_tot_slides($studio) {
+
+    $query = query("SELECT COUNT(*) as total FROM slides WHERE studio_id = '{$studio}' ");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
+// ritorna il numero di aree 
+function get_tot_areas() {
+
+    $query = query("SELECT COUNT(*) as total FROM aree");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
+// ritorna il numero di articoli
+function get_tot_art() {
+
+    $query = query("SELECT COUNT(*) as total FROM articoli");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
+// getter per i dati del profilo
+function get_profile() {
+
+    $query = query("SELECT * FROM profilo ORDER BY pro_id DESC LIMIT 1");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
 //*************************** FRONT FUNCTIONS ****************************
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -194,33 +278,6 @@ function login() {
         }
 
     }
-
-}
-
-// getter per i dati degli studi
-function get_studi() {
-
-    $query = query("SELECT * FROM studi");
-    confirm($query);
-
-    $studi = [];
-
-    while($row = fetch_array($query)) {
-        array_push($studi, $row);
-    }
-
-    return $studi;
-
-}
-
-// getter per i dati dello studio
-function get_studio_data($id) {
-
-    $query = query("SELECT * FROM studi WHERE studio_id = '{$id}' ");
-    confirm($query);
-
-    $row = fetch_array($query);
-    return $row;
 
 }
 
@@ -360,17 +417,6 @@ function get_admin_h1() {
     }
 
     echo $title;
-
-}
-
-// getter per i dati dell'admin
-function get_admin_data() {
-
-    $query = query("SELECT * FROM users WHERE user_id = '{$_SESSION['user']}' ");
-    confirm($query);
-
-    $row = fetch_array($query);
-    return $row;
 
 }
 
@@ -531,17 +577,6 @@ echo $slides_thumb;
 
 }
 
-// ritorna il numero di slide
-function get_tot_slides($studio) {
-
-    $query = query("SELECT COUNT(*) as total FROM slides WHERE studio_id = '{$studio}' ");
-    confirm($query);
-
-    $row = fetch_array($query);
-    return $row['total'];
-
-}
-
 // aggiunge un'area di intervento
 function add_area() {
 
@@ -617,17 +652,6 @@ function update_area() {
         redirect("../../public/admin/index.php?areas");
 
     }
-
-}
-
-// ritorna il numero di aree 
-function get_tot_areas() {
-
-    $query = query("SELECT COUNT(*) as total FROM aree");
-    confirm($query);
-
-    $row = fetch_array($query);
-    return $row['total'];
 
 }
 
@@ -717,28 +741,6 @@ function update_art() {
         redirect("../../public/admin/index.php?articles");
 
     }
-
-}
-
-// ritorna il numero di articoli
-function get_tot_art() {
-
-    $query = query("SELECT COUNT(*) as total FROM articoli");
-    confirm($query);
-
-    $row = fetch_array($query);
-    return $row['total'];
-
-}
-
-// getter per i dati del profilo
-function get_profile() {
-
-    $query = query("SELECT * FROM profilo ORDER BY pro_id DESC LIMIT 1");
-    confirm($query);
-
-    $row = fetch_array($query);
-    return $row;
 
 }
 
