@@ -89,6 +89,13 @@ function display_image($image) {
 
 }
 
+// mostra l'anteprima di un testo
+function anteprima($txt, $lung_max) {
+
+    return (count($words = explode(' ', $txt)) > $lung_max) ? implode(' ', array_slice($words, 0, $lung_max)) . "..." : $txt;
+
+}
+
 //*************************** GETTERS ****************************
 
 // getter per i dati degli studi
@@ -308,36 +315,92 @@ echo $area_thumb;
     
 }
 
-// mostra l'anteprima di un testo
-function anteprima($txt, $lung_max) {
-
-    return (count($words = explode(' ', $txt)) > $lung_max) ? implode(' ', array_slice($words, 0, $lung_max)) . "..." : $txt;
-
-}
-
 // mostra gli articoli in lista
 function get_articles_list() {
 
-$query = query("SELECT * FROM articoli ORDER BY art_data DESC");
+$rows = get_tot_art();
+
+if(isset($_GET['page'])) {
+    $page = preg_replace('#[^0-9]#', '', $_GET['page']);
+}
+else {
+    $page = 1;
+}
+
+$art_per_page = 4;
+$last_page = ceil($rows / $art_per_page);
+
+if($page < 1) {
+    $page = 1;
+}
+elseif($page > $last_page) {
+    $page = $last_page;
+}
+
+$middle_nums = '';
+$sub = $page - 1;
+$sub2 = $page - 2;
+$add = $page + 1;
+$add2 = $page + 2;
+
+if($page == 1) {
+    $middle_nums .= '<li class="page-item active" aria-current="page"><a class="page-link">'.$page.'</a></li>';
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$add.'">'.$add.'</a></li>';
+}
+elseif($page == $last_page) {
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$sub.'">'.$sub.'</a></li>';
+    $middle_nums .= '<li class="page-item active" aria-current="page"><a class="page-link">'.$page.'</a></li>';
+}
+elseif($page > 2 && $page < ($last_page - 1)) {
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$sub2.'">'.$sub2.'</a></li>';
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$sub.'">'.$sub.'</a></li>';
+    $middle_nums .= '<li class="page-item active" aria-current="page"><a class="page-link">'.$page.'</a></li>';
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$add.'">'.$add.'</a></li>';
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$add2.'">'.$add2.'</a></li>';
+}
+elseif($page > 1 && $page < $last_page) {
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$sub.'">'.$sub.'</a></li>';
+    $middle_nums .= '<li class="page-item active" aria-current="page"><a class="page-link">'.$page.'</a></li>';
+    $middle_nums .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$add.'">'.$add.'</a></li>';
+}
+
+$limit = 'LIMIT ' . ($page-1) * $art_per_page . ',' . $art_per_page;
+
+$query = query("SELECT * FROM articoli ORDER BY art_data DESC $limit");
 confirm($query);
+
+$pagination = '';
+
+if($page != 1) {
+    $prev = $page - 1;
+    $pagination .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$prev.'">Indietro</a></li>';
+}
+
+$pagination .= $middle_nums;
+
+if($page != $last_page) {
+    $next = $page + 1;
+    $pagination .= '<li class="page-item"><a class="page-link" href="'.$_SERVER['PHP_SELF'].'?articoli&page='.$next.'">Avanti</a></li>';
+}
 
 while($row = fetch_array($query)) {
 
 $img = display_image($row['foto']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
-$ant = anteprima($row['corpo'], 150);
+$ant = anteprima($row['corpo'], 50);
     
 $arts = <<<DELIMETER
 
 <div class="card mb-3">
     <div class="row g-0">
         <div class="col-md-4">
-            <a href="../public/index.php?art_detail&id={$row['art_id']}"><img src="../resources/{$img}" class="card-img" alt=""></a>
+            <a href="../public/index.php?art_detail&id={$row['art_id']}"><img src="../resources/{$img}" class="card-img img-fluid" alt=""></a>
         </div>
         <div class="col-md-8">
             <div class="card-body">
+                <p class="card-text"><small class="text-muted">Pubblicato da {$row['autore']}</small></p>
                 <h5 class="card-title">{$row['titolo']}</h5>
-                <p class="card-text">{$ant}</p>
+                <p class="card-text text-justify pr-3">{$ant}</p>
                 <p class="card-text"><small class="text-muted">{$data}</small></p>
             </div>
         </div>
@@ -349,6 +412,8 @@ DELIMETER;
 echo $arts;
     
 }
+
+echo "<nav aria-label='Page navigation example'><ul class='pagination'>{$pagination}</ul></nav>";
     
 }
 
