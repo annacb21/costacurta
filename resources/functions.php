@@ -313,7 +313,7 @@ while($row = fetch_array($query)) {
     
 $area_thumb = <<<DELIMETER
 
-<div class="col-xs-6 col-md-3 mb-3">
+<div class="col-xs-6 col-md-3 col-lg-2 mb-3">
     <div class="card" style="width: 20rem; height: 15rem;">
         <div class="card-body">
             <h5 class="card-title text-info">{$row['area_name']}</h5>
@@ -669,7 +669,7 @@ $img = display_image($row['slide_image']);
 
 $slides_thumb = <<<DELIMETER
 
-<div class="col-xs-6 col-md-3 mb-3">
+<div class="col-xs-6 col-md-3 col-lg-2 mb-3">
     <img src="../../resources/{$img}" alt="{$row['slide_title']}" class="img-thumbnail img-fluid">
 
     <button type="button" class="btn btn-danger close-modal" data-toggle="modal" data-target="#deleteModal">X</button>
@@ -816,7 +816,7 @@ $ant = anteprima($row['corpo'], 20);
 
 $art_thumb = <<<DELIMETER
 
-<div class="col-xs-6 col-md-3 mb-3">
+<div class="col-xs-6 col-md-3 col-lg-2 mb-3">
     <div class="card" style="width: 18rem;">
         <a href="../../public/admin/index.php?edit_art&id={$row['art_id']}"><img src="../../resources/{$img}" class="card-img-top" alt=""></a>
         <div class="card-body">
