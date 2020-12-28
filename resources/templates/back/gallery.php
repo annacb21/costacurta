@@ -7,7 +7,7 @@
 
             <?php add_slide(); ?>
 
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-12">
 
                 <div class="form-group">
                     <label for="title" class="form-label">Nome foto</label>

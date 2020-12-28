@@ -5,7 +5,7 @@
     <h1 class="subtitle pb-4">Contatti</h1>
     <?php display_message(); ?>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-12 pb-5">
             <h3 class="pb-4">Invia una email</h3>
             <form action="" method="POST">
                 <?php send_email(); ?>
@@ -24,7 +24,7 @@
                 <button name="submit" type="submit" class="btn btn-primary">Invia</button>
             </form>
         </div>
-        <div class="col-lg-6 pl-5">
+        <div class="col-lg-6 col-md-12">
             <h3 class="pb-5">Recapiti</h3>
             <?php
                 for($i = 0; $i < count($studi); $i++) {

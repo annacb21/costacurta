@@ -7,7 +7,7 @@
 
             <?php update_account(); ?>
 
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-12">
 
                 <div class="form-group">
                     <label for="username" class="form-label">Username</label>
@@ -39,7 +39,7 @@
 
             <?php update_password($data['password']); ?>
 
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-12">
 
                 <h3 class="py-3">Password</h3>
 

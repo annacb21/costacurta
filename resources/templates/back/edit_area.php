@@ -18,7 +18,7 @@
 
     <?php update_area(); ?>
 
-    <div class="col-md-6">
+    <div class="col-lg-6 col-md-12">
 
         <div class="form-group">
             <label for="name_area" class="form-label">Nome area di intervento</label>

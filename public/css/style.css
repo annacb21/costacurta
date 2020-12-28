@@ -8,7 +8,7 @@ body {
 
 /* padding on the central content of every page */
 #main {
-    padding: 3% 10%;
+    padding: 3% 8%;
 }
 
 .bottom-div {
@@ -121,4 +121,20 @@ footer .fas {
     position: absolute;
     top: -0.4em;
     right: 0.3em;
+}
+
+@media (max-width: 768px) {
+
+    .carousel-inner .carousel-item img{
+        height: 20em;
+    }
+
+}
+
+@media (max-width: 575px) {
+
+    .carousel-inner .carousel-item img{
+        height: 15em;
+    }
+
 }
