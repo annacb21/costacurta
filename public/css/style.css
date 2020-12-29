@@ -2,13 +2,13 @@
 
 body {
     background-color: #F8F9FB;
-    font-family: 'Montserrat' !important;
+    font-family: 'Raleway', sans-serif !important;
     min-height: 100%;
 }
 
 /* padding on the central content of every page */
 #main {
-    padding: 3% 8%;
+    padding: 3% 5%;
 }
 
 .bottom-div {
@@ -30,9 +30,18 @@ body {
 }
 
 /* navbar brand or logo */
-nav .navbar-brand {
+.logo-title {
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.2rem;
+}
+
+.logo-desc {
+    font-size: 0.8rem;
+}
+
+#logo {
+    width: 5em;
+    height: auto;
 }
 
 /* nav item when active */
