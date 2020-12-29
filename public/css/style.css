@@ -50,11 +50,6 @@ body {
     color: #008be6 !important;
 }
 
-/* login icon */
-.fa-user {
-    color: #8D919E;
-}
-
 /* HEADER */
 
 #header {
@@ -71,9 +66,13 @@ body {
 
 /* FOOTER */
 
-footer {
-    margin-top: 7em;
-    padding: 0 10%;
+/* login icon */
+.login-btn, .login-btn:hover, .login-btn:active {
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    color: transparent;
 }
 
 /* phone and email icons */
