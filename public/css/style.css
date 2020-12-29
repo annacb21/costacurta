@@ -50,11 +50,6 @@ body {
     color: #008be6 !important;
 }
 
-.active-drop {
-    background-color: #008be6 !important;
-    color: #FFF !important;
-}
-
 /* login icon */
 .fa-user {
     color: #8D919E;
