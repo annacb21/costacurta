@@ -1,14 +1,9 @@
 /* GENERAL TAGS */
 
 body {
-    background-color: #F8F9FB;
+    background-color: #f3f5f3;
     font-family: 'Raleway', sans-serif !important;
     min-height: 100%;
-}
-
-/* padding on the central content of every page */
-#main {
-    padding: 3% 5%;
 }
 
 .bottom-div {
@@ -26,7 +21,7 @@ body {
 /* NAVBAR */
 
 .navbar {
-    padding: 0 !important;
+    padding: 2% 5% !important;
 }
 
 /* navbar brand or logo */
@@ -109,8 +104,23 @@ footer .fas {
 /* CAROUSEL */
 
 .carousel-inner .carousel-item img{
-    height: 60em;
+    height: 40em;
     width: 50em;
+}
+
+.carousel-caption {
+    background-color: rgba(32, 46, 50, 0.8);
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+}
+
+.blockquote {
+    margin-bottom: 0 !important;
+}
+
+.quote {
+    font-style: italic;
 }
 
 /* THUMBNAIL */

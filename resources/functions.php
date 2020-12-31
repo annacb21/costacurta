@@ -147,6 +147,17 @@ function get_tot_slides($studio) {
 
 }
 
+// ritorna il numero di quotes
+function get_tot_quotes() {
+
+    $query = query("SELECT COUNT(*) as total FROM quotes");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
 // ritorna il numero di aree 
 function get_tot_areas() {
 
@@ -300,6 +311,61 @@ function login() {
         }
 
     }
+
+}
+
+// ritorna la slide (foto) corrente
+function get_active_quote() {
+
+$query = query("SELECT * FROM quotes ORDER BY quote_id DESC LIMIT 1");
+confirm($query);
+
+$row = fetch_array($query);
+
+$img = display_image($row['quote_img']);
+
+$quote = <<<DELIMETER
+
+<div class="carousel-item active" data-interval="10000">
+    <img src="../resources/{$img}" class="d-block w-100" alt="">
+    <div class="carousel-caption blockquote">
+        <p class="quote">{$row['quote_text']}</p>
+        <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $quote;
+
+
+}
+
+// getter per le slide (foto) 
+function get_quotes() {
+
+$query = query("SELECT * FROM quotes WHERE quote_id NOT IN (SELECT MAX(quote_id) FROM quotes ORDER BY quote_id DESC) ORDER BY quote_id DESC");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['quote_img']);
+
+$quotes = <<<DELIMETER
+
+<div class="carousel-item" data-interval="10000">
+    <img src="../resources/{$img}" class="d-block w-100" alt="">
+    <div class="carousel-caption blockquote">
+        <p class="quote">{$row['quote_text']}</p>
+        <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $quotes;
+    
+}
 
 }
 

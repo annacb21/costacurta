@@ -1,16 +1,19 @@
 <?php $profile = get_profile(); ?>
 
-<!-- HEADER -->
-<div class="row py-5 mb-5" id="header">
-
-    <div class="col-lg-6 col-md-12 col-xl-6">
-        <h1 class="title pb-5">Chiedere aiuto <br> è il primo passo <br> per stare meglio.</h1>
-        <a role="button" href="../public/index.php?contatti" class="btn btn-primary btn-lg bottom-div">Prenota appuntamento</a>
+<!-- HEADER CAROUSEL -->
+<div id="headerCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+        <?php get_active_quote(); ?>
+        <?php get_quotes(); ?>
     </div>
-    <div class="col-lg-6 col-md-12 col-xl-6 animate__animated animate__fadeInLeft">
-        <img src="../public/images/studio1.png" alt="foto studio Padova" class="float-lg-right float-md-none mt-5 img-fluid">
-    </div>
-
+    <a class="carousel-control-prev" href="#headerCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#headerCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 
 <!-- PROFILE -->
