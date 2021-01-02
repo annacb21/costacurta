@@ -19,6 +19,7 @@ body {
 .section {
     font-style: italic;
     font-weight: 200;
+    color: #263859;
 }
 
 /* h1 */
@@ -82,6 +83,16 @@ body {
     width: 5rem;
     margin: auto auto;
     color: #d5d9e0;
+}
+
+/* PRENOTAZIONI */
+
+#prenota .section {
+    width: 50%;
+}
+
+#widget-pre {
+    border-right: 1px solid #263859;
 }
 
 /* FOOTER */

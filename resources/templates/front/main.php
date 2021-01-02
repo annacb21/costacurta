@@ -81,4 +81,20 @@
     </div>
 </div>
 
-<script src="../public/js/show-on-scroll.js"></script>
+<!-- PRENOTAZIONI -->
+<div class="py-5 px-5 mt-5" id="prenota">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="text-uppercase text-center section pb-5">Prenota un appuntamento</h3>
+        </div>
+        <div class="col-lg-6" id="widget-pre">
+            <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
+        </div>
+        <div class="col-lg-6 pl-5">
+            <p class="font-weight-bold">Oppure contattami</p>
+            <a role="button" href="../public/index.php?contatti" class="btn btn-primary btn-lg">Vai ai contatti</a>
+        </div>
+    </div>
+</div>
+
+<script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
