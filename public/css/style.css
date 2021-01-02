@@ -7,22 +7,28 @@ body {
 }
 
 .bottom-div {
-    position: absolute;
+    position: absolute !important;
     bottom: 0;
+    left: 3rem;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.section {
+    font-style: italic;
+    font-weight: 200;
 }
 
 /* h1 */
 .title {
-    font-weight: 600;
-    font-size: 4rem;
+    font-weight: 700;
+    font-size: 3rem;
     line-height: 1.5;
 }
 
 /* NAVBAR */
-
-.navbar {
-    padding: 2% 5% !important;
-}
 
 /* navbar brand or logo */
 .logo-title {
@@ -31,7 +37,7 @@ body {
 }
 
 .logo-desc {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 #logo {
@@ -45,18 +51,37 @@ body {
     color: #008be6 !important;
 }
 
-/* HEADER */
+/* PROFILO */
 
-#header {
-    color: #26293A;
+.profile {
+    padding: 3rem;
+    width: 25rem;
 }
 
-/* PROFILO */
+.profile-desc {
+    line-height: 2.5;
+}
 
 .subtitle {
     color: #26293A;
     font-size: 3em;
     font-weight: 600;
+}
+
+/* PERCORSO */
+
+#percorso {
+    background-color: #263859;
+}
+
+#percorso .card {
+    min-height: 18rem;
+}
+
+#percorso .card-img-top {
+    width: 5rem;
+    margin: auto auto;
+    color: #d5d9e0;
 }
 
 /* FOOTER */

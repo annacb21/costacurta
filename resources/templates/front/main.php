@@ -16,42 +16,69 @@
     </a>
 </div>
 
-<!-- PROFILE -->
-<div id="mainProfile" class="py-5 my-5">
-
-    <div class="row">
-        <div class="col-lg-5 col-xl-5">
-            <img src="../public/images/profile.png" alt="foto Andrea Costacurta" class="w-75 h-auto">
+<!-- QUALCOSA SU DI ME -->
+<div class="row mt-5 py-5 px-5">
+    <div class="col-lg-3">
+        <div class="card profile shadow">
+            <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="card-img shadow" alt="...">
         </div>
-        <div class="col-lg-7 col-xl-7">
-            <div class="row">
-                <h2 class="text-primary float-lg-right text-uppercase h4 pb-4">Chi sono</h2>
+    </div>
+    <div class="col-lg-9 pl-5">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-lg-12">
+                <h3 class="text-uppercase section pb-4">Qualcosa su di me ...</h3>
             </div>
-            <div class="row">
-                <p class="float-lg-right subtitle">Dott. Andrea Costacurta</p>
+            <div class="col-lg-12">
+                <p class="text-justify profile-desc"><?php echo $profile['pro_desc'] ?></p>
             </div>
-            <div class="row">
-                <p class="float-lg-right text-justify"><?php echo $profile['pro_desc']; ?></p>
-            </div>
-            <div class="row pt-5">
-                <a role="button" href="../public/index.php?chisono" class="btn btn-outline-primary btn-lg bottom-div">Approfondisci</a>
+            <div class="col-lg-12 bottom-div">
+                <a role="button" href="../public/index.php?chisono" class="btn btn-outline-dark btn-lg">Approfondisci</a>
             </div>
         </div>
     </div>
-
 </div>
 
-<!-- AREE DI INTERVENTO -->
-<div id="areas" class="pt-5">
-
-    <h2 class="text-primary text-uppercase h4 mb-5">Aree di intervento</h2>
-
-    <div class="row justify-content-evenly align-items-start">
-        <?php get_area_thumbnails(); ?>
+<!-- PERCORSO -->
+<div class="py-5 px-5 mt-5" id="percorso">
+    <h3 class="text-uppercase section py-4 text-center text-white">Professionalità - Interdisciplinarità - Empatia</h3>
+    <div class="row py-4 mb-4">
+        <div class="col-lg-3">
+            <div class="card shadow-sm">
+                <img src="../public/images/percorso1.svg" class="card-img-top pt-4" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Profilo diagnostico</h5>
+                    <p class="card-text text-center">Anamnesi, storia personale, identificazione dei sintomi</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card shadow-sm">
+                <img src="../public/images/percorso2.svg" class="card-img-top pt-4" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Miglior soluzione</h5>
+                    <p class="card-text text-center">Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card shadow-sm">
+                <img src="../public/images/percorso3.svg" class="card-img-top pt-4" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Programma terapeutico</h5>
+                    <p class="card-text text-center">Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card shadow-sm">
+                <img src="../public/images/percorso4.svg" class="card-img-top pt-4" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Valutazione dell'esito</h5>
+                    <p class="card-text text-center">Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <a role="button" href="../public/index.php?aree" class="btn btn-outline-primary btn-lg">Approfondisci</a>
-
 </div>
 
 <script src="../public/js/show-on-scroll.js"></script>
