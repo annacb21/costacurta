@@ -32,7 +32,7 @@
                 <p class="text-justify profile-desc"><?php echo $profile['pro_desc'] ?></p>
             </div>
             <div class="col-lg-12 bottom-div">
-                <a role="button" href="../public/index.php?chisono" class="btn btn-outline-dark btn-lg">Approfondisci</a>
+                <a role="button" href="../public/index.php?chisono" class="btn btn-lg home-btn">Approfondisci</a>
             </div>
         </div>
     </div>

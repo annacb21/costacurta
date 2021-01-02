@@ -69,6 +69,11 @@ body {
     font-weight: 600;
 }
 
+.home-btn {
+    background-color: #263859 !important;
+    color: #fff !important;
+}
+
 /* PERCORSO */
 
 #percorso {
