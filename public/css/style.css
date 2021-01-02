@@ -87,12 +87,12 @@ body {
 
 /* PRENOTAZIONI */
 
-#prenota .section {
-    width: 50%;
-}
-
 #widget-pre {
     border-right: 1px solid #263859;
+}
+
+#prenota form {
+    width: 60%;
 }
 
 /* FOOTER */

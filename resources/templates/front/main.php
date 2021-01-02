@@ -84,15 +84,31 @@
 <!-- PRENOTAZIONI -->
 <div class="py-5 px-5 mt-5" id="prenota">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-6">
             <h3 class="text-uppercase text-center section pb-5">Prenota un appuntamento</h3>
         </div>
+        <div class="col-lg-6">
+            <h3 class="text-uppercase text-center section pb-5">Oppure contattami</h3>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-lg-6" id="widget-pre">
             <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
         </div>
-        <div class="col-lg-6 pl-5">
-            <p class="font-weight-bold">Oppure contattami</p>
-            <a role="button" href="../public/index.php?contatti" class="btn btn-primary btn-lg">Vai ai contatti</a>
+        <div class="col-lg-6">
+            <form action="" method="POST" class="mx-auto">
+                <?php send_email(); ?>
+                <div class="mb-3">
+                    <input type="text" name="name" placeholder="Nome e cognome" class="form-control" id="name" required data-validation-required-message="Inserire il proprio nome e cognome">
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required data-validation-required-message="Inserire una email valida">
+                </div>
+                <div class="mb-3">
+                    <textarea name="message" class="form-control" id="message" rows="5" placeholder="Scrivi qui il tuo messaggio" required data-validation-required-message="Inserire un messaggio"></textarea>
+                </div>
+                <button name="submit" type="submit" class="btn btn-primary btn-lg">Invia</button>
+            </form>
         </div>
     </div>
 </div>
