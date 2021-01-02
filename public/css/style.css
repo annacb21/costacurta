@@ -22,11 +22,14 @@ body {
     color: #263859;
 }
 
-/* h1 */
 .title {
     font-weight: 700;
     font-size: 3rem;
     line-height: 1.5;
+}
+
+.widget-top {
+    border-top: 1px solid #263859;
 }
 
 /* NAVBAR */
@@ -92,7 +95,7 @@ body {
 
 /* PRENOTAZIONI */
 
-#widget-pre {
+.widget-pre {
     border-right: 1px solid #263859;
 }
 

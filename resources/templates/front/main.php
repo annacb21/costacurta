@@ -92,7 +92,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6" id="widget-pre">
+        <div class="col-lg-6 widget-pre">
             <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
         </div>
         <div class="col-lg-6">

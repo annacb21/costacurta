@@ -202,6 +202,22 @@ function get_article($id) {
 
 }
 
+// getter per le pubblicazioni
+function get_pubs() {
+
+    $query = query("SELECT * FROM pubblicazioni");
+    confirm($query);
+
+    $pubs = [];
+
+    while($row = fetch_array($query)) {
+        array_push($pubs, $row);
+    }
+
+    return $pubs;
+
+}
+
 //*************************** FRONT FUNCTIONS ****************************
 
 // mostra il contenuto del body della pagina dinamicamente
