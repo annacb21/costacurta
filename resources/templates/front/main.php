@@ -18,18 +18,26 @@
 
 <!-- QUALCOSA SU DI ME -->
 <div class="row mt-5 py-5 px-5">
-    <div class="col-lg-3">
+    <div class="col-lg-4">
         <div class="card profile shadow">
             <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="card-img shadow" alt="...">
         </div>
     </div>
-    <div class="col-lg-9 pl-5">
+    <div class="col-lg-8 pl-5">
         <div class="row justify-content-around align-items-center">
             <div class="col-lg-12">
-                <h3 class="text-uppercase section pb-4">Qualcosa su di me ...</h3>
+                <h3 class="text-uppercase section pb-5">Qualcosa su di me ...</h3>
             </div>
             <div class="col-lg-12">
-                <p class="text-justify profile-desc"><?php echo $profile['pro_desc'] ?></p>
+                <p class="font-weight-bold bold-color">
+                Costacurta Andrea, Medico Chirurgo Specialista in Psichiatria <br />
+                – Psichiatra e Psicoterapeuta, Psicoanalista -
+                </p>
+                <p class="text-justify profile-desc">
+                Libero professionista, già dirigente presso Dipartimento di Salute Mentale. <br />
+                Consulente Tecnico in ambito forense, già Direttore e Responsabile Clinico di Comunità. <br />
+                Ho una riconosciuta esperienza nella diagnosi e trattamento dei disturbi psichiatrici e caratteriali dell’età adulta.
+                </p>
             </div>
             <div class="col-lg-12 bottom-div">
                 <a role="button" href="../public/index.php?chisono" class="btn btn-lg home-btn">Approfondisci</a>

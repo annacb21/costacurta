@@ -32,6 +32,15 @@ body {
     border-top: 1px solid #263859;
 }
 
+.bold-color {
+    color: #263859;
+}
+
+.bg-color {
+    background-color: #263859;
+    color: #fff;
+}
+
 /* NAVBAR */
 
 /* navbar brand or logo */
@@ -152,8 +161,7 @@ footer .fas {
 /* CAROUSEL */
 
 .carousel-inner .carousel-item img{
-    height: 40em;
-    width: 50em;
+    height: 50rem;
 }
 
 .carousel-caption {

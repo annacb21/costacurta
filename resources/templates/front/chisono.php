@@ -1,16 +1,16 @@
 <?php $profile = get_profile(); ?>
 <?php $pubs = get_pubs(); ?>
 
-<div class="py-5 px-5 page">
-    <div class="row">
+<div class="px-5 page">
+    <div class="row py-5 px-5">
         <div class="col-lg-4 widget-pre">
-            <h1 class="section text-uppercase pb-4 pl-2">Qualcosa su di me ...</h1>
             <div class="card profile shadow">
                 <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="card-img shadow" alt="...">
-                <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn home-btn btn-lg mt-5">Curriculum [pdf]</a>
             </div>
+            <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn home-btn btn-lg mt-5" target="_blank">Curriculum [pdf]</a>
         </div>
         <div class="col-lg-8 px-5">
+            <h1 class="section text-uppercase pb-4 pl-2">Qualcosa su di me ...</h1>
             <p class="text-justify profile-desc"><?php echo html_entity_decode(htmlentities($profile['pro_desc'])); ?></p>
         </div>
     </div>
@@ -19,7 +19,8 @@
         <ul>
             <?php 
                 for($i = 0; $i < count($pubs); $i++) {
-                    echo "<li>{$pubs[$i]['pub_title']}<span class='text-muted'>({$pubs[$i]['pub_autor']}) - {$pubs[$i]['pub_note']}</span></li>";
+                    $link = display_image($pubs[$i]['pub_link']);
+                    echo "<li><a href='../resources/{$link}' target='_blank'>{$pubs[$i]['pub_title']}<span class='text-muted'>({$pubs[$i]['pub_autor']}) - {$pubs[$i]['pub_note']}</span></a></li>";
                 }
             ?>
         </ul>
