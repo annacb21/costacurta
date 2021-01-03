@@ -1,4 +1,4 @@
-<div id="login" class="pb-5">
+<div id="login" class="page">
     <header>
         <h1 class="subtitle text-center mb-5">Login</h1>
         <?php display_message(); ?>

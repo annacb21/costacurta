@@ -1,6 +1,6 @@
 <?php $studio = get_studio_data($_GET['id']); ?>
 
-<div class="py-5">
+<div class="page">
     <h1 class="subtitle mb-5">Lo studio di <?php echo $studio['city']; ?></h1>   
     <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

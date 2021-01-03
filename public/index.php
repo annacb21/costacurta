@@ -30,7 +30,7 @@
         <!-- NAVBAR -->
         <?php include(TEMPLATE_FRONT . DS . "navbar.php"); ?>
 
-        <div class="pb-5">
+        <div class="pb-5 main">
 
             <!-- MAIN CONTENT -->
             <?php show_main_content() ?>

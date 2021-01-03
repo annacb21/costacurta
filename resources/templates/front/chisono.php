@@ -1,7 +1,7 @@
 <?php $profile = get_profile(); ?>
 <?php $pubs = get_pubs(); ?>
 
-<div class="px-5 page">
+<div class="page">
     <div class="row py-5 px-5">
         <div class="col-lg-4 widget-pre">
             <div class="card profile shadow">

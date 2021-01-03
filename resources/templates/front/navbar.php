@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-xl navbar-light">
+<nav class="navbar navbar-expand-xl navbar-light page">
 
     <!-- navbar brand or logo -->
     <a class="navbar-brand" href="../public/index.php">

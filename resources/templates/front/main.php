@@ -17,7 +17,7 @@
 </div>
 
 <!-- QUALCOSA SU DI ME -->
-<div class="row mt-5 py-5 px-5">
+<div class="row mt-5 page">
     <div class="col-lg-4">
         <div class="card profile shadow">
             <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="card-img shadow" alt="...">
@@ -47,7 +47,7 @@
 </div>
 
 <!-- PERCORSO -->
-<div class="py-5 px-5 mt-5" id="percorso">
+<div class="mt-5 page" id="percorso">
     <h3 class="text-uppercase section py-4 text-center text-white">Professionalità - Interdisciplinarità - Empatia</h3>
     <div class="row py-4 mb-4">
         <div class="col-lg-3">
@@ -90,7 +90,7 @@
 </div>
 
 <!-- PRENOTAZIONI -->
-<div class="py-5 px-5 mt-5" id="prenota">
+<div class="mt-5 page" id="prenota">
     <div class="row">
         <div class="col-lg-6">
             <h3 class="text-uppercase text-center section pb-5">Prenota un appuntamento</h3>

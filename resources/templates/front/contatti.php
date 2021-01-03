@@ -1,7 +1,7 @@
 <?php $studi = get_studi(); ?>
 <?php $profile = get_profile(); ?>
 
-<div id="contatti" class="pb-5">
+<div id="contatti" class="page">
     <h1 class="subtitle pb-4">Contatti</h1>
     <?php display_message(); ?>
     <div class="row">

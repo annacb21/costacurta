@@ -1,7 +1,7 @@
 <?php $studi = get_studi(); ?>
 <?php $profile = get_profile(); ?>
 
-<footer class="footer h-auto py-5 text-white">
+<footer class="footer h-auto text-white page">
 
     <div class="row mx-0 px-5">
         <div class="col-lg-4 px-5">
