@@ -2,7 +2,7 @@
 
 <!-- HEADER CAROUSEL -->
 <div id="headerCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner">
+    <div class="carousel-inner" role='listbox'>
         <?php get_active_quote(); ?>
         <?php get_quotes(); ?>
     </div>

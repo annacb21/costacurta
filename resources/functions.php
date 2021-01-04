@@ -343,7 +343,7 @@ $img = display_image($row['quote_img']);
 $quote = <<<DELIMETER
 
 <div class="carousel-item active" data-interval="10000">
-    <img src="../resources/{$img}" class="d-block w-100" alt="">
+    <img src="../resources/{$img}" class="d-block w-100 img-fluid" alt="">
     <div class="carousel-caption blockquote">
         <p class="quote">{$row['quote_text']}</p>
         <p class="blockquote-footer text-white">{$row['quote_author']}</p>
