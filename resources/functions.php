@@ -348,7 +348,7 @@ $quote = <<<DELIMETER
 
 <div class="carousel-item active" data-interval="10000">
     <div class='row bg-color'>
-        <div class='col-xl-8 col-lg-6 col-md-6 blockquote'>
+        <div class='col-xl-8 col-lg-6 col-md-6 blockquote d-none d-sm-none'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer text-white">{$row['quote_author']}</p>
         </div>
@@ -367,11 +367,11 @@ $quote = <<<DELIMETER
 
 <div class="carousel-item active" data-interval="10000">
     <div class='row bg-color'>
-        <div class='col-xl-6 col-lg-4 col-md-12 blockquote d-md-none'>
+        <div class='col-xl-6 col-lg-4 col-md-12 blockquote d-md-none d-lg-block d-sm-none d-none'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer text-white">{$row['quote_author']}</p>
         </div>
-        <div class='carousel-caption d-none d-md-block blockquote'>
+        <div class='carousel-caption d-lg-none d-md-block d-none d-sm-none blockquote'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer text-white">{$row['quote_author']}</p>
         </div>
@@ -408,7 +408,7 @@ $quote = <<<DELIMETER
 
 <div class="carousel-item" data-interval="10000">
     <div class='row bg-color'>
-        <div class='col-xl-8 col-lg-6 col-md-6 blockquote'>
+        <div class='col-xl-8 col-lg-6 col-md-6 blockquote d-none d-sm-none'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer text-white">{$row['quote_author']}</p>
         </div>
@@ -427,11 +427,11 @@ $quote = <<<DELIMETER
 
 <div class="carousel-item" data-interval="10000">
     <div class='row bg-color'>
-        <div class='col-xl-6 col-lg-4 col-md-12 blockquote d-md-none'>
+        <div class='col-xl-6 col-lg-4 col-md-12 blockquote d-md-none d-lg-block d-sm-none d-none'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer text-white">{$row['quote_author']}</p>
         </div>
-        <div class='carousel-caption blockquote d-none d-md-block'>
+        <div class='carousel-caption blockquote d-lg-none d-md-block d-none d-sm-none'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer text-white">{$row['quote_author']}</p>
         </div>
