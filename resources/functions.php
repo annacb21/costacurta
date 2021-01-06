@@ -340,17 +340,50 @@ $row = fetch_array($query);
 
 $img = display_image($row['quote_img']);
 
+$quote = '';
+
+if($row['is_vert'] == '0') {
+
 $quote = <<<DELIMETER
 
 <div class="carousel-item active" data-interval="10000">
-    <img src="../resources/{$img}" class="d-block w-100" alt="">
-    <div class="carousel-caption blockquote">
-        <p class="quote">{$row['quote_text']}</p>
-        <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+    <div class='row bg-color'>
+        <div class='col-xl-8 col-lg-6 col-md-6 blockquote'>
+            <p class="quote">{$row['quote_text']}</p>
+            <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+        </div>
+        <div class='col-xl-4 col-lg-6 col-md-6'>
+            <img src="../resources/{$img}" alt="">
+        </div>
     </div>
 </div>
 
 DELIMETER;
+
+}
+else {
+
+$quote = <<<DELIMETER
+
+<div class="carousel-item active" data-interval="10000">
+    <div class='row bg-color'>
+        <div class='col-xl-6 col-lg-4 col-md-12 blockquote d-md-none'>
+            <p class="quote">{$row['quote_text']}</p>
+            <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+        </div>
+        <div class='carousel-caption d-none d-md-block blockquote'>
+            <p class="quote">{$row['quote_text']}</p>
+            <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+        </div>
+        <div class='col-xl-6 col-lg-8 col-md-12 wide'>
+            <img src="../resources/{$img}" alt="">
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+}
 
 echo $quote;
 
@@ -367,19 +400,52 @@ while($row = fetch_array($query)) {
 
 $img = display_image($row['quote_img']);
 
-$quotes = <<<DELIMETER
+$quote = '';
+
+if($row['is_vert'] == '0') {
+
+$quote = <<<DELIMETER
 
 <div class="carousel-item" data-interval="10000">
-    <img src="../resources/{$img}" class="d-block w-100" alt="">
-    <div class="carousel-caption blockquote">
-        <p class="quote">{$row['quote_text']}</p>
-        <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+    <div class='row bg-color'>
+        <div class='col-xl-8 col-lg-6 col-md-6 blockquote'>
+            <p class="quote">{$row['quote_text']}</p>
+            <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+        </div>
+        <div class='col-xl-4 col-lg-6 col-md-6'>
+            <img src="../resources/{$img}" alt="">
+        </div>
     </div>
 </div>
 
 DELIMETER;
 
-echo $quotes;
+}
+else {
+
+$quote = <<<DELIMETER
+
+<div class="carousel-item" data-interval="10000">
+    <div class='row bg-color'>
+        <div class='col-xl-6 col-lg-4 col-md-12 blockquote d-md-none'>
+            <p class="quote">{$row['quote_text']}</p>
+            <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+        </div>
+        <div class='carousel-caption blockquote d-none d-md-block'>
+            <p class="quote">{$row['quote_text']}</p>
+            <p class="blockquote-footer text-white">{$row['quote_author']}</p>
+        </div>
+        <div class='col-xl-6 col-lg-8 col-md-12 wide'>
+            <img src="../resources/{$img}" alt="">
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+}
+
+echo $quote;
     
 }
 
