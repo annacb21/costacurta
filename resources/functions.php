@@ -114,17 +114,6 @@ function get_studi() {
 
 }
 
-// getter per i dati dello studio
-function get_studio_data($id) {
-
-    $query = query("SELECT * FROM studi WHERE studio_id = '{$id}' ");
-    confirm($query);
-
-    $row = fetch_array($query);
-    return $row;
-
-}
-
 // getter per i dati dell'admin
 function get_admin_data() {
 
