@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl navbar-light page">
 
-    <!-- navbar brand or logo -->
+    <!-- navbar logo -->
     <a class="navbar-brand" href="../public/index.php">
         <div class="row">
             <div class="col">
@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- navbar items on the right -->
+    <!-- navbar links -->
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
