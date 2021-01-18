@@ -20,7 +20,7 @@
 <div class="row mt-5 page">
     <div class="col-lg-4">
         <div class="card profile shadow">
-            <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="card-img shadow" alt="...">
+            <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="card-img shadow" alt="foto Andrea Costacurta">
         </div>
     </div>
     <div class="col-lg-8 pl-5">
