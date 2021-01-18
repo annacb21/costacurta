@@ -28,7 +28,7 @@
             <h3 class="pb-5">Recapiti</h3>
             <?php
                 for($i = 0; $i < count($studi); $i++) {
-                    echo "<p class='font-weight-bold'>Studio di {$studi[$i]['city']}: <span class='font-weight-normal'>{$studi[$i]['adress']}, CAP {$studi[$i]['cap']}</span></p>";
+                    echo "<p class='font-weight-bold'>{$studi[$i]['studio_name']}: <span class='font-weight-normal'>{$studi[$i]['studio_adress']}, {$studi[$i]['studio_link']}</span></p>";
                 }
             ?>
             <p class="font-weight-bold">Email: <span class="font-weight-normal"><?php echo $contatti[0]['cont_value']; ?></span></p>

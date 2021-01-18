@@ -1,5 +1,5 @@
 <?php $studi = get_studi(); ?>
-<?php $profile = get_profile(); ?>
+<?php $contatti = get_contacts(); ?>
 
 <footer class="footer h-auto text-white page">
 
@@ -12,17 +12,17 @@
             <p class="font-weight-bold">Gli studi</p>
             <?php
                 for($i = 0; $i < count($studi); $i++) {
-                    echo "<p><span class='text-uppercase pr-2'>{$studi[$i]['city']}:</span>{$studi[$i]['studio_name']}, {$studi[$i]['adress']}</p>";
+                    echo "<p><span class='text-uppercase pr-2'>{$studi[$i]['studio_name']}:</span>{$studi[$i]['studio_adress']}, {$studi[$i]['studio_link']}</p>";
                 }
             ?>
         </div>
         <div class="col-lg-4 px-5">
             <p class="font-weight-bold">Contatti</p>
             <div>
-                <i class="fas fa-phone-square"></i><p class="d-inline-block pl-4"><?php echo $profile['pro_tel']; ?></p>
+                <i class="fas fa-phone-square"></i><p class="d-inline-block pl-4"><?php echo $contatti[0]['cont_value']; ?></p>
             </div>
             <div>
-                <i class="fas fa-envelope-square"></i><p class="d-inline-block pl-4"><?php echo $profile['pro_email']; ?></p>
+                <i class="fas fa-envelope-square"></i><p class="d-inline-block pl-4"><?php echo $contatti[1]['cont_value']; ?></p>
             </div>
         </div>
     </div>
