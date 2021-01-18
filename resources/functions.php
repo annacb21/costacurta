@@ -488,9 +488,9 @@ if($page != $last_page) {
 
 while($row = fetch_array($query)) {
 
-$img = display_image($row['foto']);
+$img = display_image($row['art_image']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
-$ant = anteprima($row['corpo'], 50);
+$ant = anteprima($row['art_text'], 50);
     
 $arts = <<<DELIMETER
 
@@ -501,8 +501,7 @@ $arts = <<<DELIMETER
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <p class="card-text"><small class="text-muted">Pubblicato da {$row['autore']}</small></p>
-                <h5 class="card-title">{$row['titolo']}</h5>
+                <h5 class="card-title">{$row['art_title']}</h5>
                 <p class="card-text text-justify pr-3">{$ant}</p>
                 <p class="card-text"><small class="text-muted">{$data}</small></p>
             </div>
