@@ -451,33 +451,6 @@ echo $quote;
 
 }
 
-// mostra i thumbnails delle slide
-function get_area_thumbnails() {
-
-$query = query("SELECT * FROM aree ORDER BY area_id DESC");
-confirm($query);
-
-while($row = fetch_array($query)) {
-    
-$area_thumb = <<<DELIMETER
-
-<div class="col-xs-6 col-md-6 col-xl-3 mb-3">
-    <div class="card" style="width: 20rem; height: 15rem;">
-        <div class="card-body">
-            <h5 class="card-title text-info">{$row['area_name']}</h5>
-            <p class="card-text">{$row['area_desc']}</p>
-        </div>
-    </div>
-</div>
-
-DELIMETER;
-
-echo $area_thumb;
-    
-}
-    
-}
-
 // mostra gli articoli in lista
 function get_articles_list() {
 
