@@ -1,5 +1,5 @@
 <?php $studi = get_studi(); ?>
-<?php $profile = get_profile(); ?>
+<?php $contatti = get_contacts(); ?>
 
 <div id="contatti" class="page">
     <h1 class="subtitle pb-4">Contatti</h1>
@@ -31,8 +31,8 @@
                     echo "<p class='font-weight-bold'>Studio di {$studi[$i]['city']}: <span class='font-weight-normal'>{$studi[$i]['adress']}, CAP {$studi[$i]['cap']}</span></p>";
                 }
             ?>
-            <p class="font-weight-bold">Email: <span class="font-weight-normal"><?php echo $profile['pro_email']; ?></span></p>
-            <p class="font-weight-bold">Telefono: <span class="font-weight-normal"><?php echo $profile['pro_tel']; ?></span></p>
+            <p class="font-weight-bold">Email: <span class="font-weight-normal"><?php echo $contatti[0]['cont_value']; ?></span></p>
+            <p class="font-weight-bold">Telefono: <span class="font-weight-normal"><?php echo $contatti[1]['cont_value']; ?></span></p>
         </div>
     </div>
 

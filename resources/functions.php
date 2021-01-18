@@ -114,6 +114,22 @@ function get_studi() {
 
 }
 
+// getter per i dati degli studi
+function get_contacts() {
+
+    $query = query("SELECT * FROM contatti");
+    confirm($query);
+
+    $contatti = [];
+
+    while($row = fetch_array($query)) {
+        array_push($contatti, $row);
+    }
+
+    return $contatti;
+
+}
+
 // getter per i dati dell'admin
 function get_admin_data() {
 
