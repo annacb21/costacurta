@@ -235,8 +235,8 @@ function show_main_content() {
         include(TEMPLATE_FRONT . "/aree.php");
     }
 
-    if(isset($_GET['studio'])) {
-        include(TEMPLATE_FRONT . "/studio.php");
+    if(isset($_GET['gallery'])) {
+        include(TEMPLATE_FRONT . "/gallery.php");
     }
 
     if(isset($_GET['articoli'])) {
