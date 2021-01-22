@@ -142,8 +142,10 @@ body {
 
 /* PRENOTAZIONI */
 
-.widget-pre {
-    border-right: 1px solid #263859;
+.dark-subtitle {
+    color: #0D335D;
+    font-weight: 600;
+    font-size: 1.3rem;
 }
 
 #prenota form {
