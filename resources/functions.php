@@ -376,6 +376,31 @@ echo $quote;
 
 }
 
+// mostra gli studi nel footer
+function footer_study() {
+
+$studi = get_studi();
+
+for($i = 0; $i < count($studi); $i++) {
+$s = <<<DELIMETER
+
+<div class="row align-items-center">
+    <div class="col-lg-1 px-0">
+        <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <div class="col-lg-11 px-0">
+        <p class="font-weight-bold mb-0">{$studi[$i]['studio_name']}</p>
+        <p>{$studi[$i]['studio_adress']}</p>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $s;
+}
+
+}
+
 // mostra gli articoli in lista
 function get_articles_list() {
 

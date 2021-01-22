@@ -2,15 +2,7 @@
 
     <!-- navbar logo -->
     <a class="navbar-brand" href="../public/index.php">
-        <div class="row">
-            <div class="col pl-0">
-                <img src="../public/images/logo.svg" alt="logo" id="logo" class="d-inline-block align-top">
-            </div>
-            <div class="col pl-0">
-                <p class="logo-title">Dott. Andrea Costacurta</p>
-                <p class="logo-desc mb-0">Medico Chirurgo <br/> Psichiatra - Psicoterapeuta - Psicoanalista</p>
-            </div>
-        </div>
+        <img src="../public/images/logo.svg" alt="logo" class="d-inline-block align-top logo">
     </a>
 
     <!-- hamburger menu button on smaller screens -->

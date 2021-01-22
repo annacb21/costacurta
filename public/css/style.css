@@ -59,8 +59,8 @@ body {
     font-size: 1rem;
 }
 
-#logo {
-    width: 5.2em;
+.logo {
+    width: 20em;
     height: auto;
 }
 
@@ -148,14 +148,15 @@ body {
     font-size: 1.3rem;
 }
 
-#prenota form {
-    width: 60%;
-}
-
 /* FOOTER */
 
-footer {
-    background-color: #263859 !important;
+.logo-footer {
+    width: 25em;
+    height: auto;
+}
+
+.footer-border {
+    border-bottom: solid #fff 1px;
 }
 
 /* login icon */
@@ -169,8 +170,11 @@ footer {
 
 /* phone and email icons */
 footer .fas {
-    font-size: 1.5em;
     color: #FFF;
+}
+
+.privacy {
+    color: #A2B1CE !important;
 }
 
 /* ADMIN */
