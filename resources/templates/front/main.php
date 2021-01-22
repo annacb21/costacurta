@@ -17,30 +17,30 @@
 </div>
 
 <!-- QUALCOSA SU DI ME -->
-<div class="row mt-5 page">
-    <div class="col-lg-4">
-        <div class="card profile shadow">
-            <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="card-img shadow" alt="foto Andrea Costacurta">
-        </div>
+<div class="row mt-5 page align-items-center">
+    <div class="col-lg-4 px-0 borderLeft text-center">
+        <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img" alt="foto Andrea Costacurta">
     </div>
-    <div class="col-lg-8 pl-5">
-        <div class="row justify-content-around align-items-center">
-            <div class="col-lg-12">
-                <h3 class="text-uppercase section pb-5">Qualcosa su di me ...</h3>
+    <div class="col-lg-8 pl-0 borderRight">
+        <div class="text-uppercase pb-5">
+            <h3 class="section-title pb-2 mb-0">Qualcosa su di me ...</h3>
+            <div class="w-25 borderBottom"></div>
+        </div>
+        <p class="profile-subtitle">
+            Costacurta Andrea, Medico Chirurgo Specialista in Psichiatria <br />
+            – Psichiatra e Psicoterapeuta, Psicoanalista -
+        </p>
+        <p class="text-justify profile-desc">
+            Libero professionista, già dirigente presso Dipartimento di Salute Mentale.<br />
+            Consulente Tecnico in ambito forense, già Direttore e Responsabile Clinico di Comunità.<br />
+            Ha una riconosciuta e consolidata esperienza nella diagnosi e trattamento dei disturbi psichiatrici e caratteriali dell’età adulta.
+        </p>
+        <div class="row justify-content-between pt-3">
+            <div class="col-lg-4 px-0">
+                <a role="button" href="../public/index.php?chisono" class="btn btn-lg dark-btn">Approfondisci</a>
             </div>
-            <div class="col-lg-12">
-                <p class="font-weight-bold bold-color">
-                Costacurta Andrea, Medico Chirurgo Specialista in Psichiatria <br />
-                – Psichiatra e Psicoterapeuta, Psicoanalista -
-                </p>
-                <p class="text-justify profile-desc">
-                Libero professionista, già dirigente presso Dipartimento di Salute Mentale. <br />
-                Consulente Tecnico in ambito forense, già Direttore e Responsabile Clinico di Comunità. <br />
-                Ho una riconosciuta esperienza nella diagnosi e trattamento dei disturbi psichiatrici e caratteriali dell’età adulta.
-                </p>
-            </div>
-            <div class="col-lg-12 bottom-div">
-                <a role="button" href="../public/index.php?chisono" class="btn btn-lg home-btn">Approfondisci</a>
+            <div class="col-lg-4 px-0">
+                <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn btn-lg light-btn float-right" target="_blank">Curriculum Vitae</a>
             </div>
         </div>
     </div>
