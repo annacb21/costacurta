@@ -135,18 +135,9 @@ body {
 
 /* PERCORSO */
 
-#percorso {
-    background-color: #263859;
-}
-
-#percorso .card {
-    min-height: 18rem;
-}
-
-#percorso .card-img-top {
-    width: 5rem;
-    margin: auto auto;
-    color: #d5d9e0;
+.percordo-title {
+    font-weight: 600;
+    font-size: 1.3rem;
 }
 
 /* PRENOTAZIONI */

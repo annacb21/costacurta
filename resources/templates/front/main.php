@@ -47,44 +47,28 @@
 </div>
 
 <!-- PERCORSO -->
-<div class="mt-5 page" id="percorso">
-    <h3 class="text-uppercase section py-4 text-center text-white">Professionalità - Interdisciplinarità - Empatia</h3>
-    <div class="row py-4 mb-4">
-        <div class="col-lg-3">
-            <div class="card shadow-sm">
-                <img src="../public/images/percorso1.svg" class="card-img-top pt-4" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Profilo diagnostico</h5>
-                    <p class="card-text text-center">Anamnesi, storia personale, identificazione dei sintomi</p>
-                </div>
-            </div>
+<div class="mt-5 page bg-color">
+    <h3 class="text-uppercase section-title py-3 text-center text-white">Professionalità - Interdisciplinarità - Empatia</h3>
+    <div class="row py-4">
+        <div class="col-lg-3 px-2 text-center">
+            <img src="../public/images/percorso1.png" class="pb-5" alt="icona percorso 1">
+            <p class="percordo-title pb-3">Profilo diagnostico</p>
+            <p>Anamnesi, storia personale, identificazione dei sintomi</p>
         </div>
-        <div class="col-lg-3">
-            <div class="card shadow-sm">
-                <img src="../public/images/percorso2.svg" class="card-img-top pt-4" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Miglior soluzione</h5>
-                    <p class="card-text text-center">Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
-                </div>
-            </div>
+        <div class="col-lg-3 px-2 text-center">
+            <img src="../public/images/percorso2.png" class="pb-5" alt="icona percorso 2">
+            <p class="percordo-title pb-3">Miglior soluzione</p>
+            <p>Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
         </div>
-        <div class="col-lg-3">
-            <div class="card shadow-sm">
-                <img src="../public/images/percorso3.svg" class="card-img-top pt-4" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Programma terapeutico</h5>
-                    <p class="card-text text-center">Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
-                </div>
-            </div>
+        <div class="col-lg-3 px-2 text-center">
+            <img src="../public/images/percorso3.png" class="pb-5" alt="icona percorso 3">
+            <p class="percordo-title pb-3">Programma terapeutico</p>
+            <p>Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
         </div>
-        <div class="col-lg-3">
-            <div class="card shadow-sm">
-                <img src="../public/images/percorso4.svg" class="card-img-top pt-4" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Valutazione dell'esito</h5>
-                    <p class="card-text text-center">Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
-                </div>
-            </div>
+        <div class="col-lg-3 px-2 text-center">
+            <img src="../public/images/percorso4.png" class="pb-5" alt="icona percorso 4">
+            <p class="percordo-title pb-3">Valutazione dell’esito</p>
+            <p>Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
         </div>
     </div>
 </div>
