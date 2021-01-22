@@ -2,7 +2,7 @@
 
 <!-- HEADER CAROUSEL -->
 <div id="headerCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner" role='listbox'>
+    <div class="carousel-inner">
         <?php get_active_quote(); ?>
         <?php get_quotes(); ?>
     </div>
@@ -13,7 +13,7 @@
     <a class="carousel-control-next" href="#headerCarousel" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
-    </a>
+    </a> 
 </div>
 
 <!-- QUALCOSA SU DI ME -->
