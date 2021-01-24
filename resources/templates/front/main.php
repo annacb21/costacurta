@@ -19,7 +19,7 @@
 <!-- QUALCOSA SU DI ME -->
 <div class="row mt-5 page align-items-center">
     <div class="col-lg-4 px-0 borderLeft text-center">
-        <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img" alt="foto Andrea Costacurta">
+        <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img shadow" alt="foto Andrea Costacurta">
     </div>
     <div class="col-lg-8 pl-0 borderRight">
         <div class="text-uppercase pb-5">
