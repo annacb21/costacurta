@@ -173,7 +173,7 @@ footer .fas {
     color: #FFF;
 }
 
-.privacy {
+.privacy, .privacy a {
     color: #A2B1CE !important;
 }
 

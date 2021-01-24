@@ -22,7 +22,7 @@
             <?php footer_study(); ?>
         </div>
     </div>
-    <p class="privacy text-center pt-3">www.andreacostacurta.it © 2021 - P.IVA 03207300249 - Privacy Policy</p>
+    <p class="privacy text-center pt-3"><a href="../public/index.php">www.andreacostacurta.it</a> © 2021 - P.IVA 03207300249 - Privacy Policy</p>
     <div>
         <a role="button" class="login-btn" href="../public/index.php?login">Login</a>
     </div>
