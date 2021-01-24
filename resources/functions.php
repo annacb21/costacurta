@@ -401,6 +401,123 @@ echo $s;
 
 }
 
+// ritorna la slide (foto) corrente
+function get_page_quote($page) {
+
+$query = query("SELECT * FROM quotes WHERE quote_page = $page LIMIT 1");
+confirm($query);
+
+$row = fetch_array($query);
+
+$img = display_image($row['quote_img']);
+
+$quote = <<<DELIMETER
+
+<div class="position-relative">
+    <div class="position-relative w-100 overflow-hidden">
+        <div class="position-relative float-left w-100">
+        <div class='row bg-color align-items-center'>
+            <div class='col-lg-6 blockquote mb-0'>
+                    <p class="quote">{$row['quote_text']}</p>
+                    <p class="blockquote-footer">{$row['quote_author']}</p>
+                </div>
+                <div class='col-lg-6 quote-image'>
+                    <img src="../resources/{$img}" alt="{$row['quote_img']}" class="float-right">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+DELIMETER;
+
+echo $quote;
+
+
+}
+
+// ritorna lista di disturbi
+function get_disturbi() {
+
+$query = query("SELECT * FROM disturbi");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$disturbi = <<<DELIMETER
+
+<div class="py-3">
+    <i class="fas fa-check-circle profile-icon"></i><p class="d-inline-block pl-4 mb-0 profile-list">{$row['disturbo_name']}</p>
+</div>
+
+DELIMETER;
+
+echo $disturbi;
+    
+}
+
+}
+
+// ritorna lista di disturbi
+function get_servizi() {
+
+$query = query("SELECT * FROM servizi");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$servizi = <<<DELIMETER
+
+<div class="col-lg-4 pr-3 pl-0 pt-0 pb-3">
+    <div class="card service-card">
+        <div class="row align-items-center card-body">
+            <div class="col-lg-1 px-0">
+                <i class="fas fa-check profile-icon"></i>
+            </div>
+            <div class="col-lg-11 px-0">
+                <p class="d-inline-block pl-4 mb-0 profile-list">{$row['servizio_name']}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+DELIMETER;
+
+echo $servizi;
+    
+}
+
+}
+
+// ritorna lista di affiliazioni
+function get_aff() {
+
+$query = query("SELECT * FROM affiliazioni");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['aff_image']);
+
+$aff = <<<DELIMETER
+
+<div class="col-lg-3 text-center">
+    <a href="{$row['aff_link']}" target="_blank">
+        <img src="../resources/{$img}" alt="{$row['aff_name']}">
+    </a>
+</div>
+
+
+DELIMETER;
+
+echo $aff;
+    
+}
+
+}
+
 // mostra gli articoli in lista
 function get_articles_list() {
 

@@ -1,7 +1,7 @@
 /* GENERAL TAGS */
 
 body {
-    background-color: #f3f5f3;
+    background-color: #FFF;
     font-family: 'Raleway', sans-serif !important;
     min-height: 100%;
 }
@@ -11,16 +11,43 @@ body {
     padding: 2% 5% !important;
 }
 
+.page-title {
+    width: 50%;
+    padding: 1% 5% 1.5% 5% !important;
+    box-shadow:  1em 1em 0 1px #F2A51A;
+    font-style: italic;
+    font-weight: 200;
+    color: #FFF;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.page-title-dark {
+    font-style: italic;
+    font-weight: 200;
+    color: #F2A51A;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.borderBottomLight {
+    border-bottom: solid 5px #FFF;
+}
+
+.desc {
+    line-height: 2.3;
+}
+
 /* altezza minima per evitare problemi con il footer*/
 .main {
     min-height: 852px;
 }
 
-.bottom-div {
+/* .bottom-div {
     position: absolute !important;
     bottom: 0;
     left: 3rem;
-}
+} */
 
 .row {
     margin: 0 !important;
@@ -35,13 +62,13 @@ body {
 
 .title {
     font-weight: 700;
-    font-size: 3rem;
-    line-height: 1.5;
+    font-size: 2em;
+    color: #0D335D;
 }
 
-.widget-top {
+/* .widget-top {
     border-top: 1px solid #263859;
-}
+} */
 
 .bg-color {
     background-color: #0D335D;
@@ -66,12 +93,12 @@ body {
 
 .active-link {
     font-weight: 600 !important;
-    color: #D89216 !important;
+    color: #F2A51A !important;
 }
 
 /* HEADER */
 
-.carousel-inner .carousel-item img{
+.quote-image img{
     height: 30em;
     padding: 5em 0 !important;
 }
@@ -96,11 +123,11 @@ body {
 /* PROFILO */
 
 .borderLeft {
-    border-left: dashed #D89216 3px;
+    border-left: dashed #F2A51A 3px;
 }
 
 .borderRight {
-    border-right: dashed #D89216 3px;
+    border-right: dashed #F2A51A 3px;
     padding-right: 5rem !important;
 }
 
@@ -113,7 +140,7 @@ body {
 }
 
 .profile-subtitle {
-    color: #D89216;
+    color: #F2A51A;
     font-weight: 700;
 }
 
@@ -128,7 +155,7 @@ body {
 }
 
 .light-btn {
-    background-color: #D89216 !important;
+    background-color: #F2A51A !important;
     color: #fff !important;
     text-transform: uppercase;
 }
@@ -175,6 +202,47 @@ footer .fas {
 
 .privacy, .privacy a {
     color: #A2B1CE !important;
+}
+
+/* CHI SONO */
+
+.profile-img2 {
+    height: 32rem !important;
+}
+
+.profile-icon {
+    color: #F2A51A;
+    font-size: 1.2rem;
+}
+
+.profile-list {
+    color: #0D335D;
+    font-size: 1.1rem;
+}
+
+.profile-card {
+    padding: 2rem 3.5rem;
+}
+
+.profile {
+    padding: 0 4rem 0 0 !important;
+}
+
+.profile-p {
+    margin-top: 10rem !important;
+}
+
+.servizi {
+    color: #0D335D;
+}
+
+.borderTop {
+    border-top: dashed #F2A51A 3px;
+}
+
+.service-card {
+    height: 6rem !important;
+    padding: 0 1rem;
 }
 
 /* ADMIN */
