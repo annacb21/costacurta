@@ -19,22 +19,22 @@
         <p class="text-justify"><?php echo html_entity_decode(htmlentities($profile['pro_desc'])); ?></p>
     </div>
 
-    <div class="row mt-4 page borderRight borderLeft">
-        <div class="col-lg-4 profile">
+    <div class="row mt-5">
+        <div class="col-lg-3 px-0">
             <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img2 shadow" alt="foto Andrea Costacurta">
         </div>
-        <div class="col-lg-8 px-0">
+        <div class="col-lg-9 profile">
             <div class="card profile-card">
                 <?php get_disturbi(); ?>
             </div>
         </div>
     </div>
 
-    <div class="row page py-0 align-items-center">
-        <div class="col-lg-4 profile">
+    <div class="row py-4 align-items-center">
+        <div class="col-lg-3 px-0">
             <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn dark-btn btn-block btn-lg" target="_blank">Curriculum Vitae</a>
         </div>
-        <div class="col-lg-8 px-0">
+        <div class="col-lg-9 profile">
             <p class="mb-0">Psicoanalista formato con il Prof. Arnaldo Petterlini</p>
         </div>
     </div>
