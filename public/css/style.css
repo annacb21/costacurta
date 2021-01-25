@@ -43,12 +43,6 @@ body {
     min-height: 852px;
 }
 
-/* .bottom-div {
-    position: absolute !important;
-    bottom: 0;
-    left: 3rem;
-} */
-
 .row {
     margin: 0 !important;
 }
@@ -65,10 +59,6 @@ body {
     font-size: 2em;
     color: #0D335D;
 }
-
-/* .widget-top {
-    border-top: 1px solid #263859;
-} */
 
 .bg-color {
     background-color: #0D335D;
@@ -243,6 +233,30 @@ footer .fas {
 .service-card {
     height: 6rem !important;
     padding: 0 1rem;
+}
+
+/* AREE DI INTERVENTO */
+
+.piramide {
+    background-image: url("../images/piramide.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    width: 100%;
+    margin-top: 5rem !important;
+}
+
+.area-title {
+    color: #0D335D;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.area-card {
+    height: 26rem !important;
+}
+
+.area {
+    margin-top: 5rem !important;
 }
 
 /* ADMIN */
