@@ -79,33 +79,35 @@
         <h3 class="section-title pb-2 mb-0">Prenota un appuntamento ...</h3>
         <div class="w-25 borderBottom"></div>
     </div>
-    <div class="row pt-5">
+    <div class="row pt-5 align-items-center">
         <div class="col-lg-6 px-0 borderRight">
             <p class="dark-subtitle text-center pb-3">Tramite MioDottore</p>
             <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
         </div>
-        <div class="col-lg-6 pr-0 pl-5">
+        <div class="col-lg-6 px-0">
             <p class="dark-subtitle text-center pb-3">Oppure contattami</p>
-            <form action="" method="POST">
+            <form action="" method="POST" class="w-75 mx-auto">
                 <?php send_email(); ?>
-                <div class="form-row mb-3 mx-0">
-                    <div class="col-lg-6 px-0">
-                        <input type="text" name="name" placeholder="Nome" class="form-control" id="name" required data-validation-required-message="Inserire il proprio nome"> 
-                    </div>
-                    <div class="col-lg-6 px-0">
-                        <input type="text" name="cognome" placeholder="Cognome" class="form-control" id="cognome" required data-validation-required-message="Inserire il proprio cognome"> 
-                    </div>
+                <div class="mb-3">
+                    <input type="text" name="name" placeholder="Nome" class="form-control" id="name" required data-validation-required-message="Inserire il proprio nome">               
                 </div>
-                <div class="form-row mb-3 mx-0">
-                    <div class="col-lg-6 px-0">
-                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required data-validation-required-message="Inserire una email valida">
-                    </div>
-                    <div class="col-lg-6 px-0">
-                        <input type="number" name="phone" placeholder="Telefono" class="form-control" id="telefono" required data-validation-required-message="Inserire il proprio numero di telefono"> 
-                    </div>
+                <div class="mb-3">
+                    <input type="text" name="cognome" placeholder="Cognome" class="form-control" id="cognome" required data-validation-required-message="Inserire il proprio cognome">               
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required data-validation-required-message="Inserire una email valida">               
+                </div>
+                <div class="mb-3">
+                    <input type="number" name="phone" placeholder="Telefono" class="form-control" id="telefono" required data-validation-required-message="Inserire il proprio numero di telefono">                
                 </div>
                 <div class="mb-3">
                     <textarea name="message" class="form-control" id="message" rows="5" placeholder="Scrivi qui il tuo messaggio" required data-validation-required-message="Inserire un messaggio"></textarea>
+                </div>
+                <div class="mb-3 pl-4">
+                    <input type="checkbox" class="form-check-input" id="check">
+                    <label class="form-check-label" for="check">
+                        Dichiaro di essere già maggiorenne e acconsento al trattamento dei miei dati personali per fini informativi e di prenotazione. <a href="#">(Privacy Policy)</a>
+                    </label>
                 </div>
                 <button name="submit" type="submit" class="btn btn-primary px-5">Invia</button>
             </form>
