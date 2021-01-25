@@ -89,8 +89,8 @@ body {
 /* HEADER */
 
 .quote-image img{
-    height: 30em;
-    padding: 5em 0 !important;
+    height: 32em;
+    padding: 3em 0 !important;
 }
 
 .blockquote {
@@ -233,6 +233,15 @@ footer .fas {
 .service-card {
     height: 6rem !important;
     padding: 0 1rem;
+}
+
+.link-light {
+    color: #fff;
+}
+
+.link-light:hover {
+    color: #A2B1CE;
+    text-decoration: none;
 }
 
 /* AREE DI INTERVENTO */

@@ -55,7 +55,7 @@
         <?php 
             for($i = 0; $i < count($pubs); $i++) {
                 $link = display_image($pubs[$i]['pub_link']);
-                echo "<li class='pl-3 pb-3'><a href='../resources/{$link}' target='_blank' class='text-white'>{$pubs[$i]['pub_title']}<span class='text-muted pl-2'>({$pubs[$i]['pub_autor']}) {$pubs[$i]['pub_subtitle']}</span></a></li>";
+                echo "<li class='pl-3 pb-3'><a href='../resources/{$link}' target='_blank' class='link-light'>{$pubs[$i]['pub_title']}<span class='text-muted pl-2'>({$pubs[$i]['pub_autor']}) {$pubs[$i]['pub_subtitle']}</span></a></li>";
             }
         ?>
     </ul>
