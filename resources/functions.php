@@ -347,7 +347,7 @@ echo $quote;
 // getter per le slide (foto) 
 function get_quotes() {
 
-$query = query("SELECT * FROM quotes WHERE quote_page = 0 AND quote_id NOT IN (SELECT MAX(quote_id) FROM quotes ORDER BY quote_id DESC) ORDER BY quote_id DESC");
+$query = query("SELECT * FROM quotes WHERE quote_page = 0 AND quote_id NOT IN (SELECT MAX(quote_id) FROM quotes WHERE quote_page = 0 ORDER BY quote_id DESC) ORDER BY quote_id DESC");
 confirm($query);
 
 while($row = fetch_array($query)) {
