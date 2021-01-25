@@ -262,6 +262,7 @@ footer .fas {
 
 .area-card {
     height: 26rem !important;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15);
 }
 
 .area {

@@ -11,8 +11,8 @@
 <div class="page piramide">
     <div class="row justify-content-center align-items-center">
         <div class="col-lg-6 pr-5 pt-4 area">
-            <div class="card area-card px-4 py-4">
-                <h5 class="area-title text-center pb-2">Psichiatria clinica</h5>
+            <div class="card area-card px-4 py-4" id="psichiatria" onmouseover="cardHover1()" onmouseout="cardUp1()">
+                <h5 class="area-title text-center pb-2" id="psichiatriaTitle">Psichiatria clinica</h5>
                 <p class="px-3 py-3">Diagnosi e cura, psicologica, medica e farmacologica dei principali disturbi quali:</p>
                 <ul>
                     <li>depressione nell’adolescente, nell’adulto e nell’anziano</li>
@@ -29,8 +29,8 @@
             </div>
         </div>
         <div class="col-lg-6 pl-5 pt-4 area">
-            <div class="card area-card px-4 py-4">
-                <h5 class="area-title text-center pb-2">Psicofarmacologia</h5>
+            <div class="card area-card px-4 py-4" id="psicofarma" onmouseover="cardHover2()" onmouseout="cardUp2()">
+                <h5 class="area-title text-center pb-2" id="psicofarmaTitle">Psicofarmacologia</h5>
                 <p class="px-3 py-3">Terapia medica dei disturbi psicologici e psichiatrici. Le terapie farmacologiche moderne sono sicure ed efficaci e se prescritte correttamente, prive di rischi. Comprendono terapie:</p>
                 <ul>
                     <li>dell’ansia (ansiolitici) e di tutte le manifestazioni associate</li>
@@ -41,8 +41,8 @@
             </div>
         </div>
         <div class="col-lg-6 pl-5 pt-2 area">
-            <div class="card area-card px-4 py-4">
-                <h5 class="area-title text-center pb-2">Psicoterapia</h5>
+            <div class="card area-card px-4 py-4" id="psicoterapia" onmouseover="cardHover3()" onmouseout="cardUp3()">
+                <h5 class="area-title text-center pb-2" id="psicoterapiaTitle">Psicoterapia</h5>
                 <ul class="py-3">
                     <li>Psicoterapia della Crisi Emozionale</li>
                     <li>Psicoterapia Interpersonale</li>
@@ -53,3 +53,5 @@
         </div>
     </div>
 </div>
+
+<script src="../public/js/hover.js"></script>
