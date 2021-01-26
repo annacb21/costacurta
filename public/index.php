@@ -32,13 +32,17 @@
         <?php include(TEMPLATE_FRONT . DS . "navbar.php"); ?>
 
         <div class="pb-5 main">
-
             <!-- MAIN CONTENT -->
             <?php show_main_content() ?>
         </div>
 
+        <!-- UP BUTTON -->
+        <button type="button" class="btn rounded-circle shadow light-btn btn-lg" id="upBtn" onclick="backToTop()"><i class="fas fa-chevron-up"></i></button>
+
         <!-- FOOTER -->
         <?php include(TEMPLATE_FRONT . DS . "footer.php"); ?>
+
+        <script src="../public/js/scroll.js"></script>
       
     </body>
 </html>
