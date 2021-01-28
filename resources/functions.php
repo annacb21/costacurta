@@ -544,7 +544,7 @@ $img = display_image($row['foto_image']);
 $foto = <<<DELIMETER
 
 <li class="glide__slide">
-    <img src="../resources/{$img}" alt="{$row['foto_name']}" class="img-fluid">
+    <a href="../resources/{$img}" target="_blank"><img src="../resources/{$img}" alt="{$row['foto_name']}" class="img-fluid"></a>
     <p class="mb-0 pt-3 text-uppercase font-weight-bold foto-text">{$row['foto_name']}</p>
 </li>
 
