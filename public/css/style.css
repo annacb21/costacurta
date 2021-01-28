@@ -322,6 +322,55 @@ footer .fas {
     width: auto !important;
 }
 
+/* NEWS */
+
+#filterList {
+    margin: 0;
+    display: inline-block;
+    padding: 0 !important;
+}
+
+.filter {
+    display: inline-block;
+    padding: 0.5em 2.5em !important;
+    color: #F2A51A !important;
+    border: solid 2px #F2A51A !important;
+    margin-right: 2.5em !important;
+    font-weight: 500 !important;
+}
+
+.active-filter {
+    color: #FFF !important;
+    background-color: #F2A51A !important;
+    font-weight: 600 !important;
+}
+
+.art-card {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.card-art-image {
+    width: 100% !important;
+    height: 20em !important;
+    object-fit: cover !important;
+}
+
+.card-art {
+    padding: 2em 3.5em !important;
+}
+
+.art-data {
+    color: #F2A51A;
+}
+
+.art-title {
+    color: #0D335D;
+    font-weight: 800;
+}
 
 /* ADMIN */
 

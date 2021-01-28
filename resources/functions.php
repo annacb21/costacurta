@@ -662,20 +662,29 @@ while($row = fetch_array($query)) {
 
 $img = display_image($row['art_image']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
-$ant = anteprima($row['art_text'], 50);
+$ant = anteprima($row['art_text'], 30);
     
 $arts = <<<DELIMETER
 
-<div class="card mb-3">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <a href="../public/index.php?art_detail&id={$row['art_id']}"><img src="../resources/{$img}" class="card-img img-fluid" alt=""></a>
+<div class="card art-card mb-4 shadow {$row['art_tag']}">
+    <div class="row no-gutters align-items-center">
+        <div class="col-lg-4">
+            <a href="../public/index.php?art_detail&id={$row['art_id']}"><img src="../resources/{$img}" class="card-img card-art-image" alt="{$row['art_image']}"></a>
         </div>
         <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">{$row['art_title']}</h5>
-                <p class="card-text text-justify pr-3">{$ant}</p>
-                <p class="card-text"><small class="text-muted">{$data}</small></p>
+            <div class="card-art align-items-end flex-column">
+                <div class="px-3 py-1">
+                    <p class="art-data">{$data}</p>
+                </div>
+                <div class="px-3 py-1">
+                    <h4 class="art-title pb-2">{$row['art_title']}</h4>
+                </div>
+                <div class="px-3 py-1">
+                    <p class="card-text text-justify pb-4">{$ant}</p>
+                </div>
+                <div class="mt-auto px-3">
+                    <a role="button" href="../public/index.php?art_detail&id={$row['art_id']}" class="btn dark-btn btn-lg">Leggi di più</a>
+                </div>
             </div>
         </div>
     </div>
