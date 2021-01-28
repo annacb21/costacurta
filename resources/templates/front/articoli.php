@@ -11,10 +11,10 @@
 <div class="mt-5 page">
 
     <div id="filterList">
-        <button class="btn btn-lg rounded-pill active-filter filter" onclick="filterSelection('0')">Tutti</button>
-        <button class="btn btn-lg rounded-pill filter" onclick="filterSelection('1')">News</button>
-        <button class="btn btn-lg rounded-pill filter" onclick="filterSelection('2')">Eventi</button>
-        <button class="btn btn-lg rounded-pill filter" onclick="filterSelection('3')">Libri</button>
+        <button class="btn rounded-pill active-filter filter" onclick="filterSelection('0')">Tutti</button>
+        <button class="btn rounded-pill filter" onclick="filterSelection('1')">News</button>
+        <button class="btn rounded-pill filter" onclick="filterSelection('2')">Eventi</button>
+        <button class="btn rounded-pill filter" onclick="filterSelection('3')">Libri</button>
     </div>
     
 </div>
