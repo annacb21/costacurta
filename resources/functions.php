@@ -163,6 +163,17 @@ function get_tot_art() {
 
 }
 
+// ritorna il numero di video
+function get_tot_video() {
+
+    $query = query("SELECT COUNT(*) as total FROM video");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
 // getter per i dati del profilo
 function get_profile() {
 
@@ -518,6 +529,67 @@ echo $aff;
 
 }
 
+// ritorna galery foto
+function get_foto($cat) {
+
+$query = query("SELECT * FROM foto WHERE foto_cat = '$cat' ORDER BY foto_id DESC");
+confirm($query);
+
+$row = fetch_array($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['foto_image']);
+
+$foto = <<<DELIMETER
+
+<li class="glide__slide">
+    <img src="../resources/{$img}" alt="{$row['foto_name']}" class="img-fluid">
+    <p class="mb-0 pt-3 text-uppercase font-weight-bold foto-text">{$row['foto_name']}</p>
+</li>
+
+DELIMETER;
+
+echo $foto;
+
+}
+
+}
+ 
+// ritorna id video Youtube
+function extractVideoID($url){
+    $regExp = "/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/";
+    preg_match($regExp, $url, $video);
+    return $video[7];
+}
+
+// ritorna gallery video
+function get_video() {
+
+$query = query("SELECT * FROM video ORDER BY video_id DESC");
+confirm($query);
+
+$row = fetch_array($query);
+
+while($row = fetch_array($query)) {
+
+$id = extractVideoID($row['video_link']);
+
+$video = <<<DELIMETER
+
+<li class="glide__slide">
+    <iframe class="embed-responsive-item" width="420" height="250" src="https://www.youtube.com/embed/{$id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p class="mb-0 pt-3 text-uppercase font-weight-bold foto-text">{$row['video_name']}</p>
+</li>
+
+DELIMETER;
+
+echo $video;
+
+}
+    
+}
+
 // mostra gli articoli in lista
 function get_articles_list() {
 
@@ -772,53 +844,6 @@ function update_password($psw) {
         }
 
     }
-
-}
-
-// ritorna la slide (foto) corrente
-function get_active_slide($studio) {
-
-$query = query("SELECT * FROM slides WHERE studio_id = '{$studio}' ORDER BY slide_id DESC LIMIT 1");
-confirm($query);
-
-$row = fetch_array($query);
-
-$img = display_image($row['slide_image']);
-
-$slide = <<<DELIMETER
-
-<div class="carousel-item active">
-    <img src="../resources/{$img}" class="d-block w-100" alt="{$row['slide_title']}">
-</div>
-
-DELIMETER;
-
-echo $slide;
-
-
-}
-
-// getter per le slide (foto) degli studi
-function get_slides($studio) {
-
-$query = query("SELECT * FROM slides WHERE studio_id = '{$studio}' AND slide_id NOT IN (SELECT MAX(slide_id) FROM slides WHERE studio_id = '{$studio}' ORDER BY slide_id DESC) ORDER BY slide_id DESC");
-confirm($query);
-
-while($row = fetch_array($query)) {
-
-$img = display_image($row['slide_image']);
-
-$slides = <<<DELIMETER
-
-<div class="carousel-item">
-    <img src="../resources/{$img}" class="d-block w-100" alt="{$row['slide_title']}">
-</div>
-
-DELIMETER;
-
-echo $slides;
-    
-}
 
 }
 

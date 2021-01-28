@@ -25,7 +25,7 @@ body {
 .page-title-dark {
     font-style: italic;
     font-weight: 200;
-    color: #F2A51A;
+    color: #0D335D;
     font-size: 2rem;
     text-transform: uppercase;
 }
@@ -74,6 +74,23 @@ body {
     font-size: 1.5rem !important;
 }
 
+.borderLeft {
+    border-left: dashed #F2A51A 3px;
+}
+
+.borderRight {
+    border-right: dashed #F2A51A 3px;
+    padding-right: 5rem !important;
+}
+
+.borderTop {
+    border-top: dashed #F2A51A 3px;
+}
+
+.separator {
+    margin: 0 5% !important;
+}
+
 /* NAVBAR */
 
 .logo-title {
@@ -120,15 +137,6 @@ body {
 }
 
 /* PROFILO */
-
-.borderLeft {
-    border-left: dashed #F2A51A 3px;
-}
-
-.borderRight {
-    border-right: dashed #F2A51A 3px;
-    padding-right: 5rem !important;
-}
 
 .borderBottom {
     border-bottom: solid 5px #0D335D;
@@ -235,10 +243,6 @@ footer .fas {
     color: #0D335D;
 }
 
-.borderTop {
-    border-top: dashed #F2A51A 3px;
-}
-
 .service-card {
     height: 6rem !important;
     padding: 0 1rem;
@@ -264,7 +268,7 @@ footer .fas {
 }
 
 .area-title {
-    color: #0D335D;
+    color: #9098a1;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -277,6 +281,47 @@ footer .fas {
 .area {
     margin-top: 5rem !important;
 }
+
+/* GALLERY */
+
+.glide__slide {
+    transform: scale(.6) !important;
+    transition: all ease 400ms !important;
+    opacity: .7;
+}
+
+.glide__slide.glide__slide--active {
+    transform: scale(1) !important;
+    opacity: 1.0;
+}
+
+.glide__arrow {
+    background-color: #FFF !important;
+    color: #F2A51A !important;
+    font-size: 1.5em;
+}
+
+.glide__arrow--left {
+    left: 20em !important;
+}
+
+.glide__arrow--right {
+    right: 20em !important;
+}
+
+.foto-text {
+    color: #0D335D !important;
+}
+
+.glide2, .glide3 {
+    position: relative;
+}
+
+.glide2 .glide__slide img {
+    height: 30em !important;
+    width: auto !important;
+}
+
 
 /* ADMIN */
 
