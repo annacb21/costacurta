@@ -32,7 +32,7 @@ body {
 
 
 .borderBottom {
-    border-bottom: solid 5px #0D335D;
+    border-bottom: solid 5px #0F3057;
 }
 
 .borderBottomLight {
@@ -106,15 +106,15 @@ body {
 }
 
 .borderX {
-    /*border-left: dashed #F2A51A 3px;*/
     border: solid transparent;
     border-image: url("../images/border-vert.svg") 0 50 0 50 repeat;
     margin: 2% 5% !important;
 }
 
-.borderRight {
-    border-right: dashed #F2A51A 3px;
-    padding-right: 5rem !important;
+.borderLeft {
+    border: solid transparent;
+    border-image: url("../images/border-vert-large.svg") 0 0 0 50 repeat;
+    padding-bottom: 1% !important;
 }
 
 .borderTop {
@@ -190,7 +190,7 @@ body {
 /* PRENOTAZIONI */
 
 .dark-subtitle {
-    color: #0D335D;
+    color: #0F3057;
     font-weight: 600;
     font-size: 1.3rem;
 }

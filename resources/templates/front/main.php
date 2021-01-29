@@ -80,12 +80,16 @@
         <div class="w-25 borderBottom"></div>
     </div>
     <div class="row pt-5 align-items-center">
-        <div class="col-lg-6 px-0 borderRight">
+        <div class="col-lg-6 px-0">
             <p class="dark-subtitle text-center pb-3">Tramite MioDottore</p>
-            <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
+        </div>
+        <div class="col-lg-6 px-0 borderLeft">
+            <p class="dark-subtitle text-center pb-3">Oppure contattami</p>
         </div>
         <div class="col-lg-6 px-0">
-            <p class="dark-subtitle text-center pb-3">Oppure contattami</p>
+            <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
+        </div>
+        <div class="col-lg-6 px-0 borderLeft">
             <form action="" method="POST" class="w-75 mx-auto">
                 <?php send_email(); ?>
                 <div class="mb-3">
