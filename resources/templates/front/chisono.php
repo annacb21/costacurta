@@ -20,10 +20,10 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-lg-3 px-0">
+        <div class="col-lg-4 px-0">
             <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img2 shadow" alt="foto Andrea Costacurta">
         </div>
-        <div class="col-lg-9 profile">
+        <div class="col-lg-7">
             <div class="card profile-card">
                 <?php get_disturbi(); ?>
             </div>
@@ -31,10 +31,10 @@
     </div>
 
     <div class="row py-4 align-items-center">
-        <div class="col-lg-3 px-0">
-            <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn dark-btn btn-block btn-lg" target="_blank">Curriculum Vitae</a>
+        <div class="col-lg-4 px-0">
+            <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn dark-btn cv-btn btn-lg" target="_blank">Curriculum Vitae</a>
         </div>
-        <div class="col-lg-9 profile">
+        <div class="col-lg-7 profile">
             <p class="mb-0">Psicoanalista formato con il Prof. Arnaldo Petterlini</p>
         </div>
     </div>
@@ -55,7 +55,7 @@
         <?php 
             for($i = 0; $i < count($pubs); $i++) {
                 $link = display_image($pubs[$i]['pub_link']);
-                echo "<li class='pl-3 pb-3'><a href='../resources/{$link}' target='_blank' class='link-light'>{$pubs[$i]['pub_title']}<span class='text-muted pl-2'>({$pubs[$i]['pub_autor']}) {$pubs[$i]['pub_subtitle']}</span></a></li>";
+                echo "<li class='pl-3 pb-3'><a href='../resources/{$link}' target='_blank' class='link-light'>{$pubs[$i]['pub_title']}<span class='pub-small pl-2'>({$pubs[$i]['pub_autor']}) {$pubs[$i]['pub_subtitle']}</span></a></li>";
             }
         ?>
     </ul>
@@ -63,7 +63,7 @@
 
 <!-- AFFILIATION -->
 <div class="text-center py-5">
-    <p class="page-title-dark">Affiliazioni</p>   
+    <h3 class="section-title text-uppercase pb-3">Affiliazioni</h3>   
     <div class="row justify-content-center align-items-center">
         <?php get_aff(); ?>
     </div>   
