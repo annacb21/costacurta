@@ -212,6 +212,22 @@ function get_pubs() {
 
 }
 
+// getter per link utili
+function get_links() {
+
+    $query = query("SELECT * FROM links");
+    confirm($query);
+
+    $links = [];
+
+    while($row = fetch_array($query)) {
+        array_push($links, $row);
+    }
+
+    return $links;
+
+}
+
 //*************************** FRONT FUNCTIONS ****************************
 
 // mostra il contenuto del body della pagina dinamicamente
@@ -402,6 +418,52 @@ $s = <<<DELIMETER
     <div class="col-lg-11 px-0">
         <p class="font-weight-bold mb-0">{$studi[$i]['studio_name']}</p>
         <p>{$studi[$i]['studio_adress']}</p>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $s;
+}
+
+}
+
+// ritorna lista link utili
+function link_utili() {
+
+$links = get_links();
+
+for($i = 0; $i < count($links); $i++) {
+$s = <<<DELIMETER
+
+<div class="py-3">
+    <i class="fas fa-link"></i>
+    <a href="{$links[$i]['link_path']}" target="_blank" class="dark-link">
+        <p class="d-inline-block pl-4 mb-0 font-weight-bold">{$links[$i]['link_name']} :<span class="pl-3 font-weight-normal">{$links[$i]['link_path']}</span></p>
+    </a>
+</div>
+
+DELIMETER;
+
+echo $s;
+}
+
+}
+
+// mostra gli studi nel footer
+function contact_study() {
+
+$studi = get_studi();
+
+for($i = 0; $i < count($studi); $i++) {
+$s = <<<DELIMETER
+
+<div class="pb-3">
+    <i class="fas fa-map-marker-alt mr-4"></i>
+    <p class="font-weight-bold mb-1 d-inline-block">{$studi[$i]['studio_name']}</p>
+    <div class="pl-5">
+        <p class="mb-0">{$studi[$i]['studio_adress']}</p>
+        <p class="mb-0">Tel: {$studi[$i]['studio_phone']}</p>
     </div>
 </div>
 

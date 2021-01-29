@@ -39,13 +39,13 @@
         </div>
     </div>
 
-    <div class="servizi pt-5 mt-5 borderTop">
-        <h4 class="text-uppercase">ALTRI SERVIZI</h4>
-        <div class="row pt-4">
-            <?php get_servizi(); ?>
-        </div>
-    </div>
+</div>
 
+<div class="servizi pt-5 mt-5 borderTop">
+    <h4 class="text-uppercase">ALTRI SERVIZI</h4>
+    <div class="row pt-4">
+        <?php get_servizi(); ?>
+    </div>
 </div>
 
 <!-- PUBBLICATIONS -->

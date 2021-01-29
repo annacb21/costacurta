@@ -83,7 +83,7 @@
         <div class="col-lg-6 px-0">
             <p class="dark-subtitle text-center pb-3">Tramite MioDottore</p>
         </div>
-        <div class="col-lg-6 px-0 borderLeft">
+        <div class="col-lg-6 px-0 borderLeft pb-0">
             <p class="dark-subtitle text-center pb-3">Oppure contattami</p>
         </div>
         <div class="col-lg-6 px-0">

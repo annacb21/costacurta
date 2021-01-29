@@ -120,6 +120,23 @@ body {
 .borderTop {
     border: solid transparent;
     border-image: url("../images/border-top.svg") 50 0 0 0 repeat;
+    margin: 2% 5% !important;
+}
+
+.borderTopLarge {
+    border: solid transparent;
+    border-image: url("../images/border-top.svg") 50 0 0 0 repeat;
+    margin: 0 5% 2% 5% !important;
+}
+
+.borderLeftSmall {
+    border: solid transparent;
+    border-image: url("../images/border-left-small.svg") 0 0 0 50 round;
+}
+
+.borderRight {
+    border: solid transparent;
+    border-image: url("../images/border-left-small.svg") 0 50 0 0 round;
 }
 
 .separator {
@@ -393,6 +410,23 @@ footer .fas {
 .art-title {
     color: #0D335D;
     font-weight: 800;
+}
+
+/* CONTATTI */
+
+.contact-title {
+    color: #0F3057;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+#contatti .fas {
+    color: #81B214;
+    font-size: 1.2em !important;
+}
+
+.dark-link {
+    color: #000 !important;
 }
 
 /* ADMIN */
