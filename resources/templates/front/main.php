@@ -17,13 +17,13 @@
 </div>
 
 <!-- QUALCOSA SU DI ME -->
-<div class="row mt-5 page align-items-center">
-    <div class="col-lg-4 px-0 borderLeft text-center">
+<div class="row my-5 py-5 align-items-center borderX">
+    <div class="col-lg-4 px-0 text-center">
         <img src="../public/images/profile1.jpg" class="profile-img shadow" alt="foto Andrea Costacurta">
     </div>
-    <div class="col-lg-8 pl-0 borderRight">
+    <div class="col-lg-7 px-0">
         <div class="text-uppercase pb-5">
-            <h3 class="section-title pb-2 mb-0">Qualcosa su di me ...</h3>
+            <h3 class="section-title pb-2 mb-0">Dott. Andrea Costacurta</h3>
             <div class="w-25 borderBottom"></div>
         </div>
         <p class="profile-subtitle">

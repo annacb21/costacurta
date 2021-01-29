@@ -30,6 +30,11 @@ body {
     text-transform: uppercase;
 }
 
+
+.borderBottom {
+    border-bottom: solid 5px #0D335D;
+}
+
 .borderBottomLight {
     border-bottom: solid 5px #FFF;
 }
@@ -50,7 +55,7 @@ body {
 .section-title {
     font-style: italic;
     font-weight: 300;
-    color: #0D335D;
+    color: #0F3057;
     font-size: 2rem;
 }
 
@@ -69,13 +74,35 @@ body {
     display: none;
     position: fixed;
     bottom: 2em;
-    right: 2.5em;
+    right: 2em;
     z-index: 99;
     font-size: 1.5rem !important;
+    background-color: #81B214 !important;
+    color: #fff !important;
+    text-transform: uppercase;
 }
 
-.borderLeft {
-    border-left: dashed #F2A51A 3px;
+.dark-btn {
+    background-color: #0F3057 !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.light-btn {
+    background-color: #81B214 !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.borderX {
+    /*border-left: dashed #F2A51A 3px;*/
+    border: solid transparent;
+    border-image: url("../images/border-vert.svg") 0 50 0 50 repeat;
+    margin: 2% 5% !important;
 }
 
 .borderRight {
@@ -133,33 +160,17 @@ body {
 
 /* PROFILO */
 
-.borderBottom {
-    border-bottom: solid 5px #0D335D;
-}
-
 .profile-img {
     height: 25rem !important;
 }
 
 .profile-subtitle {
-    color: #F2A51A;
+    color: #81B214;
     font-weight: 700;
 }
 
 .profile-desc {
     line-height: 2.5;
-}
-
-.dark-btn {
-    background-color: #0D335D !important;
-    color: #fff !important;
-    text-transform: uppercase;
-}
-
-.light-btn {
-    background-color: #F2A51A !important;
-    color: #fff !important;
-    text-transform: uppercase;
 }
 
 /* PERCORSO */

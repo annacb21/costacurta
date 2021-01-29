@@ -34,7 +34,7 @@
         </div>
 
         <!-- UP BUTTON -->
-        <button type="button" class="btn rounded-circle shadow light-btn btn-lg" id="upBtn" onclick="backToTop()"><i class="fas fa-chevron-up"></i></button>
+        <button type="button" class="btn rounded-circle shadow btn-lg" id="upBtn" onclick="backToTop()"><i class="fas fa-chevron-up"></i></button>
 
         <!-- FOOTER -->
         <?php include(TEMPLATE_FRONT . DS . "footer.php"); ?>
