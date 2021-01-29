@@ -93,23 +93,18 @@ body {
 
 /* NAVBAR */
 
-.logo-title {
-    font-weight: 600;
-    font-size: 1.3rem;
-}
-
-.logo-desc {
-    font-size: 1rem;
-}
-
 .logo {
     width: 20em;
     height: auto;
 }
 
+.nav-link {
+    color: #888989 !important;
+}
+
 .active-link {
     font-weight: 600 !important;
-    color: #F2A51A !important;
+    color: #81B214 !important;
 }
 
 /* HEADER */
