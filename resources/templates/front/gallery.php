@@ -9,7 +9,7 @@
 
 <!-- STUDI --> 
 <div class="text-center mt-5 pt-4">
-    <p class="page-title-dark">Gli studi ...</p>
+    <p class="section-title text-uppercase">Gli studi ...</p>
     <div class="glide my-4">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides align-items-center">
@@ -26,7 +26,7 @@
 
 <!-- SUGGESTIONI --> 
 <div class="text-center mt-5">
-    <p class="page-title-dark">SUGGESTIONI ...</p>
+    <p class="section-title text-uppercase">SUGGESTIONI ...</p>
     <div class="glide2 my-5">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides align-items-center">
@@ -43,7 +43,7 @@
 
 <!-- MULTIMEDIA --> 
 <div class="text-center mt-5">
-    <p class="page-title-dark">MULTIMEDIA</p>
+    <p class="section-title text-uppercase">MULTIMEDIA</p>
     <div class="glide3 mb-4 mt-5">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides align-items-center">
