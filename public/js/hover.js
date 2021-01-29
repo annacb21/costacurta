@@ -9,7 +9,7 @@ function cardHover1() {
 function cardUp1() {
     document.getElementById("psichiatria").style.boxShadow = "0px 3px 4px rgba(0, 0, 0, 0.40)";
     document.getElementById("psichiatria").style.border = "none";
-    document.getElementById("psichiatriaTitle").style.color = "#0D335D";
+    document.getElementById("psichiatriaTitle").style.color = "#0F3057";
 }
 
 function cardHover2() {
@@ -23,7 +23,7 @@ function cardHover2() {
 function cardUp2() {
     document.getElementById("psicofarma").style.boxShadow = "0px 3px 4px rgba(0, 0, 0, 0.40)";
     document.getElementById("psicofarma").style.border = "none";
-    document.getElementById("psicofarmaTitle").style.color = "#0D335D";
+    document.getElementById("psicofarmaTitle").style.color = "#0F3057";
 }
 
 function cardHover3() {
@@ -37,5 +37,5 @@ function cardHover3() {
 function cardUp3() {
     document.getElementById("psicoterapia").style.boxShadow = "0px 3px 4px rgba(0, 0, 0, 0.40)";
     document.getElementById("psicoterapia").style.border = "none";
-    document.getElementById("psicoterapiaTitle").style.color = "#0D335D";
+    document.getElementById("psicoterapiaTitle").style.color = "#0F3057";
 }
