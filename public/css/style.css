@@ -206,7 +206,6 @@ body {
     border-bottom: solid #fff 1px;
 }
 
-/* login icon */
 .login-btn, .login-btn:hover, .login-btn:active {
     position: absolute;
     right: 0;
@@ -215,9 +214,13 @@ body {
     color: transparent;
 }
 
-/* phone and email icons */
 footer .fas {
     color: #FFF;
+}
+
+.footer-title {
+    font-size: 1.2rem !important;
+    font-weight: 600;
 }
 
 .privacy, .privacy a {
