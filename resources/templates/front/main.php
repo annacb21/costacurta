@@ -27,7 +27,7 @@
             <div class="w-25 borderBottom"></div>
         </div>
         <p class="profile-subtitle">
-            Costacurta Andrea, Medico Chirurgo Specialista in Psichiatria <br />
+            Medico Chirurgo Specialista in Psichiatria <br />
             – Psichiatra e Psicoterapeuta, Psicoanalista -
         </p>
         <p class="text-justify profile-desc">
@@ -47,26 +47,26 @@
 </div>
 
 <!-- PERCORSO -->
-<div class="mt-5 page bg-color">
-    <h3 class="text-uppercase section-title py-3 text-center text-white">Professionalità - Interdisciplinarità - Empatia</h3>
+<div class="my-5 page bg-color">
+    <h3 class="text-uppercase section-title-light pb-4 pt-3 text-center">Professionalità - Interdisciplinarità - Empatia</h3>
     <div class="row py-4">
         <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso1.png" class="pb-5" alt="icona percorso 1">
+            <img src="../public/images/percorso1.svg" class="pb-5" alt="icona percorso 1">
             <p class="percordo-title pb-3">Profilo diagnostico</p>
             <p>Anamnesi, storia personale, identificazione dei sintomi</p>
         </div>
         <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso2.png" class="pb-5" alt="icona percorso 2">
+            <img src="../public/images/percorso2.svg" class="pb-5" alt="icona percorso 2">
             <p class="percordo-title pb-3">Miglior soluzione</p>
             <p>Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
         </div>
         <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso3.png" class="pb-5" alt="icona percorso 3">
+            <img src="../public/images/percorso3.svg" class="pb-5" alt="icona percorso 3">
             <p class="percordo-title pb-3">Programma terapeutico</p>
             <p>Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
         </div>
         <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso4.png" class="pb-5" alt="icona percorso 4">
+            <img src="../public/images/percorso4.svg" class="pb-5" alt="icona percorso 4">
             <p class="percordo-title pb-3">Valutazione dell’esito</p>
             <p>Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
         </div>
