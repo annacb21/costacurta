@@ -52,7 +52,7 @@
                             Dichiaro di essere già maggiorenne e acconsento al trattamento dei miei dati personali per fini informativi e di prenotazione. <a href="#">(Privacy Policy)</a>
                         </label>
                     </div>
-                    <button name="submit" type="submit" class="btn btn-primary px-5">Invia</button>
+                    <button name="submit" type="submit" class="btn dark-btn px-5">Invia</button>
                 </form>
             </div>
             <div class="col-lg-12 px-0 text-center">
