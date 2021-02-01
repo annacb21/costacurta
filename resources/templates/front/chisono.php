@@ -24,7 +24,7 @@
             <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img2 shadow" alt="foto Andrea Costacurta">
         </div>
         <div class="col-lg-7">
-            <div class="card profile-card">
+            <div class="card profile-card shadow">
                 <?php get_disturbi(); ?>
             </div>
         </div>

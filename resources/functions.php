@@ -543,7 +543,7 @@ while($row = fetch_array($query)) {
 $servizi = <<<DELIMETER
 
 <div class="col-lg-4 pr-3 pl-0 pt-0 pb-3">
-    <div class="card service-card">
+    <div class="card service-card shadow-sm">
         <div class="row align-items-center card-body">
             <div class="col-lg-1 px-0">
                 <i class="fas fa-check profile-icon"></i>
