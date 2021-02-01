@@ -8,12 +8,49 @@
 </div>
 
 <!-- STUDI --> 
-<div class="text-center mt-5 pt-4">
-    <p class="section-title text-uppercase">Gli studi ...</p>
-    <div class="glide my-4">
+<div class="mt-5 pt-4">
+    <p class="section-title text-uppercase text-center">Gli studi ...</p>
+    <!-- padova -->
+    <div class="studio-title d-flex align-items-center">
+        <p class="dark-subtitle pt-4 pb-3 text-left w-25">Studio Carollo a Padova</p>
+        <div class="studioBorder w-100"></div>
+    </div>
+    <div class="glide mt-2 mb-3">
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides align-items-center">
-                <?php get_foto("studi"); ?>
+                <?php get_foto("padova"); ?>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+    <!-- thiene -->
+    <div class="studio-title d-flex align-items-center">
+        <div class="studioBorder w-100"></div>
+        <p class="dark-subtitle pt-4 pb-3 text-right w-75">Centro Psiché - Poliambulatorio San Gaetano a Thiene</p>
+    </div>
+    <div class="glide4 mt-2 mb-3">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides align-items-center">
+                <?php get_foto("thiene"); ?>
+            </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+    <!-- chioggia -->
+    <div class="studio-title d-flex align-items-center">
+        <p class="dark-subtitle pt-4 pb-3 text-left w-50">Poliambulatorio San Giovanni a Chioggia</p>
+        <div class="studioBorder w-100"></div>
+    </div>
+    <div class="glide5 mt-2 mb-5">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides align-items-center">
+                <?php get_foto("chioggia"); ?>
             </ul>
         </div>
         <div class="glide__arrows" data-glide-el="controls">
@@ -67,6 +104,22 @@ new Glide('.glide', {
   gap: 100,
 }).mount()
 
+new Glide('.glide4', {
+  type: 'carousel',
+  startAt: 0,
+  perView: 3,
+  focusAt: 'center',
+  gap: 100,
+}).mount()
+
+new Glide('.glide5', {
+  type: 'carousel',
+  startAt: 0,
+  perView: 3,
+  focusAt: 'center',
+  gap: 100,
+}).mount()
+
 new Glide('.glide2', {
   type: 'carousel',
   startAt: 0,
@@ -84,3 +137,4 @@ new Glide('.glide3', {
 }).mount()
 
 </script>
+

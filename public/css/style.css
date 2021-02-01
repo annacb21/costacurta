@@ -355,13 +355,21 @@ footer .fas {
     color: #0F3057 !important;
 }
 
-.glide2, .glide3 {
+.glide2, .glide3, .glide4, .glide5 {
     position: relative;
 }
 
 .glide2 .glide__slide img {
     height: 30em !important;
     width: auto !important;
+}
+
+.studioBorder {
+    border: 1px solid #81B214;
+}
+
+.studio-title {
+    padding: 0 5% !important;
 }
 
 /* NEWS */
