@@ -143,6 +143,11 @@ body {
     margin: 0 5% !important;
 }
 
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 /* NAVBAR */
 
 .logo {
@@ -383,20 +388,31 @@ footer .fas {
 .filter {
     display: inline-block;
     padding: 0.5em 2.5em !important;
-    color: #F2A51A !important;
-    border: solid 2px #F2A51A !important;
+    color: #81B214 !important;
+    border: solid 2px #81B214 !important;
     margin-right: 2.5em !important;
     font-weight: 500 !important;
 }
 
 .active-filter {
     color: #FFF !important;
-    background-color: #F2A51A !important;
+    background-color: #81B214 !important;
     font-weight: 600 !important;
 }
 
 .art-card {
     display: none !important;
+}
+
+.fixed-card {
+    height: 42em !important;
+}
+
+.art-footer {
+    position: absolute;
+    bottom: 1.5em;
+    left: 1em;
+    right: 1em;
 }
 
 .show {
@@ -405,21 +421,33 @@ footer .fas {
 
 .card-art-image {
     width: 100% !important;
-    height: 20em !important;
+    height: 17em !important;
     object-fit: cover !important;
 }
 
 .card-art {
-    padding: 2em 3.5em !important;
+    padding: 0 3.5em !important;
 }
 
 .art-data {
-    color: #F2A51A;
+    color: #81B214;
 }
 
 .art-title {
-    color: #0D335D;
+    color: #0F3057;
     font-weight: 800;
+}
+
+.art-note {
+    color: #0F3057;
+}
+
+.art-tag {
+    display: inline-block;
+    padding: 0.2em 2em !important;
+    color: #81B214 !important;
+    border: solid 1px #81B214 !important;
+    font-size: 0.8em !important;
 }
 
 /* CONTATTI */
