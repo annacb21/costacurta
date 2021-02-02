@@ -2,8 +2,6 @@
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-require '../vendor/autoload.php';
-
 
 //*************************** SYSTEM FUNCTIONS ****************************
 
@@ -270,6 +268,8 @@ function show_main_content() {
 
 // manda una email dal form della pagina dei contatti
 function send_email($page) {
+    
+    require '../vendor/autoload.php';
 
     if(isset($_POST['sendEmail'])) {
 
