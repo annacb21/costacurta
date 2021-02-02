@@ -269,7 +269,7 @@ function show_main_content() {
 }
 
 // manda una email dal form della pagina dei contatti
-function send_email() {
+function send_email($page) {
 
     if(isset($_POST['sendEmail'])) {
 
@@ -302,7 +302,13 @@ function send_email() {
         else {
             set_message("Oops, qualcosa è andato storto: " . $mail->ErrorInfo, "alert-danger");  
         }
-        redirect("../public/index.php");
+
+        if($page == 'home') {
+            redirect("../public/index.php#prenotazioni");
+        }
+        elseif($page == 'contatti') {
+            redirect("../public/index.php?contatti#contatto");
+        }
     }
 
 }

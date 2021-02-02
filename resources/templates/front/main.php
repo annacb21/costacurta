@@ -74,7 +74,7 @@
 </div>
 
 <!-- PRENOTAZIONI -->
-<div class="mt-5 page">
+<div class="mt-5 page" id="prenotazioni">
     <div class="text-uppercase">
         <h3 class="section-title pb-2 mb-0">Prenota un appuntamento ...</h3>
         <div class="w-25 borderBottom"></div>
@@ -92,7 +92,7 @@
         <div class="col-lg-6 px-0 borderLeft">
             <?php display_message(); ?>
             <form action="" method="POST" class="w-75 mx-auto needs-validation" novalidate>
-                <?php send_email(); ?>
+                <?php send_email('home'); ?>
                 <div class="mb-3">
                     <input type="text" name="name" placeholder="Nome" class="form-control" id="name" required>
                     <div class="invalid-feedback">Inserire il proprio nome</div>               
