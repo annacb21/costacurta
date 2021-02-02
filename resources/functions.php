@@ -755,7 +755,7 @@ $art0 = <<<DELIMETER
 <div class="col-lg-3 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
         <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
-        <div class="card-body">
+        <div class="card-body px-4 py-4">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
             <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
