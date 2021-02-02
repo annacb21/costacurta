@@ -148,6 +148,27 @@ body {
     box-shadow: none !important;
 }
 
+/* FORM */
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    color: #dc3545;
+}
+
+.was-validated .form-control:invalid {
+    border-color: #dc3545;
+}
+
+.was-validated :invalid~.invalid-feedback {
+    display: block;
+}
+
+.was-validated .form-control:valid {
+    border-color: #28a745;
+}
+
 /* NAVBAR */
 
 .logo {

@@ -1,7 +1,8 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-//require '../vendor/autoload.php';
+use PHPMailer\PHPMailer\SMTP;
+require '../vendor/autoload.php';
 
 
 //*************************** SYSTEM FUNCTIONS ****************************
@@ -34,7 +35,7 @@ if(isset($_SESSION['message']) && isset($_SESSION['alert'])) {
     
 $alert = <<<DELIMETER
 
-<div class="alert {$_SESSION['alert']} w-50 text-center" role="alert">
+<div class="alert {$_SESSION['alert']} w-50 text-center mx-auto" role="alert">
     {$_SESSION['message']}
 </div>
 
@@ -270,35 +271,28 @@ function show_main_content() {
 // manda una email dal form della pagina dei contatti
 function send_email() {
 
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['sendEmail'])) {
 
         $name = $_POST['name'];
+        $cognome = $_POST['cognome'];
         $email = $_POST['email'];
+        $phone = $_POST['phone'];
         $message = $_POST['message'];
-        $toEmail = "annacb21@gmail.com";
+        $toEmail = "annacb21@gmail.com"; /* costacurta.andrea@gmail.com */
 
         $mail = new PHPMailer();
-
-        /*
-        Host: smtp.mailtrap.io
-        Port: 25 or 465 or 587 or 2525
-        Username: 7118daa26bcca3
-        Password: d35b5a76b761b8
-        Auth: PLAIN, LOGIN and CRAM-MD5
-        TLS: Optional (STARTTLS on all ports)
-        */
-
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->Host = 'smtp.mailtrap.io'; /* smtp.gmail.com */
+        $mail->Port = 2525; /* 587 */
         $mail->SMTPAuth = true;
-        $mail->Username = '7118daa26bcca3';
-        $mail->Password = 'd35b5a76b761b8';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 2525;
+        $mail->Username = '7118daa26bcca3'; /* $toEmail */
+        $mail->Password = 'd35b5a76b761b8'; /* costacurta psw */
+        $mail->SMTPSecure = 'tls'; /* PHPMailer::ENCRYPTION_STARTTLS */
 
-        $mail->setFrom($email, $name);
-        $mail->addAddress('annacb21@gmail.com', 'Anna');
-        $mail->Subject = 'New message from your website';
+        $mail->setFrom($email, $name . " " . $cognome);
+        $mail->addAddress('annacb21@gmail.com', 'Anna'); /* costacurta.andrea@gmail.com */
+        $mail->Subject = 'Messaggio da ' . $name . " " . $cognome . ' recapito: ' . $phone;
         $mail->isHTML(true);
         $mail->Body = $message;
 
@@ -308,8 +302,7 @@ function send_email() {
         else {
             set_message("Oops, qualcosa è andato storto: " . $mail->ErrorInfo, "alert-danger");  
         }
-        redirect("../public/index.php?contatti");
-
+        redirect("../public/index.php");
     }
 
 }

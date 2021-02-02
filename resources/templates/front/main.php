@@ -90,33 +90,41 @@
             <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
         </div>
         <div class="col-lg-6 px-0 borderLeft">
-            <form action="" method="POST" class="w-75 mx-auto">
+            <?php display_message(); ?>
+            <form action="" method="POST" class="w-75 mx-auto needs-validation" novalidate>
                 <?php send_email(); ?>
                 <div class="mb-3">
-                    <input type="text" name="name" placeholder="Nome" class="form-control" id="name" required data-validation-required-message="Inserire il proprio nome">               
+                    <input type="text" name="name" placeholder="Nome" class="form-control" id="name" required>
+                    <div class="invalid-feedback">Inserire il proprio nome</div>               
                 </div>
                 <div class="mb-3">
-                    <input type="text" name="cognome" placeholder="Cognome" class="form-control" id="cognome" required data-validation-required-message="Inserire il proprio cognome">               
+                    <input type="text" name="cognome" placeholder="Cognome" class="form-control" id="cognome" required>    
+                    <div class="invalid-feedback">Inserire il proprio cognome</div>            
                 </div>
                 <div class="mb-3">
-                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required data-validation-required-message="Inserire una email valida">               
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" required>
+                    <div class="invalid-feedback">Inserire una email valida</div>                
                 </div>
                 <div class="mb-3">
-                    <input type="number" name="phone" placeholder="Telefono" class="form-control" id="telefono" required data-validation-required-message="Inserire il proprio numero di telefono">                
+                    <input type="text" name="phone" placeholder="Telefono" class="form-control" id="telefono">
+                    <small class="form-text text-muted px-1 py-1">(Opzionale)</small> 
                 </div>
                 <div class="mb-3">
-                    <textarea name="message" class="form-control" id="message" rows="5" placeholder="Scrivi qui il tuo messaggio" required data-validation-required-message="Inserire un messaggio"></textarea>
+                    <textarea name="message" class="form-control" id="message" rows="5" placeholder="Scrivi qui il tuo messaggio" required></textarea>
+                    <div class="invalid-feedback">Inserire un messaggio</div>
                 </div>
                 <div class="mb-3 pl-4">
-                    <input type="checkbox" class="form-check-input" id="check">
+                    <input type="checkbox" class="form-input-control" id="check" name="check" required>
                     <label class="form-check-label" for="check">
                         Dichiaro di essere già maggiorenne e acconsento al trattamento dei miei dati personali per fini informativi e di prenotazione. <a href="https://www.iubenda.com/privacy-policy/56078482" class="iubenda-white iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
                     </label>
+                    <div class="invalid-feedback">Devi accettare le confizioni di privacy per inviare l'email</div>
                 </div>
-                <button name="submit" type="submit" class="btn btn-primary px-5">Invia</button>
+                <button name="sendEmail" type="submit" class="btn btn-primary px-5">Invia</button>
             </form>
         </div>
     </div>
 </div>
 
+<script src="../public/js/validate.js"></script>
 <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
