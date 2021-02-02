@@ -261,6 +261,10 @@ function show_main_content() {
         include(TEMPLATE_FRONT . "/login.php");
     }
 
+    if(isset($_GET['privacy'])) {
+        include(TEMPLATE_FRONT . "/privacy.php");
+    }
+
 }
 
 // manda una email dal form della pagina dei contatti
