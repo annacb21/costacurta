@@ -49,13 +49,21 @@
 </div>
 
 <!-- PUBBLICATIONS -->
-<div class="bg-color page">
+<div class="bg-color page" id="pubblicazioni">
     <p class="page-title-dark">Pubblicazioni</p>
     <ul class="px-3 pt-4">
         <?php 
             for($i = 0; $i < count($pubs); $i++) {
-                $link = display_image($pubs[$i]['pub_link']);
-                echo "<li class='pl-3 pb-3'><a href='../resources/{$link}' target='_blank' class='link-light'>{$pubs[$i]['pub_title']}<span class='pub-small pl-2'>({$pubs[$i]['pub_autor']}) {$pubs[$i]['pub_subtitle']}</span></a></li>";
+                if($pubs[$i]['pub_link'] === NULL) {
+                    $link = "#pubblicazioni";
+                    $target = '';
+                }
+                else {
+                    $url = display_image($pubs[$i]['pub_link']);
+                    $link = "../resources/{$url}";
+                    $target = '_blank';
+                }
+                echo "<li class='pl-3 pb-3'><a href='{$link}' target='{$target}' class='link-light'>{$pubs[$i]['pub_title']}<span class='pub-small pl-2'>({$pubs[$i]['pub_autor']}) {$pubs[$i]['pub_subtitle']}</span></a></li>";
             }
         ?>
     </ul>
