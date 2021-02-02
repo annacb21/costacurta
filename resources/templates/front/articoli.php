@@ -8,23 +8,17 @@
 </div>
 
 <!-- FILTERS --> 
-<div class="mt-5 page">
+<div class="mt-5 page" id="articoli">
 
-    <div id="filterList">
-        <button class="btn rounded-pill active-filter filter" onclick="filterSelection('0')">Tutti</button>
-        <button class="btn rounded-pill filter" onclick="filterSelection('2')">Eventi</button>
-        <button class="btn rounded-pill filter" onclick="filterSelection('3')">Libri</button>
-        <button class="btn rounded-pill filter" onclick="filterSelection('1')">News</button>
+    <div id="filterList" class="mb-5">
+        <a href="../public/index.php?articoli&tag=0#articoli" class="btn rounded-pill filter">Tutti</a>
+        <a href="../public/index.php?articoli&tag=2#articoli" class="btn rounded-pill filter">Eventi</a>
+        <a href="../public/index.php?articoli&tag=3#articoli" class="btn rounded-pill filter">Libri</a>
+        <a href="../public/index.php?articoli&tag=1#articoli" class="btn rounded-pill filter">News</a>
     </div>
+    <!-- ARTICLES --> 
+    <?php show_articles(); ?>
     
-</div>
-
-<!-- ARTICLES --> 
-<div class="page">
-    <?php get_last_article(); ?>
-    <div class="row">
-        <?php get_articles_list(); ?>
-    </div>
 </div>
 
 <script src="../public/js/filter.js"></script>

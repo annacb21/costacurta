@@ -648,13 +648,95 @@ echo $video;
     
 }
 
+// mostra articoli e tag
+function show_articles() {
+
+$container = "";
+
+// il tag è tutti, quindi mostro ultimo atricolo più lista articoli
+if(isset($_GET['tag'])) {
+
+if($_GET['tag'] == '0') {
+
+$last = query("SELECT * FROM articoli ORDER BY art_data DESC LIMIT 1");
+confirm($last);
+
+$row1 = fetch_array($last);
+
+$img1 = display_image($row1['art_image']);
+$data1 = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row1['art_data']);
+if($row1['art_tag'] == '1') {
+    $tag1 = "News";
+}
+elseif($row1['art_tag'] == '2') {
+    $tag1 = "Evento";
+}
+else {
+    $tag1 = "Libro";
+}
+
+$last_art = <<<DELIMETER
+
+<div class="card art-card mb-4 shadow {$row1['art_tag']}">
+    <div class="row no-gutters align-items-center">
+        <div class="col-lg-7">
+            <img src="../resources/{$img1}" class="card-img card-art-image" alt="{$row1['art_image']}">
+        </div>
+        <div class="col-md-5">
+            <div class="card-art align-items-end flex-column">
+                <div class="px-3 pb-1">
+                    <p class="art-data">Pubblicato il {$data1}</p>
+                </div>
+                <div class="px-3 pb-1">
+                    <h4 class="art-title pb-2">{$row1['art_title']}</h4>
+                </div>
+                <div class="px-3 pb-1">
+                    <p class="art-note text-justify pb-4">di {$row1['art_note']}</p>
+                </div>
+                <div class="mt-auto px-3 d-flex align-items-center justify-content-between">
+                    <a role="button" href="{$row1['art_link']}" class="btn dark-btn btn-lg" target="_blank">Approfondisci</a>
+                    <button class="btn rounded-pill art-tag">{$tag1}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+$container .= $last_art;
+
+$container .= get_articles_list('0');
+
+echo $container;
+}
+else {
+
+$container .= get_articles_list($_GET['tag']);
+
+echo $container;
+
+}
+}
+else {
+
+echo "No items found";
+
+}
+
+}
+
 // mostra gli articoli in lista
-function get_articles_list() {
+function get_articles_list($filter) {
 
-$query = query("SELECT * FROM articoli WHERE art_id NOT IN (SELECT MAX(art_id) FROM articoli ORDER BY art_data DESC) ORDER BY art_data DESC");
-confirm($query);
+$arts = "<div class='row mt-4'>";
 
-while($row = fetch_array($query)) {
+if($filter == '0') {
+
+$query0 = query("SELECT * FROM articoli WHERE art_id NOT IN (SELECT MAX(art_id) FROM articoli ORDER BY art_data DESC) ORDER BY art_data DESC");
+confirm($query0);
+
+while($row = fetch_array($query0)) {
 
 $img = display_image($row['art_image']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
@@ -668,7 +750,7 @@ else {
     $tag = "Libro";
 }
     
-$arts = <<<DELIMETER
+$art0 = <<<DELIMETER
 
 <div class="col-lg-3 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
@@ -687,19 +769,16 @@ $arts = <<<DELIMETER
 
 DELIMETER;
 
-echo $arts;
-    
+$arts .= $art0;
 }
-    
+$arts .= "</div>";
 }
+else {
 
-// mostra l'ultimo articolo
-function get_last_article() {
-
-$query = query("SELECT * FROM articoli ORDER BY art_data DESC LIMIT 1");
+$query = query("SELECT * FROM articoli WHERE art_tag = $filter ORDER BY art_data DESC");
 confirm($query);
 
-$row = fetch_array($query);
+while($row = fetch_array($query)) {
 
 $img = display_image($row['art_image']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
@@ -712,29 +791,19 @@ elseif($row['art_tag'] == '2') {
 else {
     $tag = "Libro";
 }
+    
+$art0 = <<<DELIMETER
 
-$arts = <<<DELIMETER
-
-<div class="card art-card mb-4 shadow {$row['art_tag']}">
-    <div class="row no-gutters align-items-center">
-        <div class="col-lg-7">
-            <img src="../resources/{$img}" class="card-img card-art-image" alt="{$row['art_image']}">
-        </div>
-        <div class="col-md-5">
-            <div class="card-art align-items-end flex-column">
-                <div class="px-3 pb-1">
-                    <p class="art-data">Pubblicato il {$data}</p>
-                </div>
-                <div class="px-3 pb-1">
-                    <h4 class="art-title pb-2">{$row['art_title']}</h4>
-                </div>
-                <div class="px-3 pb-1">
-                    <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
-                </div>
-                <div class="mt-auto px-3 d-flex align-items-center justify-content-between">
-                    <a role="button" href="{$row['art_link']}" class="btn dark-btn btn-lg" target="_blank">Approfondisci</a>
-                    <button class="btn rounded-pill art-tag">{$tag}</button>
-                </div>
+<div class="col-lg-3 px-2">
+    <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
+        <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+        <div class="card-body">
+            <p class="art-data">Pubblicato il {$data}</p>
+            <h4 class="art-title pb-2">{$row['art_title']}</h4>
+            <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
+            <div class="art-footer d-flex align-items-center justify-content-between">
+                <a role="button" href="{$row['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
+                <button class="btn rounded-pill art-tag">{$tag}</button>
             </div>
         </div>
     </div>
@@ -742,9 +811,16 @@ $arts = <<<DELIMETER
 
 DELIMETER;
 
-echo $arts;
-        
+$arts .= $art0;
+
 }
+$arts .= "</div>";
+}
+
+return $arts;
+    
+}
+
 
 //*************************** BACK FUNCTIONS ****************************
 

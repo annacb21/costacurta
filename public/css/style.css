@@ -400,9 +400,6 @@ footer .fas {
     font-weight: 600 !important;
 }
 
-.art-card {
-    display: none !important;
-}
 
 .fixed-card {
     height: 42em !important;
@@ -413,10 +410,6 @@ footer .fas {
     bottom: 1.5em;
     left: 1em;
     right: 1em;
-}
-
-.show {
-    display: block !important;
 }
 
 .card-art-image {

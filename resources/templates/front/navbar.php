@@ -26,7 +26,7 @@
                 <a href="../public/index.php?gallery" class="nav-link px-4">Gallery</a>
             </li>
             <li class="nav-item">
-                <a href="../public/index.php?articoli" class="nav-link px-4">News</a>
+                <a href="../public/index.php?articoli&tag=0" class="nav-link px-4">News</a>
             </li>
             <li class="nav-item">
                 <a href="../public/index.php?contatti" class="nav-link px-4">Contatti</a>
