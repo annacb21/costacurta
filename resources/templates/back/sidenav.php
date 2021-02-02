@@ -5,19 +5,7 @@
                 <a class="nav-link" href="../admin/index.php"><i class="fas fa-chart-line"></i>Dashboard</a>
             </li>
             <li class="nav-item pb-3">
-                <a class="nav-link" href="../admin/index.php?account"><i class="fas fa-user-circle"></i>Account</a>
-            </li>
-            <li class="nav-item pb-3">
-                <a class="nav-link" href="../admin/index.php?profile"><i class="fas fa-id-card"></i>Profilo</a>
-            </li>
-            <li class="nav-item pb-3">
-                <a class="nav-link" href="../admin/index.php?areas"><i class="fas fa-list"></i>Aree di intervento</a>
-            </li>
-            <li class="nav-item pb-3">
-                <a class="nav-link" href="../admin/index.php?gallery"><i class="far fa-images"></i>Gallery foto</a>
-            </li>
-            <li class="nav-item pb-3">
-                <a class="nav-link" href="../admin/index.php?articles"><i class="far fa-newspaper"></i>Articoli</a>
+                <a class="nav-link" href="../admin/index.php?account"><i class="fas fa-user-cog"></i>Impostazioni account</a>
             </li>
         </ul>
     </div>

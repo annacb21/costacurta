@@ -268,7 +268,7 @@ function show_main_content() {
 
 // manda una email dal form della pagina dei contatti
 function send_email($page) {
-    
+
     require '../vendor/autoload.php';
 
     if(isset($_POST['sendEmail'])) {
@@ -842,16 +842,28 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/profile.php");
     }
 
-    if(isset($_GET['areas'])) {
-        include(TEMPLATE_BACK . "/areas.php");
+    if(isset($_GET['quotes'])) {
+        include(TEMPLATE_BACK . "/quotes.php");
     }
 
-    if(isset($_GET['gallery'])) {
-        include(TEMPLATE_BACK . "/gallery.php");
+    if(isset($_GET['aff'])) {
+        include(TEMPLATE_BACK . "/aff.php");
+    }
+
+    if(isset($_GET['contatti'])) {
+        include(TEMPLATE_BACK . "/contatti.php");
     }
 
     if(isset($_GET['articles'])) {
         include(TEMPLATE_BACK . "/articles.php");
+    }
+
+    if(isset($_GET['aree'])) {
+        include(TEMPLATE_BACK . "/aree.php");
+    }
+
+    if(isset($_GET['gallery'])) {
+        include(TEMPLATE_BACK . "/gallery.php");
     }
 
     if(isset($_GET['edit_account'])) {
@@ -898,7 +910,7 @@ function get_admin_h1() {
     }
 
     if(isset($_GET['account'])) {
-        $title = "Account";
+        $title = "Impostazioni account";
     }
 
     if(isset($_GET['profile'])) {
@@ -940,7 +952,7 @@ function get_admin_h1() {
 // modifica account admin
 function update_account() {
 
-    if(isset($_POST['update'])) {
+    if(isset($_POST['updateAccount'])) {
 
         $username = escape_string($_POST['username']);
         $email = escape_string($_POST['email']);
@@ -948,6 +960,7 @@ function update_account() {
         $query = query("UPDATE users SET username = '{$username}', email = '{$email}' WHERE user_id = '{$_SESSION['user']}' ");
         confirm($query);
 
+        set_message("Account modificato con successo", "alert-success");
         redirect("../../public/admin/index.php?account");
 
     }
@@ -960,22 +973,22 @@ function update_password($psw) {
     if(isset($_POST['updatePsw'])) {
 
         $current_psw = escape_string($_POST['current_psw']);
-        $new_psw = escape_string($_POST['new_psw']);
+        $new_psw = password_hash(escape_string($_POST['new_psw']), PASSWORD_DEFAULT);
 
-        if($current_psw == $psw) {
+        if(password_verify($current_psw, $psw) === true) {
 
             $query = query("UPDATE users SET password = '{$new_psw}' WHERE user_id = '{$_SESSION['user']}' ");
             confirm($query);
 
-            redirect("../../public/admin/index.php?account");
+            set_message("Password modificata con successo", "alert-success");
 
         }
         else {
-            
+        
             set_message("Password attuale non corretta", "alert-danger");
-            redirect("../../public/admin/index.php?edit_account");
 
         }
+        redirect("../../public/admin/index.php?account");
 
     }
 
