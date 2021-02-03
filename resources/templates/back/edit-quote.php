@@ -29,7 +29,7 @@ if(isset($_GET['id'])) {
             <img src="../../resources/<?php echo $img; ?>" alt="" class="w-25 img-fluid">
             
             <div class="form-group mb-3">
-                <input type="file" class="form-control-file" id="quoteFoto">
+                <input type="file" class="form-control-file" id="quoteFoto" name="quoteFoto">
                 <label class="form-label" for="quoteFoto">Scegli foto...</label>
                 <div class="invalid-feedback">Scegli una foto per la citazione</div>
             </div>

@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <input type="file" class="form-control-file" id="cv">
+                        <input type="file" class="form-control-file" id="cv" name="cv">
                         <label class="form-label" for="cv">Carica il curriculum...</label>
                         <div class="invalid-feedback">Carica il tuo curriculum</div>
                     </div>
@@ -32,7 +32,7 @@
                     <img class="mt-4" width="200" src="../../resources/<?php echo display_image($profile['pro_foto']); ?>" alt="">
 
                     <div class="form-group my-3">
-                        <input type="file" class="form-control-file" id="foto">
+                        <input type="file" class="form-control-file" id="foto" name="foto">
                         <label class="form-label" for="foto">Carica una foto per il profilo ...</label>
                         <div class="invalid-feedback">Carica una foto per il profilo</div>
                     </div>

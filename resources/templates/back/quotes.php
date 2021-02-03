@@ -20,8 +20,7 @@
             </div>
 
             <div class="form-group mb-3">
-                <input type="file" class="form-control-file" id="quoteFoto" required>
-                <label class="form-label" for="quoteFoto">Scegli foto...</label>
+                <input type="file" class="form-control-file" id="quoteFoto" name="quoteFoto" required>
                 <div class="invalid-feedback">Scegli una foto per la citazione</div>
             </div>
 

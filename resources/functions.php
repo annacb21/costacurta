@@ -878,6 +878,10 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/quotes.php");
     }
 
+    if(isset($_GET['pubs'])) {
+        include(TEMPLATE_BACK . "/pubs.php");
+    }
+
     if(isset($_GET['aff'])) {
         include(TEMPLATE_BACK . "/aff.php");
     }
@@ -888,10 +892,6 @@ function show_admin_content() {
 
     if(isset($_GET['articles'])) {
         include(TEMPLATE_BACK . "/articles.php");
-    }
-
-    if(isset($_GET['aree'])) {
-        include(TEMPLATE_BACK . "/aree.php");
     }
 
     if(isset($_GET['gallery'])) {
@@ -914,8 +914,8 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/delete_serv.php");
     }
 
-    if(isset($_GET['delete_area'])) {
-        include(TEMPLATE_BACK . "/delete_area.php");
+    if(isset($_GET['delete_pub'])) {
+        include(TEMPLATE_BACK . "/delete_pub.php");
     }
 
     if(isset($_GET['edit_area'])) {
@@ -950,15 +950,15 @@ function get_admin_h1() {
     }
 
     if(isset($_GET['quotes'])) {
-        $title = "Gestisci citazioni";
+        $title = "Citazioni";
     }
 
     if(isset($_GET['profile'])) {
         $title = "Profilo";
     }
 
-    if(isset($_GET['areas'])) {
-        $title = "Aree di intervento";
+    if(isset($_GET['pubs'])) {
+        $title = "Pubblicazioni";
     }
 
     if(isset($_GET['gallery'])) {
@@ -1046,10 +1046,10 @@ function add_quote() {
 
         move_uploaded_file($img_loc, UPLOADS . DS . $img);
 
-        $query = query("INSERT INTO quotes(quote_text, quote_img, quote_author) VALUES ('{$cit}', '{$img}', '{$autore}') ");
+        $query = query("INSERT INTO quotes(quote_text, quote_img, quote_author) VALUES ('{$cit}', '{$img}', '{$autore}')");
         confirm($query);
 
-        set_message("Foto aggiunta correttamente", "alert-success");
+        set_message("{$img_loc}", "alert-success");
         redirect("../../public/admin/index.php?quotes");
 
     }
@@ -1234,19 +1234,24 @@ function add_servizio() {
 
 }
 
-// aggiunge un'area di intervento
-function add_area() {
+// aggiunge una pubblicazione
+function add_pub() {
 
-    if(isset($_POST['add'])) {
+    if(isset($_POST['addPub'])) {
 
-        $name = escape_string($_POST['name_area']);
-        $desc = escape_string($_POST['desc']);
+        $title = escape_string($_POST['title']);
+        $pub = escape_string($_FILES['pubLink']['name']);
+        $pub_loc = escape_string($_FILES['pubLink']['tmp_name']);
+        $autore = escape_string($_POST['autore']);
+        $sub = escape_string($_POST['sub']);
 
-        $query = query("INSERT INTO aree(area_name, area_desc) VALUES ('{$name}', '{$desc}') ");
+        move_uploaded_file($pub_loc, UPLOADS . DS . $pub);
+
+        $query = query("INSERT INTO pubblicazioni(pub_title, pub_subtitle, pub_autor, pub_link) VALUES ('{$title}', '{$sub}', '{$autore}', '{$pub}') ");
         confirm($query);
 
-        set_message("Area aggiunta correttamente", "alert-success");
-        redirect("../../public/admin/index.php?areas");
+        set_message("Pubblicazione aggiunta correttamente", "alert-success");
+        redirect("../../public/admin/index.php?pubs");
 
     }
 
