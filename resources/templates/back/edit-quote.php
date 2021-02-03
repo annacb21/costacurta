@@ -26,9 +26,10 @@ if(isset($_GET['id'])) {
                 <div class="invalid-feedback">Inserire l'autore della citazione</div>
             </div>
 
+            <img src="../../resources/<?php echo $img; ?>" alt="" class="w-25 img-fluid">
+            
             <div class="form-group mb-3">
-                <img src="../../resources/<?php echo $img; ?>" alt="" class="w-25 img-fluid">
-                <input type="file" class="form-control-file" id="quoteFoto" required>
+                <input type="file" class="form-control-file" id="quoteFoto">
                 <label class="form-label" for="quoteFoto">Scegli foto...</label>
                 <div class="invalid-feedback">Scegli una foto per la citazione</div>
             </div>

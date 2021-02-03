@@ -8,6 +8,9 @@
                 <a class="nav-link" href="../admin/index.php?quotes"><i class="fas fa-quote-left"></i>Citazioni</a>
             </li>
             <li class="nav-item pb-3">
+                <a class="nav-link" href="../admin/index.php?profile"><i class="fas fa-user-circle"></i>Profilo</a>
+            </li>
+            <li class="nav-item pb-3">
                 <a class="nav-link" href="../admin/index.php?account"><i class="fas fa-user-cog"></i>Impostazioni account</a>
             </li>
         </ul>

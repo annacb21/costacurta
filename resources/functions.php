@@ -211,6 +211,38 @@ function get_pubs() {
 
 }
 
+// getter per i disturbi
+function get_dist() {
+
+    $query = query("SELECT * FROM disturbi");
+    confirm($query);
+
+    $dist = [];
+
+    while($row = fetch_array($query)) {
+        array_push($dist, $row);
+    }
+
+    return $dist;
+
+}
+
+// getter per i servizi
+function get_serv() {
+
+    $query = query("SELECT * FROM servizi");
+    confirm($query);
+
+    $serv = [];
+
+    while($row = fetch_array($query)) {
+        array_push($serv, $row);
+    }
+
+    return $serv;
+
+}
+
 // getter per link utili
 function get_links() {
 
@@ -870,8 +902,16 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/edit-quote.php");
     }
 
-    if(isset($_GET['delete_slide'])) {
-        include(TEMPLATE_BACK . "/delete_slide.php");
+    if(isset($_GET['edit_profile'])) {
+        include(TEMPLATE_BACK . "/edit_profile.php");
+    }
+
+    if(isset($_GET['delete_dist'])) {
+        include(TEMPLATE_BACK . "/delete_dist.php");
+    }
+
+    if(isset($_GET['delete_serv'])) {
+        include(TEMPLATE_BACK . "/delete_serv.php");
     }
 
     if(isset($_GET['delete_area'])) {
@@ -888,10 +928,6 @@ function show_admin_content() {
 
     if(isset($_GET['delete_art'])) {
         include(TEMPLATE_BACK . "/delete_art.php");
-    }
-
-    if(isset($_GET['edit_profile'])) {
-        include(TEMPLATE_BACK . "/edit_profile.php");
     }
 
     if(isset($_GET['logout'])) {
@@ -937,16 +973,16 @@ function get_admin_h1() {
         $title = "Modifica citazione";
     }
 
+    if(isset($_GET['edit_profile'])) {
+        $title = "Modifica profilo";
+    }
+
     if(isset($_GET['edit_area'])) {
         $title = "Modifica area di intervento";
     }
 
     if(isset($_GET['edit_art'])) {
         $title = "Modifica articolo";
-    }
-
-    if(isset($_GET['edit_profile'])) {
-        $title = "Modifica profilo";
     }
 
     echo $title;
@@ -1121,6 +1157,83 @@ echo $thumb;
 
 }
 
+// modifica il profilo
+function update_profile() {
+
+    if(isset($_POST['editProfile'])) {
+
+        $desc = escape_string($_POST['desc']);
+        $foto = escape_string($_FILES['foto']['name']);
+        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
+        $cv = escape_string($_FILES['cv']['name']);
+        $cv_loc = escape_string($_FILES['cv']['tmp_name']);
+
+        if(empty($foto)) {
+
+            $get_foto = query("SELECT pro_foto FROM profilo ORDER BY pro_id DESC LIMIT 1");
+            confirm($get_foto);
+
+            $result = fetch_array($get_foto);
+            $foto = $result['pro_foto'];
+
+        }
+
+        if(empty($cv)) {
+
+            $get_cv = query("SELECT pro_cv FROM profilo ORDER BY pro_id DESC LIMIT 1");
+            confirm($get_cv);
+
+            $result = fetch_array($get_cv);
+            $cv = $result['pro_cv'];
+
+        }
+
+        move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
+        move_uploaded_file($cv_loc, UPLOADS . DS . $cv);
+
+        $query = query("UPDATE profilo SET pro_desc = '{$desc}', pro_foto = '{$foto}', pro_cv = '{$cv}' ORDER BY pro_id DESC LIMIT 1");
+        confirm($query);
+
+        redirect("../../public/admin/index.php?profile");
+
+    }
+
+}
+
+// aggiunge un disturbo
+function add_disturbo() {
+
+    if(isset($_POST['addDisturbo'])) {
+
+        $name = escape_string($_POST['nome']);
+
+        $query = query("INSERT INTO disturbi(disturbo_name) VALUES ('{$name}') ");
+        confirm($query);
+
+        set_message("Disturbo aggiunto correttamente", "alert-success");
+        redirect("../../public/admin/index.php?profile");
+
+    }
+
+}
+
+// aggiunge un servizio
+function add_servizio() {
+
+    if(isset($_POST['addServizio'])) {
+
+        $name = escape_string($_POST['nome']);
+
+        $query = query("INSERT INTO servizi(servizio_name) VALUES ('{$name}') ");
+        confirm($query);
+
+        set_message("Servizio aggiunto correttamente", "alert-success");
+        redirect("../../public/admin/index.php?profile");
+
+    }
+
+}
+
 // aggiunge un'area di intervento
 function add_area() {
 
@@ -1282,51 +1395,6 @@ function update_art() {
         confirm($query);
 
         redirect("../../public/admin/index.php?articles");
-
-    }
-
-}
-
-// modifica il profilo
-function update_profile() {
-
-    if(isset($_POST['update'])) {
-
-        $desc = escape_string($_POST['desc']);
-        $email = escape_string($_POST['email']);
-        $tel = escape_string($_POST['tel']);
-        $foto = escape_string($_FILES['foto']['name']);
-        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
-        $cv = escape_string($_FILES['cv']['name']);
-        $cv_loc = escape_string($_FILES['cv']['tmp_name']);
-
-        if(empty($foto)) {
-
-            $get_foto = query("SELECT pro_foto FROM profilo ORDER BY pro_id DESC LIMIT 1");
-            confirm($get_foto);
-
-            $result = fetch_array($get_foto);
-            $foto = $result['pro_foto'];
-
-        }
-
-        if(empty($cv)) {
-
-            $get_cv = query("SELECT pro_cv FROM profilo ORDER BY pro_id DESC LIMIT 1");
-            confirm($get_cv);
-
-            $result = fetch_array($get_cv);
-            $cv = $result['pro_cv'];
-
-        }
-
-        move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
-        move_uploaded_file($cv_loc, UPLOADS . DS . $cv);
-
-        $query = query("UPDATE profilo SET pro_desc = '{$desc}', pro_foto = '{$foto}', pro_cv = '{$cv}', pro_email = '{$email}', pro_tel = '{$tel}' ORDER BY pro_id DESC LIMIT 1");
-        confirm($query);
-
-        redirect("../../public/admin/index.php?profile");
 
     }
 
