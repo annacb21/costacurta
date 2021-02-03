@@ -184,10 +184,10 @@ function get_profile() {
 
 }
 
-// getter articolo
-function get_article($id) {
+// getter quote
+function get_quote($id) {
 
-    $query = query("SELECT * FROM articoli WHERE art_id = $id");
+    $query = query("SELECT * FROM quotes WHERE quote_id = $id");
     confirm($query);
 
     $row = fetch_array($query);
@@ -866,8 +866,8 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/gallery.php");
     }
 
-    if(isset($_GET['edit_account'])) {
-        include(TEMPLATE_BACK . "/edit_account.php");
+    if(isset($_GET['edit-quote'])) {
+        include(TEMPLATE_BACK . "/edit-quote.php");
     }
 
     if(isset($_GET['delete_slide'])) {
@@ -913,6 +913,10 @@ function get_admin_h1() {
         $title = "Impostazioni account";
     }
 
+    if(isset($_GET['quotes'])) {
+        $title = "Gestisci citazioni";
+    }
+
     if(isset($_GET['profile'])) {
         $title = "Profilo";
     }
@@ -929,8 +933,8 @@ function get_admin_h1() {
         $title = "Articoli";
     }
 
-    if(isset($_GET['edit_account'])) {
-        $title = "Modifica dati account";
+    if(isset($_GET['edit-quote'])) {
+        $title = "Modifica citazione";
     }
 
     if(isset($_GET['edit_area'])) {
@@ -994,67 +998,124 @@ function update_password($psw) {
 
 }
 
-// aggiunge una slide (foto)
-function add_slide() {
+// aggiunge una citazione
+function add_quote() {
 
-    if(isset($_POST['upload'])) {
+    if(isset($_POST['addQuote'])) {
 
-        $title = escape_string($_POST['title']);
-        $img = escape_string($_FILES['file']['name']);
-        $img_loc = escape_string($_FILES['file']['tmp_name']);
-        $studio = escape_string($_POST['study']);
+        $cit = escape_string($_POST['cit']);
+        $img = escape_string($_FILES['quoteFoto']['name']);
+        $img_loc = escape_string($_FILES['quoteFoto']['tmp_name']);
+        $autore = escape_string($_POST['autore']);
 
         move_uploaded_file($img_loc, UPLOADS . DS . $img);
 
-        $query = query("INSERT INTO slides(slide_title, slide_image, studio_id) VALUES ('{$title}', '{$img}', '{$studio}') ");
+        $query = query("INSERT INTO quotes(quote_text, quote_img, quote_author) VALUES ('{$cit}', '{$img}', '{$autore}') ");
         confirm($query);
 
         set_message("Foto aggiunta correttamente", "alert-success");
-        redirect("../../public/admin/index.php?gallery");
+        redirect("../../public/admin/index.php?quotes");
 
     }
 
 }
 
-// mostra i thumbnails delle slide
-function get_slides_thumbnails() {
+// modifica una citazione
+function edit_quote($id) {
 
-$query = query("SELECT * FROM slides ORDER BY slide_id DESC");
+    if(isset($_POST['editQuote'])) {
+
+        $cit = escape_string($_POST['cit']);
+        $autore = escape_string($_POST['autore']);
+        $foto = escape_string($_FILES['quoteFoto']['name']);
+        $foto_loc = escape_string($_FILES['quoteFoto']['tmp_name']);
+
+        if(empty($foto)) {
+
+            $get_foto = query("SELECT quote_img FROM quotes WHERE quote_id = $id");
+            confirm($get_foto);
+
+            $result = fetch_array($get_foto);
+            $foto = $result['quote_img'];
+
+        }
+
+        move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
+
+        $query = query("UPDATE quotes SET quote_text = '{$cit}', quote_img = '{$foto}', quote_author = '{$autore}' WHERE quote_id = $id");
+        confirm($query);
+
+        redirect("../../public/admin/index.php?quotes");
+
+    }
+
+}
+
+// mostra i thumbnails delle citazioni
+function get_quote_thumbnails($page) {
+
+$query = query("SELECT * FROM quotes WHERE quote_page = $page ORDER BY quote_id DESC");
 confirm($query);
 
 while($row = fetch_array($query)) {
 
-$img = display_image($row['slide_image']);
+$img = display_image($row['quote_img']);
 
-$slides_thumb = <<<DELIMETER
+if($page == '0') {
 
-<div class="col-sm-12 col-md-4 col-lg-2 col-xl-2 mb-3">
-    <img src="../../resources/{$img}" alt="{$row['slide_title']}" class="img-thumbnail img-fluid">
+$thumb = <<<DELIMETER
 
-    <button type="button" class="btn btn-danger close-modal" data-toggle="modal" data-target="#deleteModal">X</button>
-
-    <div class="modal fade" role="dialog" id="deleteModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModalLabel">Elimina foto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <p>Sei sicuro di voler eliminare questa foto?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-                <a href="../../public/admin/index.php?delete_slide&id={$row['slide_id']}&img={$row['slide_image']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
-            </div>
-            </div>
+<div class="col-lg-2 mb-3">
+    <div class="card">
+        <img src="../../resources/{$img}" alt="" class="img-fluid quote-thumb">
+        <div class="card-body">
+            <p>{$row['quote_text']}</p>
+            <p class="font-weight-bold">{$row['quote_author']}</p>
+            <a href="../../public/admin/index.php?edit-quote&id={$row['quote_id']}" role="button" class="btn btn-primary">Modifica</a>
         </div>
     </div>
 </div>
 
 DELIMETER;
 
-echo $slides_thumb;
+}
+else {
+
+if($page == '1') {
+$text = "Qualcosa su di me";
+}
+elseif($page == '2') {
+$text = "Aree di intervento";
+}
+elseif($page == '3') {
+$text = "Gallery";
+}
+elseif($page == '4') {
+$text = "News";
+}
+elseif($page == '5') {
+$text = "Contatti";
+}
+
+$thumb = <<<DELIMETER
+
+<div class="col-lg-2 mb-3">
+    <p class="text-uppercase font-weight-bold mb-3">{$text}</p>
+    <div class="card">
+        <img src="../../resources/{$img}" alt="" class="img-fluid quote-thumb">
+        <div class="card-body">
+            <p>{$row['quote_text']}</p>
+            <p class="font-weight-bold">{$row['quote_author']}</p>
+            <a href="../../public/admin/index.php?edit-quote&id={$row['quote_id']}" role="button" class="btn btn-primary">Modifica</a>
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+}
+
+echo $thumb;
     
 }
 

@@ -483,10 +483,6 @@ footer .fas {
 
 /* ADMIN */
 
-.feedback {
-    color: red;
-}
-
 /* SIDEBAR */
 .sidebar {
     position: fixed;
@@ -508,15 +504,9 @@ footer .fas {
 
 /* THUMBNAIL */
 
-.img-thumbnail {
-    width: 20em !important;
+.quote-thumb {
+    width: auto !important;
     height: 10em !important;
-}
-
-.close-modal {
-    position: absolute;
-    top: -0.4em;
-    right: 0.3em;
 }
 
 /* MEDIA QUERIES */
