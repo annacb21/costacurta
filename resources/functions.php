@@ -151,6 +151,17 @@ function get_tot_quotes() {
 
 }
 
+// ritorna il numero di pubs
+function get_tot_pub() {
+
+    $query = query("SELECT COUNT(*) as total FROM pubblicazioni");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
 // ritorna il numero di articoli
 function get_tot_art() {
 
@@ -166,6 +177,17 @@ function get_tot_art() {
 function get_tot_video() {
 
     $query = query("SELECT COUNT(*) as total FROM video");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row['total'];
+
+}
+
+// ritorna il numero di foto
+function get_tot_foto() {
+
+    $query = query("SELECT COUNT(*) as total FROM foto");
     confirm($query);
 
     $row = fetch_array($query);
