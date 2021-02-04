@@ -195,6 +195,17 @@ function get_quote($id) {
 
 }
 
+// getter quote
+function get_pub($id) {
+
+    $query = query("SELECT * FROM pubblicazioni WHERE pub_id = $id");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
 // getter per le pubblicazioni
 function get_pubs() {
 
@@ -906,6 +917,10 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/edit_profile.php");
     }
 
+    if(isset($_GET['edit_pub'])) {
+        include(TEMPLATE_BACK . "/edit_pub.php");
+    }
+
     if(isset($_GET['delete_dist'])) {
         include(TEMPLATE_BACK . "/delete_dist.php");
     }
@@ -918,8 +933,8 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/delete_pub.php");
     }
 
-    if(isset($_GET['edit_area'])) {
-        include(TEMPLATE_BACK . "/edit_area.php");
+    if(isset($_GET['delete_foto'])) {
+        include(TEMPLATE_BACK . "/delete_foto.php");
     }
 
     if(isset($_GET['edit_art'])) {
@@ -962,7 +977,7 @@ function get_admin_h1() {
     }
 
     if(isset($_GET['gallery'])) {
-        $title = "Gallery foto";
+        $title = "Gallery";
     }
 
     if(isset($_GET['articles'])) {
@@ -977,8 +992,8 @@ function get_admin_h1() {
         $title = "Modifica profilo";
     }
 
-    if(isset($_GET['edit_area'])) {
-        $title = "Modifica area di intervento";
+    if(isset($_GET['edit_pub'])) {
+        $title = "Modifica pubblicazione";
     }
 
     if(isset($_GET['edit_art'])) {
@@ -1245,10 +1260,16 @@ function add_pub() {
         $autore = escape_string($_POST['autore']);
         $sub = escape_string($_POST['sub']);
 
-        move_uploaded_file($pub_loc, UPLOADS . DS . $pub);
+        if(empty($pub)) {
+            $query = query("INSERT INTO pubblicazioni(pub_title, pub_subtitle, pub_autor, pub_link) VALUES ('{$title}', '{$sub}', '{$autore}', NULL) ");
+            confirm($query);
+        }
+        else {
+            move_uploaded_file($pub_loc, UPLOADS . DS . $pub);
+            $query = query("INSERT INTO pubblicazioni(pub_title, pub_subtitle, pub_autor, pub_link) VALUES ('{$title}', '{$sub}', '{$autore}', '{$pub}') ");
+            confirm($query);
+        }
 
-        $query = query("INSERT INTO pubblicazioni(pub_title, pub_subtitle, pub_autor, pub_link) VALUES ('{$title}', '{$sub}', '{$autore}', '{$pub}') ");
-        confirm($query);
 
         set_message("Pubblicazione aggiunta correttamente", "alert-success");
         redirect("../../public/admin/index.php?pubs");
@@ -1257,44 +1278,98 @@ function add_pub() {
 
 }
 
-// ritorna la lista delle aree di intervento
-function get_areas() {
+// modifica una pubblicazione
+function edit_pub($id) {
 
-$query = query("SELECT * FROM aree");
+    if(isset($_POST['editPub'])) {
+
+        $title = escape_string($_POST['title']);
+        $pub = escape_string($_FILES['pubLink']['name']);
+        $pub_loc = escape_string($_FILES['pubLink']['tmp_name']);
+        $autore = escape_string($_POST['autore']);
+        $sub = escape_string($_POST['sub']);
+
+        if(empty($pub)) {
+
+            $get_pub = query("SELECT pub_link FROM pubblicazioni WHERE pub_id = $id");
+            confirm($get_pub);
+
+            $result = fetch_array($get_pub);
+            $pub = $result['pub_link'];
+
+        }
+
+        move_uploaded_file($pub_loc, UPLOADS . DS . $pub);
+
+        $query = query("UPDATE pubblicazioni SET pub_title = '{$title}', pub_subtitle = '{$sub}', pub_autor = '{$autore}', pub_link = '{$pub}' WHERE pub_id = $id");
+        confirm($query);
+
+        redirect("../../public/admin/index.php?pubs");
+
+    }
+
+}
+
+// aggiunge una foto
+function add_foto() {
+
+    if(isset($_POST['addFoto'])) {
+
+        $nome = escape_string($_POST['name']);
+        $foto = escape_string($_FILES['foto']['name']);
+        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
+        $cat = escape_string($_POST['cat']);
+
+        move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
+
+        $query = query("INSERT INTO foto(foto_image, foto_name, foto_cat) VALUES ('{$foto}', '{$nome}', '{$cat}') ");
+        confirm($query);
+
+        set_message("Foto aggiunta correttamente", "alert-success");
+        redirect("../../public/admin/index.php?gallery");
+
+    }
+
+}
+
+// ritorna la lista delle foto
+function get_foto_thumb($cat) {
+
+$query = query("SELECT * FROM foto WHERE foto_cat = '{$cat}' ");
 confirm($query);
 
 while($row = fetch_array($query)) {
 
-$aree = <<<DELIMETER
+$img = display_image($row['foto_image']);
 
-<li class="list-group-item d-flex justify-content-between align-items-center">
-    <p class="pr-5">{$row['area_name']}</p>
-    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-        <a href="../../public/admin/index.php?edit_area&id={$row['area_id']}" role="button" class="btn btn-warning">Modifica</a>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAreaModal">Elimina</button>
-    </div>
-</li>
-<div class="modal fade" role="dialog" id="deleteAreaModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="deleteModalLabel">Elimina area di intervento</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-            <p>Sei sicuro di voler eliminare l'area di intervento?</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-            <a href="../../public/admin/index.php?delete_area&id={$row['area_id']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
-        </div>
+$foto = <<<DELIMETER
+
+<div class="col-lg-2 mb-5">
+    <img src="../../resources/{$img}" alt="" class="img-thumbnail img-fluid">
+    <button type="button" class="btn btn-danger close-modal" data-toggle="modal" data-target="#deleteModal{$row['foto_id']}">X</button>
+
+    <div class="modal fade" role="dialog" id="deleteModal{$row['foto_id']}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Elimina foto dalla gallery</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Sei sicuro di voler eliminare questa foto?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <a href="../../public/admin/index.php?delete_foto&id={$row['foto_id']}&img={$row['foto_image']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 DELIMETER;
 
-echo $aree;
+echo $foto;
     
 }
 

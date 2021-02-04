@@ -194,7 +194,7 @@ body {
 
 .blockquote {
     padding-left: 15% !important; 
-    padding-right: 5% !important;
+    padding-right: 10% !important;
 }
 
 .blockquote-footer {
@@ -502,11 +502,19 @@ footer .fas {
     margin-right: 1rem;
 }
 
-/* THUMBNAIL */
+/* QUOTES */
 
 .quote-thumb {
     width: auto !important;
     height: 10em !important;
+}
+
+/* GALLERY */
+
+.close-modal {
+    position: absolute;
+    top: -1em;
+    right: 0.2em;
 }
 
 /* MEDIA QUERIES */

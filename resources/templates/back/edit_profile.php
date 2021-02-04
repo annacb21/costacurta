@@ -18,7 +18,6 @@
                     <div class="form-group mb-3">
                         <input type="file" class="form-control-file" id="cv" name="cv">
                         <label class="form-label" for="cv">Carica il curriculum...</label>
-                        <div class="invalid-feedback">Carica il tuo curriculum</div>
                     </div>
 
                     <div class="form-group mt-5">
@@ -34,7 +33,6 @@
                     <div class="form-group my-3">
                         <input type="file" class="form-control-file" id="foto" name="foto">
                         <label class="form-label" for="foto">Carica una foto per il profilo ...</label>
-                        <div class="invalid-feedback">Carica una foto per il profilo</div>
                     </div>
 
                 </div>

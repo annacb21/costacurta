@@ -21,13 +21,13 @@
             </div>
 
             <div class="form-group">
-                <label for="sub" class="form-label">Sottotitolo pubblicazione</label>
+                <label for="sub" class="form-label">Sottotitolo pubblicazione (opzionale)</label>
                 <input type="text" name="sub" class="form-control" id="sub">
             </div>
 
             <div class="form-group mb-3">
                 <input type="file" class="form-control-file" id="pubLink" name="pubLink">
-                <label class="form-label" for="pubLink">Carica pubblicazione...</label>
+                <label class="form-label" for="pubLink">Carica pubblicazione... (opzionale)</label>
             </div>
 
             <div class="form-group mt-4">
@@ -44,7 +44,7 @@
 <ul class="list-group mb-5">
     <?php
     for($i=0; $i<count($pubs); $i++) {
-        echo "<li class='list-group-item d-flex justify-content-between'>{$pubs[$i]['pub_title']}<a href='../../public/admin/index.php?delete_pub&id={$pubs[$i]['pub_id']}' role='button' class='btn btn-danger'>Elimina</a></li>";
+        echo "<li class='list-group-item d-flex justify-content-between'>{$pubs[$i]['pub_title']}<div><a href='../../public/admin/index.php?edit_pub&id={$pubs[$i]['pub_id']}' role='button' class='btn btn-primary mr-3'>Modifica</a><a href='../../public/admin/index.php?delete_pub&id={$pubs[$i]['pub_id']}' role='button' class='btn btn-danger'>Elimina</a></div></li>";
     }
     ?>
 </ul>
