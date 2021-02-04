@@ -11,9 +11,9 @@
 <div class="mt-5 pt-4">
     <p class="section-title text-uppercase text-center">Gli studi ...</p>
     <!-- padova -->
-    <div class="studio-title d-flex align-items-center">
-        <p class="dark-subtitle pt-4 pb-3 text-left w-25">Studio Carollo a Padova</p>
-        <div class="studioBorder w-100"></div>
+    <div class="studio-title mb-5">
+        <p class="dark-subtitle pt-4 mb-1 text-left">Studio Carollo a Padova</p>
+        <div class="studioBorder"></div>
     </div>
     <div class="glide mt-2 mb-3">
         <div class="glide__track" data-glide-el="track">
@@ -27,9 +27,9 @@
         </div>
     </div>
     <!-- thiene -->
-    <div class="studio-title d-flex align-items-center">
-        <div class="studioBorder w-100"></div>
-        <p class="dark-subtitle pt-4 pb-3 text-right w-75">Centro Psiché - Poliambulatorio San Gaetano a Thiene</p>
+    <div class="studio-title mb-5 mt-4">
+        <p class="dark-subtitle pt-4 mb-1 text-right">Centro Psiché - Poliambulatorio San Gaetano a Thiene</p>
+        <div class="studioBorder"></div>
     </div>
     <div class="glide4 mt-2 mb-3">
         <div class="glide__track" data-glide-el="track">
@@ -43,9 +43,9 @@
         </div>
     </div>
     <!-- chioggia -->
-    <div class="studio-title d-flex align-items-center">
-        <p class="dark-subtitle pt-4 pb-3 text-left w-50">Poliambulatorio San Giovanni a Chioggia</p>
-        <div class="studioBorder w-100"></div>
+    <div class="studio-title mb-5 mt-4">
+        <p class="dark-subtitle pt-4 mb-1 text-left">Poliambulatorio San Giovanni a Chioggia</p>
+        <div class="studioBorder"></div>
     </div>
     <div class="glide5 mt-2 mb-5">
         <div class="glide__track" data-glide-el="track">

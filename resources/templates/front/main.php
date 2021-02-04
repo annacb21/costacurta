@@ -36,10 +36,10 @@
             Ha una riconosciuta e consolidata esperienza nella diagnosi e trattamento dei disturbi psichiatrici e caratteriali dell’età adulta.
         </p>
         <div class="row justify-content-between pt-3">
-            <div class="col-lg-4 px-0">
+            <div class="col-lg-5 px-0">
                 <a role="button" href="../public/index.php?chisono" class="btn btn-lg dark-btn">Approfondisci</a>
             </div>
-            <div class="col-lg-4 px-0">
+            <div class="col-lg-5 px-0">
                 <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn btn-lg light-btn float-right" target="_blank">Curriculum Vitae</a>
             </div>
         </div>
@@ -113,7 +113,7 @@
                     <textarea name="message" class="form-control" id="message" rows="5" placeholder="Scrivi qui il tuo messaggio" required></textarea>
                     <div class="invalid-feedback">Inserire un messaggio</div>
                 </div>
-                <div class="mb-3 pl-4">
+                <div class="mb-3">
                     <input type="checkbox" class="form-input-control" id="check" name="check" required>
                     <label class="form-check-label" for="check">
                         Dichiaro di essere già maggiorenne e acconsento al trattamento dei miei dati personali per fini informativi e di prenotazione. <a href="https://www.iubenda.com/privacy-policy/56078482" class="iubenda-white iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>

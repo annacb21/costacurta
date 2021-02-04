@@ -375,11 +375,11 @@ footer .fas {
 }
 
 .glide__arrow--left {
-    left: 20em !important;
+    left: 30% !important;
 }
 
 .glide__arrow--right {
-    right: 20em !important;
+    right: 30% !important;
 }
 
 .foto-text {
@@ -428,7 +428,7 @@ footer .fas {
 
 
 .fixed-card {
-    height: 42em !important;
+    height: 45em !important;
 }
 
 .art-footer {
@@ -462,7 +462,6 @@ footer .fas {
 }
 
 .art-tag {
-    display: inline-block;
     padding: 0.2em 2em !important;
     color: #81B214 !important;
     border: solid 1px #81B214 !important;

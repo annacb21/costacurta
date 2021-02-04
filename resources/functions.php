@@ -834,9 +834,9 @@ $art0 = <<<DELIMETER
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
             <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
-            <div class="art-footer d-flex align-items-center justify-content-between">
+            <div class="art-footer">
                 <a role="button" href="{$row['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
-                <button class="btn rounded-pill art-tag">{$tag}</button>
+                <button class="btn rounded-pill art-tag mt-3">{$tag}</button>
             </div>
         </div>
     </div>
