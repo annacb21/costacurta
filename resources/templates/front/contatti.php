@@ -72,11 +72,11 @@
     </div>
 
     <div class="row borderTopLarge align-items-center">
-        <div class="col-lg-8 px-0 pt-5 borderRight">
+        <div class="col-xl-8 col-lg-7 px-0 pt-5 borderRight">
             <p class="contact-title pb-1">Link utili</p>
             <?php link_utili(); ?>
         </div>
-        <div class="col-lg-4 px-0 pt-5 text-center">
+        <div class="col-xl-4 col-lg-5 px-0 pt-5 text-center">
             <p class="contact-title pb-5 px-3">Prenota una visita tramite MioDottore</p>
             <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
         </div>

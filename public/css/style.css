@@ -532,3 +532,62 @@ footer .fas {
 
 /* MEDIA QUERIES */
 
+/* tablet */
+@media (max-width: 1199.98px) {
+
+    .borderX {
+        border: none !important;
+    }
+
+    .profile-img {
+        height: 20rem !important;
+    }
+
+    .logo-footer {
+        width: 15em;
+    }
+
+    .profile-img2 {
+        height: 22rem !important;
+    }
+
+    .profile-list {
+        font-size: 0.9em;
+    }
+
+    .profile-card {
+        padding: 1.5em 2em !important;
+    }
+
+    .cv-btn {
+        width: auto !important;
+    }
+
+    .service-card {
+        height: 8rem !important;
+    }
+
+    .area-card {
+        height: auto !important;
+    }
+
+    .glide2 .glide__slide img {
+        width: 30em !important;
+        height: 30em !important;
+        object-fit: cover;
+    }
+
+    .glide3 iframe {
+        width: 250px !important;
+    }
+
+    .quote-image img{
+        width: 90% !important;
+        object-fit: cover;
+    }
+
+    .card-art {
+        padding: 0 2rem !important;
+    }
+
+}

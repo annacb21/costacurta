@@ -651,7 +651,7 @@ $img = display_image($row['aff_image']);
 
 $aff = <<<DELIMETER
 
-<div class="col-lg-3 text-center">
+<div class="col-xl-4 col-lg-5 text-center">
     <a href="{$row['aff_link']}" target="_blank">
         <img src="../resources/{$img}" alt="{$row['aff_name']}" class="aff">
     </a>
@@ -757,7 +757,7 @@ $last_art = <<<DELIMETER
         <div class="col-lg-7">
             <img src="../resources/{$img1}" class="card-img card-art-image" alt="{$row1['art_image']}">
         </div>
-        <div class="col-md-5">
+        <div class="col-lg-5">
             <div class="card-art align-items-end flex-column">
                 <div class="px-3 pb-1">
                     <p class="art-data">Pubblicato il {$data1}</p>
@@ -769,7 +769,7 @@ $last_art = <<<DELIMETER
                     <p class="art-note text-justify pb-4">di {$row1['art_note']}</p>
                 </div>
                 <div class="mt-auto px-3 d-flex align-items-center justify-content-between">
-                    <a role="button" href="{$row1['art_link']}" class="btn dark-btn btn-lg" target="_blank">Approfondisci</a>
+                    <a role="button" href="{$row1['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
                     <button class="btn rounded-pill art-tag">{$tag1}</button>
                 </div>
             </div>
@@ -827,7 +827,7 @@ else {
     
 $art0 = <<<DELIMETER
 
-<div class="col-lg-3 px-2">
+<div class="col-xl-3 col-lg-4 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
         <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
         <div class="card-body px-4 py-4">

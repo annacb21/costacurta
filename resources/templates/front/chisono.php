@@ -19,11 +19,11 @@
         <p class="text-justify"><?php echo html_entity_decode(htmlentities($profile['pro_desc'])); ?></p>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 justify-content-around">
         <div class="col-lg-4 px-0">
             <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img2 shadow" alt="foto Andrea Costacurta">
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-8">
             <div class="card profile-card shadow">
                 <?php get_disturbi(); ?>
             </div>
