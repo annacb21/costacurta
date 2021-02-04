@@ -633,13 +633,12 @@ echo $aff;
 
 }
 
+
 // ritorna galery foto
 function get_foto($cat) {
 
-$query = query("SELECT * FROM foto WHERE foto_cat = '$cat' ORDER BY foto_id DESC");
+$query = query("SELECT * FROM foto WHERE foto_cat = '{$cat}'");
 confirm($query);
-
-$row = fetch_array($query);
 
 while($row = fetch_array($query)) {
 
@@ -648,8 +647,7 @@ $img = display_image($row['foto_image']);
 $foto = <<<DELIMETER
 
 <li class="glide__slide">
-    <a href="../resources/{$img}" target="_blank"><img src="../resources/{$img}" alt="{$row['foto_name']}" class="img-fluid shadow"></a>
-    <p class="mb-0 pt-3 text-uppercase font-weight-bold foto-text">{$row['foto_name']}</p>
+    <a href="../resources/{$img}" target="_blank"><img src="../resources/{$img}" alt="" class="img-fluid shadow"></a>
 </li>
 
 DELIMETER;
@@ -672,8 +670,6 @@ function get_video() {
 
 $query = query("SELECT * FROM video ORDER BY video_id DESC");
 confirm($query);
-
-$row = fetch_array($query);
 
 while($row = fetch_array($query)) {
 
@@ -893,6 +889,14 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/pubs.php");
     }
 
+    if(isset($_GET['gallery'])) {
+        include(TEMPLATE_BACK . "/gallery.php");
+    }
+
+    if(isset($_GET['video'])) {
+        include(TEMPLATE_BACK . "/video.php");
+    }
+
     if(isset($_GET['aff'])) {
         include(TEMPLATE_BACK . "/aff.php");
     }
@@ -903,10 +907,6 @@ function show_admin_content() {
 
     if(isset($_GET['articles'])) {
         include(TEMPLATE_BACK . "/articles.php");
-    }
-
-    if(isset($_GET['gallery'])) {
-        include(TEMPLATE_BACK . "/gallery.php");
     }
 
     if(isset($_GET['edit-quote'])) {
@@ -935,6 +935,10 @@ function show_admin_content() {
 
     if(isset($_GET['delete_foto'])) {
         include(TEMPLATE_BACK . "/delete_foto.php");
+    }
+
+    if(isset($_GET['delete_video'])) {
+        include(TEMPLATE_BACK . "/delete_video.php");
     }
 
     if(isset($_GET['edit_art'])) {
@@ -977,7 +981,11 @@ function get_admin_h1() {
     }
 
     if(isset($_GET['gallery'])) {
-        $title = "Gallery";
+        $title = "Gallery foto";
+    }
+
+    if(isset($_GET['video'])) {
+        $title = "Video e multimedia";
     }
 
     if(isset($_GET['articles'])) {
@@ -1320,6 +1328,10 @@ function add_foto() {
         $foto_loc = escape_string($_FILES['foto']['tmp_name']);
         $cat = escape_string($_POST['cat']);
 
+        if(empty($nome)) {
+            $nome = NULL;
+        }
+
         move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
 
         $query = query("INSERT INTO foto(foto_image, foto_name, foto_cat) VALUES ('{$foto}', '{$nome}', '{$cat}') ");
@@ -1335,7 +1347,7 @@ function add_foto() {
 // ritorna la lista delle foto
 function get_foto_thumb($cat) {
 
-$query = query("SELECT * FROM foto WHERE foto_cat = '{$cat}' ");
+$query = query("SELECT * FROM foto WHERE foto_cat = '{$cat}' ORDER BY foto_id DESC");
 confirm($query);
 
 while($row = fetch_array($query)) {
@@ -1375,21 +1387,66 @@ echo $foto;
 
 }
 
-// modifica area di intervento
-function update_area() {
+// aggiunge un video
+function add_video() {
 
-    if(isset($_POST['update'])) {
+    if(isset($_POST['addVideo'])) {
 
-        $name = escape_string($_POST['name_area']);
-        $desc = escape_string($_POST['desc']);
+        $title = escape_string($_POST['title']);
+        $link = escape_string($_POST['link']);
 
-        $query = query("UPDATE aree SET area_name = '{$name}', area_desc = '{$desc}' WHERE area_id = " . escape_string($_GET['id']) . " ");
+        $query = query("INSERT INTO video(video_name, video_link) VALUES ('{$title}', '{$link}') ");
         confirm($query);
 
-        redirect("../../public/admin/index.php?areas");
+        set_message("Video aggiunto correttamente", "alert-success");
+        redirect("../../public/admin/index.php?video");
 
     }
 
+}
+
+// ritorna gallery video
+function get_video_thumb() {
+
+$query = query("SELECT * FROM video ORDER BY video_id DESC");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$id = extractVideoID($row['video_link']);
+
+$video = <<<DELIMETER
+
+<div class="col-lg-3 mb-4">
+    <iframe class="embed-responsive-item" width="100%" height="auto" src="https://www.youtube.com/embed/{$id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <p class="pt-1 text-uppercase foto-text">{$row['video_name']}</p>
+    <button type="button" class="btn btn-danger close-modal" data-toggle="modal" data-target="#deletevideoModal{$row['video_id']}">X</button>
+
+    <div class="modal fade" role="dialog" id="deletevideoModal{$row['video_id']}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Elimina video dalla gallery</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Sei sicuro di voler eliminare questo video?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                    <a href="../../public/admin/index.php?delete_video&id={$row['video_id']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $video;
+
+}
+    
 }
 
 // aggiunge un articolo

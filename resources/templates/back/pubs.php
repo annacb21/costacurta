@@ -44,7 +44,7 @@
 <ul class="list-group mb-5">
     <?php
     for($i=0; $i<count($pubs); $i++) {
-        echo "<li class='list-group-item d-flex justify-content-between'>{$pubs[$i]['pub_title']}<div><a href='../../public/admin/index.php?edit_pub&id={$pubs[$i]['pub_id']}' role='button' class='btn btn-primary mr-3'>Modifica</a><a href='../../public/admin/index.php?delete_pub&id={$pubs[$i]['pub_id']}' role='button' class='btn btn-danger'>Elimina</a></div></li>";
+        echo "<li class='list-group-item d-flex justify-content-between'>{$pubs[$i]['pub_title']}<div><a href='../../public/admin/index.php?edit_pub&id={$pubs[$i]['pub_id']}' role='button' class='btn btn-primary mr-3'>Modifica</a><a href='../../public/admin/index.php?delete_pub&id={$pubs[$i]['pub_id']}&link={$pubs[$i]['pub_link']}' role='button' class='btn btn-danger'>Elimina</a></div></li>";
     }
     ?>
 </ul>
