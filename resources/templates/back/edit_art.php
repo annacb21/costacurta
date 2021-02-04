@@ -1,85 +1,78 @@
 <?php
-
     if(isset($_GET['id'])) {
-
-        $query = query("SELECT * FROM articoli WHERE art_id = " . escape_string($_GET['id']) . " ");
-        confirm($query);
-
-        $row = fetch_array($query);
-
-        $id = $row['art_id'];
-        $autore = $row['autore'];
-        $titolo = $row['titolo'];
-        $articolo = $row['corpo'];
-        $data = $row['art_data'];
-        $foto = $row['foto'];
-        $foto_img = display_image($row['foto']);
-        
+        $art = get_art($_GET['id']);
+        if($art['art_tag'] == '1') {
+            $activetag = "News";
+            $tag1 = "Evento";
+            $num1 = '2';
+            $tag2 = "Libro";
+            $num2 = '3';
+        } 
+        elseif($art['art_tag'] == '2') {
+            $activetag = "Evento";
+            $tag1 = "Libro";
+            $num1 = '3';
+            $tag2 = "News";
+            $num2 = '1';
+        } 
+        elseif($art['art_tag'] == '3') {
+            $activetag = "Libro";
+            $tag1 = "Evento";
+            $num1 = '2';
+            $tag2 = "News";
+            $num2 = '1';
+        } 
     }
-
 ?>
 
-<div class="card">
+<div class="card mb-5">
     <div class="card-body">
-        <form id="artForm" action="" method="POST" enctype="multipart/form-data">
+        <form id="editArtForm" action="" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-            <?php update_art(); ?>
+            <?php edit_art($_GET['id']); ?>
 
-            <div class="row">
-                <div class="col-lg-6">
-
-                    <div class="form-group">
-                        <label for="autore" class="form-label">Autore</label>
-                        <input type="text" name="autore" class="form-control" id="autore" required data-validation-required-message="Inserire l'autore dell'articolo" value="<?php echo $autore; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="titolo" class="form-label">Titolo</label>
-                        <input type="text" name="titolo" class="form-control" id="titolo" required data-validation-required-message="Inserire un titolo per l'articolo" value="<?php echo $titolo; ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="file" id="foto" name="foto"></br>
-                        <img width="200" src="../../resources/<?php echo $foto_img; ?>" alt="" class="pt-3">
-                    </div>
-
-                </div>
-                <div class="col-lg-6">
-
-                    <div class="form-group">
-                        <label for="articolo" class="form-label">Articolo</label>
-                        <textarea class="form-control" name="articolo" id="articolo" rows="10" cols="40" required data-validation-required-message="Inserisci il testo dell'articolo"><?php echo $articolo; ?></textarea>
-                    </div>
-
-                    <div class="form-group mt-5">
-                        <button name="update" type="submit" class="btn btn-warning">Modifica</button> 
-                        <button name="reset" type="reset" class="btn btn-outline-secondary" onClick="formReset('artForm')">Cancella</button>           
-                    </div> 
-
-                </div>
+            <div class="form-group">
+                <label for="title" class="form-label">Titolo</label>
+                <input type="text" name="title" class="form-control" id="title" required value="<?php echo $art['art_title']; ?>">
+                <small id="titleHelp" class="form-text text-muted">Per un evento o una news inserire il titolo dell'evento o l'argomento della news, per un libro inserire il titolo del libro</small>
+                <div class="invalid-feedback">Inserire un titolo (nome dell'evento, titolo del libro, argomento della news ...)</div>
             </div>
 
+            <div class="form-group">
+                <label for="sub" class="form-label">Sottotitolo</label>
+                <input type="text" name="sub" class="form-control" id="sub" required value="<?php echo $art['art_note']; ?>">
+                <small id="subHelp" class="form-text text-muted">Per un evento inserire la data prevista dell'evento, per un libro inserire l'autore del libro, una news scrivere una breve descrizione della news</small>
+                <div class="invalid-feedback">Inserire un sottotitolo (data dell'evento, autore del libro...)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="link" class="form-label">Link</label>
+                <input type="text" name="link" class="form-control" id="link" required value="<?php echo $art['art_link']; ?>">
+                <small id="linkHelp" class="form-text text-muted">Il link alla pagina web dell'evento o del libro</small>
+                <div class="invalid-feedback">Inserire il link al sito web dell'evento/libro</div>
+            </div>
+
+            <div class="form-group">
+                <label for="tag">Tag</label>
+                <select class="custom-select" id="tag" name="tag" required>
+                    <option selected value="<?php echo $art['art_tag']; ?>"><?php echo $activetag; ?></option>
+                    <option value="<?php echo $num1; ?>"><?php echo $tag1; ?></option>
+                    <option value="<?php echo $num2; ?>"><?php echo $tag2; ?></option>
+                </select>
+                <div class="invalid-feedback">Scegliere il tag</div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="form-label" for="artFoto">Carica foto ... (opzionale)</label>
+                <input type="file" class="form-control-file" id="artFoto" name="artFoto">
+            </div>
+
+            <div class="form-group mt-4">
+                <button name="editArt" type="submit" class="btn btn-primary btn-lg mr-3">Modifica</button> 
+                <button name="reset" type="reset" class="btn btn-outline-secondary btn-lg" onClick="formReset('editArtForm')">Cancella</button>           
+            </div> 
+
         </form>
-    </div>
-</div>
-
-<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteArtModal">Elimina articolo</button>
-
-<div class="modal fade" role="dialog" id="deleteArtModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="deleteModalLabel">Elimina articolo</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <div class="modal-body">
-            <p>Sei sicuro di voler eliminare questo articolo?</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-            <a href="../../public/admin/index.php?delete_art&id=<?php echo $id; ?>&img=<?php echo $foto; ?>" role="button" class="btn btn-danger">Conferma eliminazione</a>
-        </div>
-        </div>
     </div>
 </div>
 

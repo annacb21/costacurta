@@ -6,14 +6,12 @@
         confirm($query);
 
         $img_path = UPLOADS . DS . $_GET['img'];
-        unlink($img_path);
+
+        if($_GET['img'] != 'empty-event.png') {
+            unlink($img_path);
+        }
 
         set_message("Articolo eliminato con successo", "alert-success");
-        redirect("../../public/admin/index.php?articles");
-
-    }
-    else {
-
         redirect("../../public/admin/index.php?articles");
 
     }

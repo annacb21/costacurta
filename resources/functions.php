@@ -195,6 +195,17 @@ function get_quote($id) {
 
 }
 
+// getter articolo
+function get_art($id) {
+
+    $query = query("SELECT * FROM articoli WHERE art_id = $id");
+    confirm($query);
+
+    $row = fetch_array($query);
+    return $row;
+
+}
+
 // getter quote
 function get_pub($id) {
 
@@ -700,7 +711,7 @@ if(isset($_GET['tag'])) {
 
 if($_GET['tag'] == '0') {
 
-$last = query("SELECT * FROM articoli ORDER BY art_data DESC LIMIT 1");
+$last = query("SELECT * FROM articoli ORDER BY art_id DESC LIMIT 1");
 confirm($last);
 
 $row1 = fetch_array($last);
@@ -775,7 +786,7 @@ $arts = "<div class='row mt-4'>";
 
 if($filter == '0') {
 
-$query0 = query("SELECT * FROM articoli WHERE art_id NOT IN (SELECT MAX(art_id) FROM articoli ORDER BY art_data DESC) ORDER BY art_data DESC");
+$query0 = query("SELECT * FROM articoli WHERE art_id NOT IN (SELECT MAX(art_id) FROM articoli ORDER BY art_id DESC) ORDER BY art_id DESC");
 confirm($query0);
 
 while($row = fetch_array($query0)) {
@@ -897,16 +908,16 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/video.php");
     }
 
+    if(isset($_GET['articles'])) {
+        include(TEMPLATE_BACK . "/articles.php");
+    }
+
     if(isset($_GET['aff'])) {
         include(TEMPLATE_BACK . "/aff.php");
     }
 
     if(isset($_GET['contatti'])) {
         include(TEMPLATE_BACK . "/contatti.php");
-    }
-
-    if(isset($_GET['articles'])) {
-        include(TEMPLATE_BACK . "/articles.php");
     }
 
     if(isset($_GET['edit-quote'])) {
@@ -919,6 +930,10 @@ function show_admin_content() {
 
     if(isset($_GET['edit_pub'])) {
         include(TEMPLATE_BACK . "/edit_pub.php");
+    }
+
+    if(isset($_GET['edit_art'])) {
+        include(TEMPLATE_BACK . "/edit_art.php");
     }
 
     if(isset($_GET['delete_dist'])) {
@@ -939,10 +954,6 @@ function show_admin_content() {
 
     if(isset($_GET['delete_video'])) {
         include(TEMPLATE_BACK . "/delete_video.php");
-    }
-
-    if(isset($_GET['edit_art'])) {
-        include(TEMPLATE_BACK . "/edit_art.php");
     }
 
     if(isset($_GET['delete_art'])) {
@@ -989,7 +1000,7 @@ function get_admin_h1() {
     }
 
     if(isset($_GET['articles'])) {
-        $title = "Articoli";
+        $title = "News, eventi e libri";
     }
 
     if(isset($_GET['edit-quote'])) {
@@ -1005,7 +1016,7 @@ function get_admin_h1() {
     }
 
     if(isset($_GET['edit_art'])) {
-        $title = "Modifica articolo";
+        $title = "Modifica news";
     }
 
     echo $title;
@@ -1450,22 +1461,27 @@ echo $video;
 }
 
 // aggiunge un articolo
-function add_article() {
+function add_art() {
 
-    if(isset($_POST['publish'])) {
+    if(isset($_POST['addArt'])) {
 
-        $autore = escape_string($_POST['autore']);
-        $titolo = escape_string($_POST['titolo']);
-        $articolo = escape_string($_POST['articolo']);
-        $foto = escape_string($_FILES['foto']['name']);
-        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
+        $titolo = escape_string($_POST['title']);
+        $sub = escape_string($_POST['sub']);
+        $link = escape_string($_POST['link']);
+        $tag = escape_string($_POST['tag']);
+        $foto = escape_string($_FILES['artFoto']['name']);
+        $foto_loc = escape_string($_FILES['artFoto']['tmp_name']);
+
+        if(empty($foto)) {
+            $foto = 'empty-event.png';
+        }
 
         move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
 
-        $query = query("INSERT INTO articoli(autore, titolo, corpo, art_data, foto) VALUES ('{$autore}', '{$titolo}', '{$articolo}', now(), '{$foto}') ");
+        $query = query("INSERT INTO articoli(art_data, art_image, art_title, art_tag, art_link, art_note) VALUES (now(), '{$foto}', '{$titolo}', '{$tag}', '{$link}', '{$sub}') ");
         confirm($query);
 
-        set_message("Articolo pubblicato correttamente", "alert-success");
+        set_message("News pubblicata correttamente", "alert-success");
         redirect("../../public/admin/index.php?articles");
 
     }
@@ -1473,26 +1489,27 @@ function add_article() {
 }
 
 // ritorna lista di articoli
-function get_articles() {
+function get_art_thumb() {
 
-$query = query("SELECT * FROM articoli ORDER BY art_data DESC");
+$query = query("SELECT * FROM articoli ORDER BY art_id DESC");
 confirm($query);
 
 while($row = fetch_array($query)) {
 
-$img = display_image($row['foto']);
+$img = display_image($row['art_image']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
-$ant = anteprima($row['corpo'], 20);
 
 $art_thumb = <<<DELIMETER
 
-<div class="col-xs-6 col-md-12 col-lg-3 col-xl-3 mb-3">
-    <div class="card" style="width: 18rem;">
-        <a href="../../public/admin/index.php?edit_art&id={$row['art_id']}"><img src="../../resources/{$img}" class="card-img-top" alt=""></a>
+<div class="col-lg-3 mb-3">
+    <div class="card">
+        <img src="../../resources/{$img}" class="quote-thumb" alt="">
         <div class="card-body">
-            <h5 class="card-title">{$row['titolo']}</h5>
-            <p class="card-text">{$ant}</p>
+            <h5 class="card-title">{$row['art_title']}</h5>
+            <p class="card-text">{$row['art_note']}</p>
             <p class="card-text"><small class="text-muted">{$data}</small></p>
+            <a href="../../public/admin/index.php?edit_art&id={$row['art_id']}" role="button" class="btn btn-primary">Modifica</a>
+            <a href="../../public/admin/index.php?delete_art&id={$row['art_id']}&img={$row['art_image']}" role="button" class="btn btn-danger">Elimina</a>
         </div>
     </div>
 </div>
@@ -1506,29 +1523,30 @@ echo $art_thumb;
 }
 
 // modifica l'articolo
-function update_art() {
+function edit_art($id) {
 
-    if(isset($_POST['update'])) {
+    if(isset($_POST['editArt'])) {
 
-        $autore = escape_string($_POST['autore']);
-        $titolo = escape_string($_POST['titolo']);
-        $articolo = escape_string($_POST['articolo']);
-        $foto = escape_string($_FILES['foto']['name']);
-        $foto_loc = escape_string($_FILES['foto']['tmp_name']);
+        $titolo = escape_string($_POST['title']);
+        $sub = escape_string($_POST['sub']);
+        $link = escape_string($_POST['link']);
+        $tag = escape_string($_POST['tag']);
+        $foto = escape_string($_FILES['artFoto']['name']);
+        $foto_loc = escape_string($_FILES['artFoto']['tmp_name']);
 
         if(empty($foto)) {
 
-            $get_foto = query("SELECT foto FROM articoli WHERE art_id = " . escape_string($_GET['id']) . " ");
+            $get_foto = query("SELECT art_image FROM articoli WHERE art_id = $id");
             confirm($get_foto);
 
             $result = fetch_array($get_foto);
-            $foto = $result['foto'];
+            $foto = $result['art_image'];
 
         }
 
         move_uploaded_file($foto_loc, UPLOADS . DS . $foto);
 
-        $query = query("UPDATE articoli SET autore = '{$autore}', titolo = '{$titolo}', corpo = '{$articolo}', foto = '{$foto}' WHERE art_id = " . escape_string($_GET['id']) . " ");
+        $query = query("UPDATE articoli SET art_image = '{$foto}', art_title = '{$titolo}', art_tag = '{$tag}', art_link = '{$link}', art_note = '{$sub}' WHERE art_id = $id");
         confirm($query);
 
         redirect("../../public/admin/index.php?articles");

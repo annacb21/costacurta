@@ -20,6 +20,9 @@
                 <a class="nav-link" href="../admin/index.php?video"><i class="fab fa-youtube"></i>Video e multimedia</a>
             </li>
             <li class="nav-item pb-3">
+                <a class="nav-link" href="../admin/index.php?articles"><i class="far fa-newspaper"></i>News</a>
+            </li>
+            <li class="nav-item pb-3">
                 <a class="nav-link" href="../admin/index.php?account"><i class="fas fa-user-cog"></i>Impostazioni account</a>
             </li>
         </ul>

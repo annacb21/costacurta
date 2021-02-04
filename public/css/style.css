@@ -507,6 +507,7 @@ footer .fas {
 .quote-thumb {
     width: auto !important;
     height: 10em !important;
+    object-fit: cover;
 }
 
 /* GALLERY */
