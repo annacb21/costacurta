@@ -325,6 +325,11 @@ footer .fas {
     text-decoration: none;
 }
 
+.aff {
+    width: auto !important;
+    max-height: 10em !important;
+}
+
 /* AREE DI INTERVENTO */
 
 .piramide {
@@ -516,6 +521,14 @@ footer .fas {
     position: absolute;
     top: -1em;
     right: 0.2em;
+}
+
+/* AFF */
+
+.aff-thumb {
+    width: auto !important;
+    height: 5em !important;
+    object-fit: cover;
 }
 
 /* MEDIA QUERIES */

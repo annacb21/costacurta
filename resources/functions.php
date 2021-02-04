@@ -631,7 +631,7 @@ $aff = <<<DELIMETER
 
 <div class="col-lg-3 text-center">
     <a href="{$row['aff_link']}" target="_blank">
-        <img src="../resources/{$img}" alt="{$row['aff_name']}">
+        <img src="../resources/{$img}" alt="{$row['aff_name']}" class="aff">
     </a>
 </div>
 
@@ -960,6 +960,14 @@ function show_admin_content() {
         include(TEMPLATE_BACK . "/delete_art.php");
     }
 
+    if(isset($_GET['delete_aff'])) {
+        include(TEMPLATE_BACK . "/delete_aff.php");
+    }
+
+    if(isset($_GET['delete_link'])) {
+        include(TEMPLATE_BACK . "/delete_link.php");
+    }
+
     if(isset($_GET['logout'])) {
         include(TEMPLATE_BACK . "/logout.php");
     }
@@ -1001,6 +1009,10 @@ function get_admin_h1() {
 
     if(isset($_GET['articles'])) {
         $title = "News, eventi e libri";
+    }
+
+    if(isset($_GET['aff'])) {
+        $title = "Affiliazioni e link utili";
     }
 
     if(isset($_GET['edit-quote'])) {
@@ -1555,5 +1567,74 @@ function edit_art($id) {
 
 }
 
+// aggiunge affiliazione
+function add_aff() {
+
+    if(isset($_POST['addAff'])) {
+
+        $nome = escape_string($_POST['nome']);
+        $link = escape_string($_POST['link']);
+        $logo = escape_string($_FILES['logo']['name']);
+        $logo_loc = escape_string($_FILES['logo']['tmp_name']);
+
+        move_uploaded_file($logo_loc, UPLOADS . DS . $logo);
+
+        $query = query("INSERT INTO affiliazioni(aff_name, aff_image, aff_link) VALUES ('{$nome}', '{$logo}', '{$link}') ");
+        confirm($query);
+
+        set_message("Affiliazione aggiunta correttamente", "alert-success");
+        redirect("../../public/admin/index.php?aff");
+
+    }
+    
+}
+
+// ritorna lista di articoli
+function get_aff_thumb() {
+
+$query = query("SELECT * FROM affiliazioni");
+confirm($query);
+
+while($row = fetch_array($query)) {
+
+$img = display_image($row['aff_image']);
+
+$aff = <<<DELIMETER
+
+<div class="col-lg-3 mb-3 px-1">
+    <div class="card">
+        <img src="../../resources/{$img}" class="img-fluid aff-thumb" alt="">
+        <div class="card-body">
+            <h5 class="card-title">{$row['aff_name']}</h5>
+            <a href="../../public/admin/index.php?delete_aff&id={$row['aff_id']}&img={$row['aff_image']}" role="button" class="btn btn-danger">Elimina</a>
+        </div>
+    </div>
+</div>
+
+DELIMETER;
+
+echo $aff;
+    
+}    
+
+}
+
+// aggiunge link utile
+function add_link() {
+
+    if(isset($_POST['addLink'])) {
+
+        $nome = escape_string($_POST['nome']);
+        $link = escape_string($_POST['link']);
+
+        $query = query("INSERT INTO links(link_name, link_path) VALUES ('{$nome}', '{$link}') ");
+        confirm($query);
+
+        set_message("Link aggiunto correttamente", "alert-success");
+        redirect("../../public/admin/index.php?aff");
+
+    }
+    
+}
 
 ?>

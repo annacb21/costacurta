@@ -23,6 +23,9 @@
                 <a class="nav-link" href="../admin/index.php?articles"><i class="far fa-newspaper"></i>News</a>
             </li>
             <li class="nav-item pb-3">
+                <a class="nav-link" href="../admin/index.php?aff"><i class="fas fa-link"></i>Affiliazioni e link utili</a>
+            </li>
+            <li class="nav-item pb-3">
                 <a class="nav-link" href="../admin/index.php?account"><i class="fas fa-user-cog"></i>Impostazioni account</a>
             </li>
         </ul>
