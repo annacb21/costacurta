@@ -429,11 +429,11 @@ $quote = <<<DELIMETER
 
 <div class="carousel-item active" data-interval="15000">
     <div class='row bg-color align-items-center'>
-        <div class='col-lg-6 blockquote mb-0'>
+        <div class='col-lg-6 col-md-12 blockquote mb-0'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer">{$row['quote_author']}</p>
         </div>
-        <div class='col-lg-6 quote-image'>
+        <div class='col-lg-6 col-md-12 quote-image'>
             <img src="../resources/{$img}" alt="{$row['quote_img']}" class="float-right">
         </div>
     </div>
@@ -487,10 +487,10 @@ for($i = 0; $i < count($studi); $i++) {
 $s = <<<DELIMETER
 
 <div class="row align-items-center">
-    <div class="col-lg-1 px-0">
-        <i class="fas fa-map-marker-alt"></i>
+    <div class="col-lg-1 col-md-1 px-0">
+        <i class="fas fa-map-marker-alt footer-icon"></i>
     </div>
-    <div class="col-lg-11 px-0">
+    <div class="col-lg-11 col-md-10 px-0">
         <p class="font-weight-bold mb-0">{$studi[$i]['studio_name']}</p>
         <p>{$studi[$i]['studio_adress']}</p>
     </div>
@@ -511,7 +511,7 @@ $links = get_links();
 for($i = 0; $i < count($links); $i++) {
 $s = <<<DELIMETER
 
-<div class="py-3">
+<div class="py-3 contact-icon">
     <i class="fas fa-link"></i>
     <a href="{$links[$i]['link_path']}" target="_blank" class="dark-link">
         <p class="d-inline-block pl-4 mb-0 font-weight-bold">{$links[$i]['link_name']} :<span class="pl-3 font-weight-normal">{$links[$i]['link_path']}</span></p>
@@ -534,7 +534,7 @@ for($i = 0; $i < count($studi); $i++) {
 $s = <<<DELIMETER
 
 <div class="pb-3">
-    <i class="fas fa-map-marker-alt mr-4"></i>
+    <i class="fas fa-map-marker-alt"></i>
     <p class="font-weight-bold mb-1 d-inline-block">{$studi[$i]['studio_name']}</p>
     <div class="pl-5">
         <p class="mb-0">{$studi[$i]['studio_adress']}</p>
@@ -620,10 +620,10 @@ $servizi = <<<DELIMETER
 <div class="col-lg-4 pr-3 pl-0 pt-0 pb-3">
     <div class="card service-card shadow-sm">
         <div class="row align-items-center card-body">
-            <div class="col-lg-1 px-0">
+            <div class="col-lg-1 col-md-1 serv-col px-0">
                 <i class="fas fa-check profile-icon"></i>
             </div>
-            <div class="col-lg-11 px-0">
+            <div class="col-lg-11 col-md-11 px-0">
                 <p class="d-inline-block pl-4 mb-0 profile-list">{$row['servizio_name']}</p>
             </div>
         </div>
@@ -651,7 +651,7 @@ $img = display_image($row['aff_image']);
 
 $aff = <<<DELIMETER
 
-<div class="col-xl-4 col-lg-5 text-center">
+<div class="col-xl-4 col-lg-5 text-center aff-card">
     <a href="{$row['aff_link']}" target="_blank">
         <img src="../resources/{$img}" alt="{$row['aff_name']}" class="aff">
     </a>
@@ -753,7 +753,7 @@ else {
 $last_art = <<<DELIMETER
 
 <div class="card art-card mb-4 shadow {$row1['art_tag']}">
-    <div class="row no-gutters align-items-center">
+    <div class="row align-items-center">
         <div class="col-lg-7">
             <img src="../resources/{$img1}" class="card-img card-art-image" alt="{$row1['art_image']}">
         </div>
@@ -770,7 +770,7 @@ $last_art = <<<DELIMETER
                 </div>
                 <div class="mt-auto px-3 d-flex align-items-center justify-content-between">
                     <a role="button" href="{$row1['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
-                    <button class="btn rounded-pill art-tag">{$tag1}</button>
+                    <button class="btn rounded-pill art-tag art-tag-1">{$tag1}</button>
                 </div>
             </div>
         </div>
@@ -795,7 +795,7 @@ echo $container;
 }
 else {
 
-echo "No items found";
+echo "Nessun articolo presente";
 
 }
 
@@ -830,13 +830,13 @@ $art0 = <<<DELIMETER
 <div class="col-xl-3 col-lg-4 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
         <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
-        <div class="card-body px-4 py-4">
+        <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
             <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
             <div class="art-footer">
                 <a role="button" href="{$row['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
-                <button class="btn rounded-pill art-tag mt-3">{$tag}</button>
+                <button class="btn rounded-pill art-tag">{$tag}</button>
             </div>
         </div>
     </div>
@@ -869,14 +869,14 @@ else {
     
 $art0 = <<<DELIMETER
 
-<div class="col-lg-3 px-2">
+<div class="col-xl-3 col-lg-4 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
         <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
         <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
             <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
-            <div class="art-footer d-flex align-items-center justify-content-between">
+            <div class="art-footer">
                 <a role="button" href="{$row['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
                 <button class="btn rounded-pill art-tag">{$tag}</button>
             </div>

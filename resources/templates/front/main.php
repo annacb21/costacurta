@@ -17,11 +17,11 @@
 </div>
 
 <!-- QUALCOSA SU DI ME -->
-<div class="row my-5 py-5 align-items-center justify-content-around borderX">
-    <div class="col-xl-4 col-lg-3 px-0 text-center">
+<div class="row py-5 align-items-center justify-content-around borderX main-who">
+    <div class="col-xl-4 col-lg-4 col-md-12 px-0 text-center profile-col">
         <img src="../public/images/profile1.jpg" class="profile-img shadow" alt="foto Andrea Costacurta">
     </div>
-    <div class="col-xl-7 col-lg-8 px-0">
+    <div class="col-xl-8 col-lg-8 col-md-12 profile-md">
         <div class="text-uppercase pb-5">
             <h3 class="section-title pb-2 mb-0">Dott. Andrea Costacurta</h3>
             <div class="w-25 borderBottom"></div>
@@ -36,10 +36,10 @@
             Ha una riconosciuta e consolidata esperienza nella diagnosi e trattamento dei disturbi psichiatrici e caratteriali dell’età adulta.
         </p>
         <div class="row justify-content-between pt-3">
-            <div class="col-lg-5 px-0">
+            <div class="col-lg-6 col-md-4 px-0">
                 <a role="button" href="../public/index.php?chisono" class="btn btn-lg dark-btn">Approfondisci</a>
             </div>
-            <div class="col-lg-5 px-0">
+            <div class="col-lg-6 col-md-5 profile-btn-md">
                 <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn btn-lg light-btn float-right" target="_blank">Curriculum Vitae</a>
             </div>
         </div>
@@ -47,26 +47,26 @@
 </div>
 
 <!-- PERCORSO -->
-<div class="my-5 page bg-color">
+<div class="page bg-color main-per">
     <h3 class="text-uppercase section-title-light pb-4 pt-3 text-center">Professionalità - Interdisciplinarità - Empatia</h3>
     <div class="row py-4">
-        <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso1.svg" class="pb-5" alt="icona percorso 1">
+        <div class="col-lg-3 px-2 text-center perc">
+            <img src="../public/images/percorso1.svg" class="pb-5 perc-img" alt="icona percorso 1">
             <p class="percordo-title pb-3">Profilo diagnostico</p>
             <p>Anamnesi, storia personale, identificazione dei sintomi</p>
         </div>
-        <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso2.svg" class="pb-5" alt="icona percorso 2">
+        <div class="col-lg-3 px-2 text-center perc">
+            <img src="../public/images/percorso2.svg" class="pb-5 perc-img" alt="icona percorso 2">
             <p class="percordo-title pb-3">Miglior soluzione</p>
             <p>Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
         </div>
-        <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso3.svg" class="pb-5" alt="icona percorso 3">
+        <div class="col-lg-3 px-2 text-center perc">
+            <img src="../public/images/percorso3.svg" class="pb-5 perc-img" alt="icona percorso 3">
             <p class="percordo-title pb-3">Programma terapeutico</p>
             <p>Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
         </div>
-        <div class="col-lg-3 px-2 text-center">
-            <img src="../public/images/percorso4.svg" class="pb-5" alt="icona percorso 4">
+        <div class="col-lg-3 px-2 text-center perc">
+            <img src="../public/images/percorso4.svg" class="pb-5 perc-img" alt="icona percorso 4">
             <p class="percordo-title pb-3">Valutazione dell’esito</p>
             <p>Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
         </div>
@@ -80,18 +80,18 @@
         <div class="w-25 borderBottom"></div>
     </div>
     <div class="row pt-5 align-items-center">
-        <div class="col-lg-6 px-0">
+        <div class="col-lg-6 px-0 p1">
             <p class="dark-subtitle text-center pb-3">Tramite MioDottore</p>
         </div>
-        <div class="col-lg-6 px-0 borderLeft pb-0">
+        <div class="col-lg-6 px-0 borderLeft pb-0 p2">
             <p class="dark-subtitle text-center pb-3">Oppure contattami</p>
         </div>
-        <div class="col-lg-6 px-0">
+        <div class="col-lg-6 px-0 p3">
             <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
         </div>
-        <div class="col-lg-6 px-0 borderLeft">
+        <div class="col-lg-6 px-0 borderLeft p4">
             <?php display_message(); ?>
-            <form action="" method="POST" class="w-75 mx-auto needs-validation" novalidate>
+            <form action="" method="POST" class="contact-form needs-validation" novalidate>
                 <?php send_email('home'); ?>
                 <div class="mb-3">
                     <input type="text" name="name" placeholder="Nome" class="form-control" id="name" required>

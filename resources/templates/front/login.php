@@ -1,7 +1,7 @@
 <div class="page my-5">
     <h1 class="section-title text-uppercase text-center mb-5">Accesso amministratore</h1>
     <?php display_message(); ?>
-    <div class="mx-auto my-auto w-50">
+    <div class="mx-auto my-auto login">
         <form action="" method="POST" class="needs-validation" novalidate>
             <?php login(); ?>
             <div class="mb-3">

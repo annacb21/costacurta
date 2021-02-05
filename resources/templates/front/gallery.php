@@ -102,6 +102,14 @@ new Glide('.glide', {
   perView: 3,
   focusAt: 'center',
   gap: 100,
+  breakpoints: {
+    992: {
+      perView: 2
+    },
+    500: {
+      perView: 1
+    }
+  }
 }).mount()
 
 new Glide('.glide4', {
@@ -110,6 +118,14 @@ new Glide('.glide4', {
   perView: 3,
   focusAt: 'center',
   gap: 100,
+  breakpoints: {
+    992: {
+      perView: 2
+    },
+    500: {
+      perView: 1
+    }
+  }
 }).mount()
 
 new Glide('.glide5', {
@@ -118,6 +134,14 @@ new Glide('.glide5', {
   perView: 3,
   focusAt: 'center',
   gap: 100,
+  breakpoints: {
+    992: {
+      perView: 2
+    },
+    500: {
+      perView: 1
+    }
+  }
 }).mount()
 
 new Glide('.glide2', {
@@ -126,6 +150,14 @@ new Glide('.glide2', {
   perView: 3,
   focusAt: 'center',
   gap: 100,
+  breakpoints: {
+    992: {
+      perView: 2
+    },
+    500: {
+      perView: 1
+    }
+  }
 }).mount()
 
 new Glide('.glide3', {
@@ -134,6 +166,14 @@ new Glide('.glide3', {
   perView: 3,
   focusAt: 'center',
   gap: 100,
+  breakpoints: {
+    992: {
+      perView: 2
+    },
+    500: {
+      perView: 1
+    }
+  }
 }).mount()
 
 </script>

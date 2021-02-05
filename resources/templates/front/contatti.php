@@ -71,8 +71,8 @@
         </div>
     </div>
 
-    <div class="row borderTopLarge align-items-center">
-        <div class="col-xl-8 col-lg-7 px-0 pt-5 borderRight">
+    <div class="row borderTopLarge align-items-center justify-content-between">
+        <div class="col-xl-8 col-lg-6 px-0 pt-5 borderRight">
             <p class="contact-title pb-1">Link utili</p>
             <?php link_utili(); ?>
         </div>

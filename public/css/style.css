@@ -43,11 +43,6 @@ body {
     line-height: 2.3;
 }
 
-/* altezza minima per evitare problemi con il footer*/
-.main {
-    min-height: 852px;
-}
-
 .row {
     margin: 0 !important;
 }
@@ -226,11 +221,30 @@ body {
     line-height: 2.5;
 }
 
+.profile-md {
+    padding-right: 3em !important;
+    padding-left: 0 !important;
+}
+
+.profile-btn-md {
+    padding-right: 1.2em !important;
+}
+
+.main-who {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
 /* PERCORSO */
 
 .percordo-title {
     font-weight: 600;
     font-size: 1.3rem;
+}
+
+.main-per {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
 }
 
 /* PRENOTAZIONI */
@@ -239,6 +253,11 @@ body {
     color: #0F3057;
     font-weight: 600;
     font-size: 1.5rem;
+}
+
+.contact-form {
+    margin: 0 auto !important;
+    padding-left: 10% !important;
 }
 
 /* FOOTER */
@@ -253,8 +272,6 @@ body {
 }
 
 .login-btn, .login-btn:hover, .login-btn:active {
-    position: absolute;
-    right: 0;
     background-color: transparent;
     border: none;
     color: transparent;
@@ -267,6 +284,10 @@ footer .fas {
 .footer-title {
     font-size: 1.2rem !important;
     font-weight: 600;
+}
+
+.privacy {
+    display: flex !important;
 }
 
 .privacy, .privacy a {
@@ -353,6 +374,13 @@ footer .fas {
 
 .area {
     margin-top: 5rem !important;
+    padding-top: 1.5rem !important;
+    padding-right: 3rem !important;
+}
+
+.padding-area {
+    padding-right: 0 !important;
+    padding-left: 3rem !important;
 }
 
 /* GALLERY */
@@ -431,6 +459,10 @@ footer .fas {
     height: 45em !important;
 }
 
+.fixed-card .card-body {
+    padding: 1.5rem !important;
+}
+
 .art-footer {
     position: absolute;
     bottom: 1.5em;
@@ -466,6 +498,11 @@ footer .fas {
     color: #81B214 !important;
     border: solid 1px #81B214 !important;
     font-size: 0.8em !important;
+    margin-top: 1.5em !important;
+}
+
+.art-card .row .col-lg-5,.art-card .row .col-lg-7 {
+    padding: 0 !important;
 }
 
 /* CONTATTI */
@@ -483,6 +520,20 @@ footer .fas {
 
 .dark-link {
     color: #000 !important;
+}
+
+#contatti .fa-map-marker-alt {
+    margin-right: 1rem !important;
+}
+
+#contatti .contact-icon {
+    display: flex !important;
+}
+
+/* LOGIN */
+
+.login {
+    width: 60% !important;
 }
 
 /* ADMIN */
@@ -532,6 +583,21 @@ footer .fas {
 
 /* MEDIA QUERIES */
 
+/* large screen */
+@media (min-width: 1550px) {
+
+    .art-footer {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .art-tag {
+        margin: 0 !important;
+    }
+
+}
+
 /* tablet */
 @media (max-width: 1199.98px) {
 
@@ -541,6 +607,22 @@ footer .fas {
 
     .profile-img {
         height: 20rem !important;
+    }
+
+    .profile-desc{
+        line-height: 1.9;
+    }
+
+    .profile-md {
+        padding: 0 !important;
+    }
+
+    .profile-btn-md {
+        padding-right: 0 !important;
+    }
+
+    .perc-img {
+        width: 65% !important;
     }
 
     .logo-footer {
@@ -572,13 +654,14 @@ footer .fas {
     }
 
     .glide2 .glide__slide img {
-        width: 30em !important;
-        height: 30em !important;
+        width: auto !important;
+        height: 20em !important;
         object-fit: cover;
     }
 
     .glide3 iframe {
-        width: 250px !important;
+        width: 17em !important;
+        height: 10em !important;
     }
 
     .quote-image img{
@@ -588,6 +671,304 @@ footer .fas {
 
     .card-art {
         padding: 0 2rem !important;
+    }
+
+    .blockquote {
+        font-size: 1rem!important;
+        padding-right: 5% !important;
+    }
+
+    .art-tag-1 {
+        margin: 0 !important;
+    }
+
+    .dark-link p span{
+        font-size: 0.8rem !important;
+    }
+
+    .login {
+        width: 80% !important;
+    }
+
+}
+
+/* small tablet */
+@media (max-width: 991.98px) {
+
+    .blockquote {
+        padding: 1.5em 2em !important;
+        text-align: center !important;
+    }
+
+    .quote-image {
+        padding: 0 !important;
+        text-align: center !important;
+    }
+
+    .quote-image img {
+        float: none !important;
+        padding: 0 3em 2em 3em !important;
+        width: 60% !important;
+        height: 20em !important;
+    }
+
+    .profile-col {
+        display: none !important;
+    }
+
+    .perc-img {
+        width: 30% !important;
+    }
+
+    .perc {
+        padding: 2em 1em !important;
+    }
+
+    .p1 {
+        order: 0 !important;
+    }
+
+    .p2 {
+        order: 2 !important;
+    }
+
+    .borderLeft {
+        border: none !important;
+    }
+
+    .p3 {
+        order: 1 !important;
+    }
+
+    .p4 {
+        order: 3 !important;
+    }
+
+    .logo-footer {
+        width: 25em !important;
+    }
+
+    .page-title {
+        width: 90% !important;
+    }
+
+    .pro-foto-md {
+        order: 1 !important;
+        text-align: center !important;
+        padding: 1.5em 0 !important;
+    }
+
+    .profile {
+        padding: 0 !important;
+    }
+
+    .service-card {
+        height: auto !important;
+    }
+
+    .aff-card {
+        padding: 2em 0 !important;
+    }
+
+    .piramide {
+        background-image: none !important;
+        margin: 0 !important;
+    }
+
+    .area {
+        margin-top: 2rem !important;
+        padding: 2em 1em 0 1em !important;
+    }
+    
+    .padding-area {
+        padding: 2em 1em 0 1em !important;
+    }
+
+    .glide__arrow--left {
+        left: 15% !important;
+    }
+    
+    .glide__arrow--right {
+        right: 15% !important;
+    }
+
+    .glide3 iframe {
+        width: 20em !important;
+        height: 12em !important;
+    }
+
+    .art-card .row .col-lg-5 {
+        padding: 2em 0 !important;
+    }
+
+    .fixed-card {
+        height: auto !important;
+    }
+
+    .fixed-card .card-body {
+        padding: 2em 3em !important;
+    }
+
+    .art-footer {
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .art-tag {
+        margin: 0 !important;
+    }
+
+    .borderLeftSmall {
+        border: none !important;
+    }
+
+    #contatto {
+        padding-left: 0 !important;
+        margin-top: 3rem !important;
+    }
+
+    .borderRight {
+        border: none !important;
+    }
+
+    .dark-link p span{
+        font-size: 0.8rem !important;
+    }
+
+    .contact-form {
+        padding: 0 !important;
+    }
+
+    .login {
+        width: 100% !important;
+    }
+
+}
+
+/* mobile */
+@media (max-width: 576px) {
+
+    .logo {
+        width: 17rem !important;
+    }
+
+    .blockquote {
+        order: 1 !important;
+    }
+
+    .quote-image img {
+        width: 100% !important;
+        object-fit: cover;
+        padding: 0 !important;
+    }
+
+    .main-who {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .profile-col {
+        display: block !important;
+        order: 1 !important;
+    }
+
+    .profile-btn-md {
+        padding: 1.5em 0 !important;
+    }
+
+    .profile-btn-md a, .dark-btn {
+        float: none !important;
+        width: 100% !important;
+    }
+
+    .profile-img {
+        width: 100% !important;
+        object-fit: cover;
+    }
+
+    .main-per {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .perc-img {
+        width: 50% !important;
+    }
+
+    .logo-footer {
+        width: 17rem !important;
+    }
+
+    .footer-icon {
+        display: none !important;
+    }
+
+    .privacy {
+        display: block !important;
+    }
+
+    .profile-card {
+        padding: 1.5rem !important;
+    }
+
+    .profile-icon {
+        font-size: 1em !important;
+    }
+
+    .profile-card .py-3 {
+        display: flex !important;
+    }
+
+    .profile-img2 {
+        width: 100% !important;
+        object-fit: cover;
+    }
+
+    .profile {
+        padding-top: 2rem !important;
+    }
+
+    .serv-col {
+        display: none !important;
+    }
+
+    #pubblicazioni {
+        padding: 2rem !important;
+    }
+
+    .glide__arrow--left {
+        left: 2% !important;
+    }
+    
+    .glide__arrow--right {
+        right: 2% !important;
+    }
+
+    .glide2 .glide__slide img {
+        height: 30em !important;
+    }
+
+    .filter {
+        padding: 0.3rem 1.5rem !important;
+        margin-right: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .art-footer {
+        display: block !important;
+    }
+
+    .art-tag {
+        margin-top: 2rem !important;
+    }
+
+    .art-tag-1 {
+        margin-top: 0 !important;
     }
 
 }
