@@ -31,7 +31,7 @@
             – Psichiatra e Psicoterapeuta, Psicoanalista -
         </p>
         <p class="text-justify profile-desc">
-            Libero professionista, già dirigente presso Dipartimento di Salute Mentale.<br />
+            Libero professionista, già Dirigente presso Dipartimento di Salute Mentale.<br />
             Consulente Tecnico in ambito forense, già Direttore e Responsabile Clinico di Comunità.<br />
             Ha una riconosciuta e consolidata esperienza nella diagnosi e trattamento dei disturbi psichiatrici e caratteriali dell’età adulta.
         </p>
