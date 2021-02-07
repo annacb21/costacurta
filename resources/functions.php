@@ -766,7 +766,7 @@ $last_art = <<<DELIMETER
                     <h4 class="art-title pb-2">{$row1['art_title']}</h4>
                 </div>
                 <div class="px-3 pb-1">
-                    <p class="art-note text-justify pb-4">di {$row1['art_note']}</p>
+                    <p class="art-note text-justify pb-4">{$row1['art_note']}</p>
                 </div>
                 <div class="mt-auto px-3 d-flex align-items-center justify-content-between">
                     <a role="button" href="{$row1['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
@@ -833,7 +833,7 @@ $art0 = <<<DELIMETER
         <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
-            <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
+            <p class="art-note text-justify pb-4">{$row['art_note']}</p>
             <div class="art-footer">
                 <a role="button" href="{$row['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
                 <button class="btn rounded-pill art-tag">{$tag}</button>
@@ -875,7 +875,7 @@ $art0 = <<<DELIMETER
         <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
-            <p class="art-note text-justify pb-4">di {$row['art_note']}</p>
+            <p class="art-note text-justify pb-4">{$row['art_note']}</p>
             <div class="art-footer">
                 <a role="button" href="{$row['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
                 <button class="btn rounded-pill art-tag">{$tag}</button>
