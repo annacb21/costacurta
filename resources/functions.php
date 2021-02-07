@@ -793,11 +793,6 @@ echo $container;
 
 }
 }
-else {
-
-echo "Nessun articolo presente";
-
-}
 
 }
 
@@ -810,6 +805,11 @@ if($filter == '0') {
 
 $query0 = query("SELECT * FROM articoli WHERE art_id NOT IN (SELECT MAX(art_id) FROM articoli ORDER BY art_id DESC) ORDER BY art_id DESC");
 confirm($query0);
+
+if(mysqli_num_rows($query0)==0) {
+    $arts .= "<p>Nessuna news disponibile in questo momento ...</p>";
+}
+else {
 
 while($row = fetch_array($query0)) {
 
@@ -846,12 +846,18 @@ DELIMETER;
 
 $arts .= $art0;
 }
+}
 $arts .= "</div>";
 }
 else {
 
 $query = query("SELECT * FROM articoli WHERE art_tag = $filter ORDER BY art_data DESC");
 confirm($query);
+
+if(mysqli_num_rows($query)==0) {
+    $arts .= "<p class='h5'>Nessuna news disponibile in questo momento ...</p>";
+}
+else {
 
 while($row = fetch_array($query)) {
 
@@ -887,7 +893,7 @@ $art0 = <<<DELIMETER
 DELIMETER;
 
 $arts .= $art0;
-
+}
 }
 $arts .= "</div>";
 }
