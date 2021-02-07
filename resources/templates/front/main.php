@@ -53,22 +53,22 @@
         <div class="col-lg-3 px-2 text-center perc">
             <img src="../public/images/percorso1.svg" class="pb-5 perc-img" alt="icona percorso 1">
             <p class="percordo-title pb-3">Profilo diagnostico</p>
-            <p>Anamnesi, storia personale, identificazione dei sintomi</p>
+            <p class="percorso-desc">Anamnesi, storia personale, identificazione dei sintomi</p>
         </div>
         <div class="col-lg-3 px-2 text-center perc">
             <img src="../public/images/percorso2.svg" class="pb-5 perc-img" alt="icona percorso 2">
             <p class="percordo-title pb-3">Miglior soluzione</p>
-            <p>Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
+            <p class="percorso-desc">Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
         </div>
         <div class="col-lg-3 px-2 text-center perc">
             <img src="../public/images/percorso3.svg" class="pb-5 perc-img" alt="icona percorso 3">
             <p class="percordo-title pb-3">Programma terapeutico</p>
-            <p>Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
+            <p class="percorso-desc">Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
         </div>
         <div class="col-lg-3 px-2 text-center perc">
             <img src="../public/images/percorso4.svg" class="pb-5 perc-img" alt="icona percorso 4">
             <p class="percordo-title pb-3">Valutazione dell’esito</p>
-            <p>Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
+            <p class="percorso-desc">Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
         </div>
     </div>
 </div>
