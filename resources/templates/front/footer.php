@@ -3,7 +3,7 @@
 <footer class="bg-color page">
 
     <div class="row py-4 justify-content-around">
-        <div class="col-lg-4">
+        <div class="col-lg-4 pt-1">
             <a href="../public/index.php" class="d-inline-block">
                 <img src="../public/images/logo2.svg" alt="logo" class="d-inline-block align-top logo-footer pb-5">
             </a>
