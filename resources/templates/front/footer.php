@@ -22,7 +22,7 @@
             <?php footer_study(); ?>
         </div>
     </div>
-    <p class="privacy text-center pt-3 align-items-center justify-content-center"><a href="../public/index.php">www.andreacostacurta.it</a> © 2021 - P.IVA 03207300249 - <a href="https://www.iubenda.com/privacy-policy/56078482" class="iubenda-white iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script></p>
+    <p class="privacy text-center pt-3 align-items-center justify-content-center"><a href="http://www.andreacostacurta.it">www.andreacostacurta.it</a> © 2021 - P.IVA 04070420288 - <a href="https://www.iubenda.com/privacy-policy/56078482" class="iubenda-white iubenda-embed" title="Privacy Policy ">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script></p>
     <div class="text-left">
         <a role="button" class="login-btn" href="../public/index.php?login">Login</a>
     </div>
