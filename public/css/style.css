@@ -509,6 +509,10 @@ footer .fas {
     padding: 0 !important;
 }
 
+.card-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
 /* CONTATTI */
 
 .contact-title {

@@ -775,6 +775,8 @@ echo $container;
 // mostra gli articoli in lista
 function get_articles_list($filter) {
 
+$currYear = date("Y");
+
 $arts = "<div class='row mt-4'>";
 
 if($filter == '0') {
@@ -791,6 +793,7 @@ while($row = fetch_array($query0)) {
 
 $img = display_image($row['art_image']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
+
 if($row['art_tag'] == '1') {
     $tag = "News";
 }
@@ -800,7 +803,7 @@ elseif($row['art_tag'] == '2') {
 else {
     $tag = "Libro";
 }
-    
+  
 $art0 = <<<DELIMETER
 
 <div class="col-xl-3 col-lg-4 px-2">
@@ -839,6 +842,9 @@ while($row = fetch_array($query)) {
 
 $img = display_image($row['art_image']);
 $data = preg_replace('/^(.{4})-(.{2})-(.{2})$/','$3-$2-$1', $row['art_data']);
+$date = DateTime::createFromFormat("Y-m-d", $row['art_data']);
+$year = $date->format("Y");
+
 if($row['art_tag'] == '1') {
     $tag = "News";
 }
@@ -848,6 +854,31 @@ elseif($row['art_tag'] == '2') {
 else {
     $tag = "Libro";
 }
+
+if($year < $currYear && $row['art_tag'] == '2') {
+
+$art0 = <<<DELIMETER
+
+<div class="col-xl-3 col-lg-4 px-2">
+<div class="card art-card fixed-card mb-4 shadow {$row['art_tag']} card-overlay">
+    <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+    <div class="card-body">
+        <p class="art-data">Pubblicato il {$data}</p>
+        <h4 class="art-title pb-2">{$row['art_title']}</h4>
+        <p class="art-note text-justify pb-4">{$row['art_note']}</p>
+        <p class="text-white h5">Evento scaduto</p>
+        <div class="art-footer">
+            <a role="button" href="{$row['art_link']}" class="btn dark-btn" target="_blank">Approfondisci</a>
+            <button class="btn rounded-pill art-tag">{$tag}</button>
+        </div>
+    </div>
+</div>
+</div>
+
+DELIMETER;
+
+}
+else {
     
 $art0 = <<<DELIMETER
 
@@ -867,7 +898,7 @@ $art0 = <<<DELIMETER
 </div>
 
 DELIMETER;
-
+}
 $arts .= $art0;
 }
 }
