@@ -534,6 +534,38 @@ footer .fas {
     display: flex !important;
 }
 
+.studio-popover .indicazioni {
+    position: absolute !important;
+    right: 0;
+    left: 40%;
+    padding: 1rem 2rem !important;
+    margin-right: 1rem !important;
+    visibility: hidden;
+    opacity: 0 !important;
+    transition: 0.5s;
+    transform: translateX(60%) translateY(-20%);
+    border: none !important;
+    background-color: #81B214;
+    color: #fff;
+}
+
+.indicazioni:before {
+    content: '';
+    position: absolute !important;
+    width: 30px !important;
+    height: 30px !important;
+    transform: rotate(45deg);
+    left: -3%;
+    top: 40%;
+    background-color: #81B214;
+}
+
+.studio-popover:hover .indicazioni {
+    visibility: visible;
+    opacity: 1 !important;
+    transform: translateX(0) translateY(-20%);
+}
+
 /* LOGIN */
 
 .login {
@@ -586,6 +618,13 @@ footer .fas {
 }
 
 /* MEDIA QUERIES */
+
+/* extra large screen */
+@media (min-width: 1750px) {
+    .indicazioni:before {
+        left: -1%;
+    }
+}
 
 /* large screen */
 @media (min-width: 1550px) {
@@ -693,6 +732,23 @@ footer .fas {
     .login {
         width: 80% !important;
     }
+
+    .studio-popover .indicazioni {
+        top: 20% !important;
+        transform: translateX(0) translateY(-50%);
+        left: 0 !important;
+    }
+    
+    .indicazioni:before {
+        left: 46% !important;
+        top: auto !important;
+        bottom: -10%;
+    }
+    
+    .studio-popover:hover .indicazioni {
+        transform: translateX(0) translateY(0);
+    }
+    
 
 }
 
@@ -852,6 +908,24 @@ footer .fas {
         width: 100% !important;
     }
 
+    .studio-popover .indicazioni {
+        top: auto !important;
+        left: 40% !important;
+        right: 0 !important;
+        transform: translateX(60%) translateY(-20%);
+    }
+    
+    .indicazioni:before {
+        left: -3% !important;
+        top: 40% !important;
+        bottom: auto !important;
+    }
+    
+    .studio-popover:hover .indicazioni {
+        transform: translateX(0) translateY(-20%);
+    }
+    
+
 }
 
 /* mobile */
@@ -973,6 +1047,23 @@ footer .fas {
 
     .art-tag-1 {
         margin-top: 0 !important;
+    }
+
+    .studio-popover .indicazioni {
+        top: 15% !important;
+        transform: translateX(0) translateY(-50%);
+        left: 0 !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .indicazioni:before {
+        left: 46% !important;
+        top: auto !important;
+        bottom: -5% !important;
+    }
+    
+    .studio-popover:hover .indicazioni {
+        transform: translateX(0) translateY(0);
     }
 
 }

@@ -525,30 +525,6 @@ echo $s;
 
 }
 
-// mostra gli studi nel footer
-function contact_study() {
-
-$studi = get_studi();
-
-for($i = 0; $i < count($studi); $i++) {
-$s = <<<DELIMETER
-
-<div class="pb-3">
-    <i class="fas fa-map-marker-alt"></i>
-    <p class="font-weight-bold mb-1 d-inline-block">{$studi[$i]['studio_name']}</p>
-    <div class="pl-5">
-        <p class="mb-0">{$studi[$i]['studio_adress']}</p>
-        <p class="mb-0">Tel: {$studi[$i]['studio_phone']}</p>
-    </div>
-</div>
-
-DELIMETER;
-
-echo $s;
-}
-
-}
-
 // ritorna la slide (foto) corrente
 function get_page_quote($page) {
 

@@ -24,7 +24,34 @@
                     <i class="fas fa-phone"></i><p class="d-inline-block pl-4 mb-0"><?php echo $contatti[1]['cont_value']; ?></p>
                 </div>
                 <p class="contact-title pb-4 pt-5">Gli studi</p>
-                <?php contact_study(); ?>
+                <div class="pb-4 d-flex studio-popover">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="pl-3">
+                        <p class="font-weight-bold mb-1"><?php echo $studi[0]['studio_name']; ?></p>
+                        <p class="mb-0"><?php echo $studi[0]['studio_adress']; ?></p>
+                        <p class="mb-0">Tel: <?php echo $studi[0]['studio_phone']; ?></p>
+                    </div>
+                    <div class="indicazioni card">
+                        <p class="font-weight-bold mb-1">Indicazioni</p>
+                        <p class="mb-0">Piano 4°. Palazzo bianco e verde al lato destro della Fornace Carotta, civico di fronte ad una pizzeria per asporto. Campanello numero 15.</p>
+                    </div>
+                </div>
+                <div class="pb-4 d-flex">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="pl-3">
+                        <p class="font-weight-bold mb-1"><?php echo $studi[1]['studio_name']; ?></p>
+                        <p class="mb-0"><?php echo $studi[1]['studio_adress']; ?></p>
+                        <p class="mb-0">Tel: <?php echo $studi[1]['studio_phone']; ?></p>
+                    </div>
+                </div>
+                <div class="pb-4 d-flex">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="pl-3">
+                        <p class="font-weight-bold mb-1"><?php echo $studi[2]['studio_name']; ?></p>
+                        <p class="mb-0"><?php echo $studi[2]['studio_adress']; ?></p>
+                        <p class="mb-0">Tel: <?php echo $studi[2]['studio_phone']; ?></p>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6 pl-5 borderLeftSmall" id="contatto">
                 <p class="contact-title pb-1">Invia una email</p>
@@ -84,5 +111,10 @@
 
 </div>
 
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();   
+    });
+</script>
 <script src="../public/js/validate.js"></script>
 <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>

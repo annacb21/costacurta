@@ -14,10 +14,10 @@ function cardUp1() {
 
 function cardHover2() {
     document.getElementById("psicofarma").style.boxShadow = "0px 15px 26px rgba(0, 0, 0, 0.50)";
-    document.getElementById("psicofarma").style.borderColor = "#ff884b";
+    document.getElementById("psicofarma").style.borderColor = "#FFA41B";
     document.getElementById("psicofarma").style.borderStyle = "solid";
     document.getElementById("psicofarma").style.borderWidth = "3px";
-    document.getElementById("psicofarmaTitle").style.color = "#ff884b";
+    document.getElementById("psicofarmaTitle").style.color = "#FFA41B";
 }
 
 function cardUp2() {
@@ -28,10 +28,10 @@ function cardUp2() {
 
 function cardHover3() {
     document.getElementById("psicoterapia").style.boxShadow = "0px 15px 26px rgba(0, 0, 0, 0.50)";
-    document.getElementById("psicoterapia").style.borderColor = "#e05297";
+    document.getElementById("psicoterapia").style.borderColor = "#e44985";
     document.getElementById("psicoterapia").style.borderStyle = "solid";
     document.getElementById("psicoterapia").style.borderWidth = "3px";
-    document.getElementById("psicoterapiaTitle").style.color = "#e05297";
+    document.getElementById("psicoterapiaTitle").style.color = "#e44985";
 }
 
 function cardUp3() {
