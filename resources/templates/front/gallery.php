@@ -12,7 +12,7 @@
     <p class="section-title text-uppercase text-center">Gli studi ...</p>
     <!-- padova -->
     <div class="studio-title mb-5">
-        <p class="dark-subtitle pt-4 mb-1 text-left">Studio Carollo a Padova</p>
+        <p class="dark-subtitle pt-4 mb-1 text-left">Studio di Padova</p>
         <div class="studioBorder"></div>
     </div>
     <div class="glide mt-2 mb-3">
