@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-lg-6">
 
-                    <img class="mt-4" width="200" src="../../resources/<?php echo display_image($profile['pro_foto']); ?>" alt="">
+                    <img class="mt-4" width="200" src="../resources/<?php echo display_image($profile['pro_foto']); ?>" alt="">
 
                     <div class="form-group my-3">
                         <input type="file" class="form-control-file" id="foto" name="foto">
@@ -42,6 +42,6 @@
     </div>
 </div>
 
-<a class="btn btn-dark btn-lg my-5 ml-3" href="../../public/admin/index.php?profile" role="button">Indietro</a>
+<a class="btn btn-dark btn-lg my-5 ml-3" href="../admin/index.php?profile" role="button">Indietro</a>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

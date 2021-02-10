@@ -5,10 +5,10 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item text-nowrap px-3">
-                <a class="nav-link" href="../../public/index.php">Home</a>
+                <a class="nav-link" href="../index.php">Home</a>
             </li>
             <li class="nav-item text-nowrap px-3">
-                <a class="nav-link" href="../../public/admin/index.php?logout">Logout</a>
+                <a class="nav-link" href="../admin/index.php?logout">Logout</a>
             </li>
         </ul>
     </div>

@@ -57,4 +57,4 @@
     <?php get_art_thumb(); ?>
 </div>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

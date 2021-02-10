@@ -6,7 +6,7 @@
         confirm($query);
 
         set_message("Video eliminato con successo", "alert-success");
-        redirect("../../public/admin/index.php?video");
+        redirect("../admin/index.php?video");
 
     }
 

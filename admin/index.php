@@ -1,8 +1,8 @@
-<?php require_once("../../resources/config.php"); ?>
+<?php require_once("../resources/config.php"); ?>
 <?php
 
     if(!isset($_SESSION['user'])) {
-        redirect("../../public/index.php");
+        redirect("../index.php");
     }
 
 ?>

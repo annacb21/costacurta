@@ -308,7 +308,7 @@ function get_links() {
 // mostra il contenuto del body della pagina dinamicamente
 function show_main_content() {
 
-    if($_SERVER['REQUEST_URI'] == "/costacurta/public/" || $_SERVER['REQUEST_URI'] == "/costacurta/public/index.php" ) {
+    if($_SERVER['REQUEST_URI'] == "/costacurta/" || $_SERVER['REQUEST_URI'] == "/costacurta/index.php" ) {
         include(TEMPLATE_FRONT . "/main.php");
     }
 
@@ -345,7 +345,9 @@ function show_main_content() {
 // manda una email dal form della pagina dei contatti
 function send_email($page) {
 
-    require '../vendor/autoload.php';
+    date_default_timezone_set('Etc/UTC');
+
+    require 'vendor/autoload.php';
 
     if(isset($_POST['sendEmail'])) {
 
@@ -354,23 +356,15 @@ function send_email($page) {
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $message = $_POST['message'];
-        $toEmail = "annacb21@gmail.com"; /* costacurta.andrea@gmail.com */
+        $toEmail = "annacb21@gmail.com"; 
 
         $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-        $mail->Host = 'smtp.mailtrap.io'; /* smtp.gmail.com */
-        $mail->Port = 2525; /* 587 */
-        $mail->SMTPAuth = true;
-        $mail->Username = '7118daa26bcca3'; /* $toEmail */
-        $mail->Password = 'd35b5a76b761b8'; /* costacurta psw */
-        $mail->SMTPSecure = 'tls'; /* PHPMailer::ENCRYPTION_STARTTLS */
 
         $mail->setFrom($email, $name . " " . $cognome);
-        $mail->addAddress('annacb21@gmail.com', 'Anna'); /* costacurta.andrea@gmail.com */
-        $mail->Subject = 'Messaggio da ' . $name . " " . $cognome . ' recapito: ' . $phone;
-        $mail->isHTML(true);
-        $mail->Body = $message;
+        $mail->addAddress($toEmail, 'Andrea Costacurta'); 
+        $mail->Subject = 'Messaggio da ' . $name . " " . $cognome;
+        $mail->Body = "Recapito telefonico: " . $phone . "\n";
+        $mail->Body .= $message;
 
         if($mail->send()) {
             set_message("La tua email è stata inviata con successo", "alert-success");
@@ -380,10 +374,10 @@ function send_email($page) {
         }
 
         if($page == 'home') {
-            redirect("../public/index.php#prenotazioni");
+            redirect("index.php#prenotazioni");
         }
         elseif($page == 'contatti') {
-            redirect("../public/index.php?contatti#contatto");
+            redirect("index.php?contatti#contatto");
         }
     }
 
@@ -404,7 +398,7 @@ function login() {
 
         if(mysqli_num_rows($query) == 0 || password_verify($psw, $row['password']) === false) {
             set_message("La tua password o il tuo username sono sbagliati", "alert-danger");
-            redirect("../public/index.php?login");
+            redirect("index.php?login");
         }
         else {
             $_SESSION['user'] = $row['user_id'];
@@ -427,14 +421,14 @@ $img = display_image($row['quote_img']);
 
 $quote = <<<DELIMETER
 
-<div class="carousel-item active" data-interval="15000">
+<div class="carousel-item active" data-interval="8000">
     <div class='row bg-color align-items-center'>
         <div class='col-lg-6 col-md-12 blockquote mb-0'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer">{$row['quote_author']}</p>
         </div>
         <div class='col-lg-6 col-md-12 quote-image'>
-            <img src="../resources/{$img}" alt="{$row['quote_img']}" class="float-right">
+            <img src="resources/{$img}" alt="{$row['quote_img']}" class="float-right">
         </div>
     </div>
 </div>
@@ -458,14 +452,14 @@ $img = display_image($row['quote_img']);
 
 $quote = <<<DELIMETER
 
-<div class="carousel-item" data-interval="15000">
+<div class="carousel-item" data-interval="8000">
     <div class='row bg-color align-items-center'>
         <div class='col-lg-6 blockquote mb-0'>
             <p class="quote">{$row['quote_text']}</p>
             <p class="blockquote-footer">{$row['quote_author']}</p>
         </div>
         <div class='col-lg-6 quote-image'>
-            <img src="../resources/{$img}" alt="{$row['quote_img']}" class="float-right">
+            <img src="resources/{$img}" alt="{$row['quote_img']}" class="float-right">
         </div>
     </div>
 </div>
@@ -537,7 +531,7 @@ $img = display_image($row['quote_img']);
 
 $quote = <<<DELIMETER
 
-<div class="position-relative">
+<div class="position-relative animate__animated animate__fadeIn">
     <div class="position-relative w-100 overflow-hidden">
         <div class="position-relative float-left w-100">
         <div class='row bg-color align-items-center'>
@@ -546,7 +540,7 @@ $quote = <<<DELIMETER
                     <p class="blockquote-footer">{$row['quote_author']}</p>
                 </div>
                 <div class='col-lg-6 quote-image'>
-                    <img src="../resources/{$img}" alt="{$row['quote_img']}" class="float-right">
+                    <img src="resources/{$img}" alt="{$row['quote_img']}" class="float-right">
                 </div>
             </div>
         </div>
@@ -629,7 +623,7 @@ $aff = <<<DELIMETER
 
 <div class="col-xl-4 col-lg-5 text-center aff-card">
     <a href="{$row['aff_link']}" target="_blank">
-        <img src="../resources/{$img}" alt="{$row['aff_name']}" class="aff">
+        <img src="resources/{$img}" alt="{$row['aff_name']}" class="aff">
     </a>
 </div>
 
@@ -656,7 +650,7 @@ $img = display_image($row['foto_image']);
 $foto = <<<DELIMETER
 
 <li class="glide__slide">
-    <a href="../resources/{$img}" target="_blank"><img src="../resources/{$img}" alt="" class="img-fluid shadow"></a>
+    <a href="resources/{$img}" target="_blank"><img src="resources/{$img}" alt="" class="img-fluid shadow"></a>
 </li>
 
 DELIMETER;
@@ -731,7 +725,7 @@ $last_art = <<<DELIMETER
 <div class="card art-card mb-4 shadow {$row1['art_tag']}">
     <div class="row align-items-center">
         <div class="col-lg-7">
-            <img src="../resources/{$img1}" class="card-img card-art-image" alt="{$row1['art_image']}">
+            <img src="resources/{$img1}" class="card-img card-art-image" alt="{$row1['art_image']}">
         </div>
         <div class="col-lg-5">
             <div class="card-art align-items-end flex-column">
@@ -808,7 +802,7 @@ $art0 = <<<DELIMETER
 
 <div class="col-xl-3 col-lg-4 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
-        <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+        <img src="resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
         <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
@@ -861,7 +855,7 @@ $art0 = <<<DELIMETER
 
 <div class="col-xl-3 col-lg-4 px-2">
 <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']} card-overlay">
-    <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+    <img src="resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
     <div class="card-body">
         <p class="art-data">Pubblicato il {$data}</p>
         <h4 class="art-title pb-2">{$row['art_title']}</h4>
@@ -884,7 +878,7 @@ $art0 = <<<DELIMETER
 
 <div class="col-xl-3 col-lg-4 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
-        <img src="../resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+        <img src="resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
         <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>
@@ -915,7 +909,7 @@ return $arts;
 // mostra il contenuto del body della pagina dinamicamente
 function show_admin_content() {
 
-    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin/" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
+    if($_SERVER['REQUEST_URI'] == "/costacurta/admin/" || $_SERVER['REQUEST_URI'] == "/costacurta/admin/index.php" ) {
         include(TEMPLATE_BACK . "/dashboard.php");
     }
 
@@ -1014,7 +1008,7 @@ function get_admin_h1() {
 
     $title = "";
 
-    if($_SERVER['REQUEST_URI'] == "/costacurta/public/admin/" || $_SERVER['REQUEST_URI'] == "/costacurta/public/admin/index.php" ) {
+    if($_SERVER['REQUEST_URI'] == "/costacurta/admin/" || $_SERVER['REQUEST_URI'] == "/costacurta/admin/index.php" ) {
         $title = "Dashboard";
     }
 
@@ -1082,7 +1076,7 @@ function update_account() {
         confirm($query);
 
         set_message("Account modificato con successo", "alert-success");
-        redirect("../../public/admin/index.php?account");
+        redirect("../admin/index.php?account");
 
     }
 
@@ -1109,7 +1103,7 @@ function update_password($psw) {
             set_message("Password attuale non corretta", "alert-danger");
 
         }
-        redirect("../../public/admin/index.php?account");
+        redirect("../admin/index.php?account");
 
     }
 
@@ -1131,7 +1125,7 @@ function add_quote() {
         confirm($query);
 
         set_message("{$img_loc}", "alert-success");
-        redirect("../../public/admin/index.php?quotes");
+        redirect("../admin/index.php?quotes");
 
     }
 
@@ -1162,7 +1156,7 @@ function edit_quote($id) {
         $query = query("UPDATE quotes SET quote_text = '{$cit}', quote_img = '{$foto}', quote_author = '{$autore}' WHERE quote_id = $id");
         confirm($query);
 
-        redirect("../../public/admin/index.php?quotes");
+        redirect("../admin/index.php?quotes");
 
     }
 
@@ -1184,11 +1178,11 @@ $thumb = <<<DELIMETER
 
 <div class="col-lg-2 mb-3">
     <div class="card">
-        <img src="../../resources/{$img}" alt="" class="img-fluid quote-thumb">
+        <img src="../resources/{$img}" alt="" class="img-fluid quote-thumb">
         <div class="card-body">
             <p>{$row['quote_text']}</p>
             <p class="font-weight-bold">{$row['quote_author']}</p>
-            <a href="../../public/admin/index.php?edit-quote&id={$row['quote_id']}" role="button" class="btn btn-primary">Modifica</a>
+            <a href="../admin/index.php?edit-quote&id={$row['quote_id']}" role="button" class="btn btn-primary">Modifica</a>
         </div>
     </div>
 </div>
@@ -1219,11 +1213,11 @@ $thumb = <<<DELIMETER
 <div class="col-lg-2 mb-3">
     <p class="text-uppercase font-weight-bold mb-3">{$text}</p>
     <div class="card">
-        <img src="../../resources/{$img}" alt="" class="img-fluid quote-thumb">
+        <img src="../resources/{$img}" alt="" class="img-fluid quote-thumb">
         <div class="card-body">
             <p>{$row['quote_text']}</p>
             <p class="font-weight-bold">{$row['quote_author']}</p>
-            <a href="../../public/admin/index.php?edit-quote&id={$row['quote_id']}" role="button" class="btn btn-primary">Modifica</a>
+            <a href="../admin/index.php?edit-quote&id={$row['quote_id']}" role="button" class="btn btn-primary">Modifica</a>
         </div>
     </div>
 </div>
@@ -1275,7 +1269,7 @@ function update_profile() {
         $query = query("UPDATE profilo SET pro_desc = '{$desc}', pro_foto = '{$foto}', pro_cv = '{$cv}' ORDER BY pro_id DESC LIMIT 1");
         confirm($query);
 
-        redirect("../../public/admin/index.php?profile");
+        redirect("../admin/index.php?profile");
 
     }
 
@@ -1292,7 +1286,7 @@ function add_disturbo() {
         confirm($query);
 
         set_message("Disturbo aggiunto correttamente", "alert-success");
-        redirect("../../public/admin/index.php?profile");
+        redirect("../admin/index.php?profile");
 
     }
 
@@ -1309,7 +1303,7 @@ function add_servizio() {
         confirm($query);
 
         set_message("Servizio aggiunto correttamente", "alert-success");
-        redirect("../../public/admin/index.php?profile");
+        redirect("../admin/index.php?profile");
 
     }
 
@@ -1338,7 +1332,7 @@ function add_pub() {
 
 
         set_message("Pubblicazione aggiunta correttamente", "alert-success");
-        redirect("../../public/admin/index.php?pubs");
+        redirect("../admin/index.php?pubs");
 
     }
 
@@ -1370,7 +1364,7 @@ function edit_pub($id) {
         $query = query("UPDATE pubblicazioni SET pub_title = '{$title}', pub_subtitle = '{$sub}', pub_autor = '{$autore}', pub_link = '{$pub}' WHERE pub_id = $id");
         confirm($query);
 
-        redirect("../../public/admin/index.php?pubs");
+        redirect("../admin/index.php?pubs");
 
     }
 
@@ -1396,7 +1390,7 @@ function add_foto() {
         confirm($query);
 
         set_message("Foto aggiunta correttamente", "alert-success");
-        redirect("../../public/admin/index.php?gallery");
+        redirect("../admin/index.php?gallery");
 
     }
 
@@ -1415,7 +1409,7 @@ $img = display_image($row['foto_image']);
 $foto = <<<DELIMETER
 
 <div class="col-lg-2 mb-5">
-    <img src="../../resources/{$img}" alt="" class="img-thumbnail img-fluid">
+    <img src="../resources/{$img}" alt="" class="img-thumbnail img-fluid">
     <button type="button" class="btn btn-danger close-modal" data-toggle="modal" data-target="#deleteModal{$row['foto_id']}">X</button>
 
     <div class="modal fade" role="dialog" id="deleteModal{$row['foto_id']}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -1430,7 +1424,7 @@ $foto = <<<DELIMETER
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-                    <a href="../../public/admin/index.php?delete_foto&id={$row['foto_id']}&img={$row['foto_image']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
+                    <a href="../admin/index.php?delete_foto&id={$row['foto_id']}&img={$row['foto_image']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
                 </div>
             </div>
         </div>
@@ -1457,7 +1451,7 @@ function add_video() {
         confirm($query);
 
         set_message("Video aggiunto correttamente", "alert-success");
-        redirect("../../public/admin/index.php?video");
+        redirect("../admin/index.php?video");
 
     }
 
@@ -1492,7 +1486,7 @@ $video = <<<DELIMETER
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
-                    <a href="../../public/admin/index.php?delete_video&id={$row['video_id']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
+                    <a href="../admin/index.php?delete_video&id={$row['video_id']}" role="button" class="btn btn-danger">Conferma eliminazione</a>
                 </div>
             </div>
         </div>
@@ -1529,7 +1523,7 @@ function add_art() {
         confirm($query);
 
         set_message("News pubblicata correttamente", "alert-success");
-        redirect("../../public/admin/index.php?articles");
+        redirect("../admin/index.php?articles");
 
     }
     
@@ -1550,13 +1544,13 @@ $art_thumb = <<<DELIMETER
 
 <div class="col-lg-3 mb-3">
     <div class="card">
-        <img src="../../resources/{$img}" class="quote-thumb" alt="">
+        <img src="../resources/{$img}" class="quote-thumb" alt="">
         <div class="card-body">
             <h5 class="card-title">{$row['art_title']}</h5>
             <p class="card-text">{$row['art_note']}</p>
             <p class="card-text"><small class="text-muted">{$data}</small></p>
-            <a href="../../public/admin/index.php?edit_art&id={$row['art_id']}" role="button" class="btn btn-primary">Modifica</a>
-            <a href="../../public/admin/index.php?delete_art&id={$row['art_id']}&img={$row['art_image']}" role="button" class="btn btn-danger">Elimina</a>
+            <a href="../admin/index.php?edit_art&id={$row['art_id']}" role="button" class="btn btn-primary">Modifica</a>
+            <a href="../admin/index.php?delete_art&id={$row['art_id']}&img={$row['art_image']}" role="button" class="btn btn-danger">Elimina</a>
         </div>
     </div>
 </div>
@@ -1596,7 +1590,7 @@ function edit_art($id) {
         $query = query("UPDATE articoli SET art_image = '{$foto}', art_title = '{$titolo}', art_tag = '{$tag}', art_link = '{$link}', art_note = '{$sub}' WHERE art_id = $id");
         confirm($query);
 
-        redirect("../../public/admin/index.php?articles");
+        redirect("../admin/index.php?articles");
 
     }
 
@@ -1618,7 +1612,7 @@ function add_aff() {
         confirm($query);
 
         set_message("Affiliazione aggiunta correttamente", "alert-success");
-        redirect("../../public/admin/index.php?aff");
+        redirect("../admin/index.php?aff");
 
     }
     
@@ -1638,10 +1632,10 @@ $aff = <<<DELIMETER
 
 <div class="col-lg-3 mb-3 px-1">
     <div class="card">
-        <img src="../../resources/{$img}" class="img-fluid aff-thumb" alt="">
+        <img src="../resources/{$img}" class="img-fluid aff-thumb" alt="">
         <div class="card-body">
             <h5 class="card-title">{$row['aff_name']}</h5>
-            <a href="../../public/admin/index.php?delete_aff&id={$row['aff_id']}&img={$row['aff_image']}" role="button" class="btn btn-danger">Elimina</a>
+            <a href="../admin/index.php?delete_aff&id={$row['aff_id']}&img={$row['aff_image']}" role="button" class="btn btn-danger">Elimina</a>
         </div>
     </div>
 </div>
@@ -1666,7 +1660,7 @@ function add_link() {
         confirm($query);
 
         set_message("Link aggiunto correttamente", "alert-success");
-        redirect("../../public/admin/index.php?aff");
+        redirect("../admin/index.php?aff");
 
     }
     

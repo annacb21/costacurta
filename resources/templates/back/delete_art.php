@@ -12,7 +12,7 @@
         }
 
         set_message("Articolo eliminato con successo", "alert-success");
-        redirect("../../public/admin/index.php?articles");
+        redirect("../admin/index.php?articles");
 
     }
 

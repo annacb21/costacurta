@@ -6,7 +6,7 @@
         confirm($query);
 
         set_message("Link eliminato con successo", "alert-success");
-        redirect("../../public/admin/index.php?aff");
+        redirect("../admin/index.php?aff");
 
     }
 

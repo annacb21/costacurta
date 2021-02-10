@@ -67,4 +67,4 @@
     </div>
 </div>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

@@ -1,4 +1,4 @@
-<?php require_once("../resources/config.php"); ?>
+<?php require_once("resources/config.php"); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,7 +39,7 @@
         <!-- FOOTER -->
         <?php include(TEMPLATE_FRONT . DS . "footer.php"); ?>
 
-        <script src="../public/js/scroll.js"></script>
+        <script src="js/scroll.js"></script>
       
     </body>
 </html>

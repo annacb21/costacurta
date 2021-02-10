@@ -11,14 +11,14 @@
 <div class="mt-5 page" id="articoli">
 
     <div id="filterList" class="mb-5">
-        <a href="../public/index.php?articoli&tag=0#articoli" class="btn rounded-pill filter">Tutti</a>
-        <a href="../public/index.php?articoli&tag=2#articoli" class="btn rounded-pill filter">Eventi</a>
-        <a href="../public/index.php?articoli&tag=3#articoli" class="btn rounded-pill filter">Libri</a>
-        <a href="../public/index.php?articoli&tag=1#articoli" class="btn rounded-pill filter">News</a>
+        <a href="index.php?articoli&tag=0#articoli" class="btn rounded-pill filter">Tutti</a>
+        <a href="index.php?articoli&tag=2#articoli" class="btn rounded-pill filter">Eventi</a>
+        <a href="index.php?articoli&tag=3#articoli" class="btn rounded-pill filter">Libri</a>
+        <a href="index.php?articoli&tag=1#articoli" class="btn rounded-pill filter">News</a>
     </div>
     <!-- ARTICLES --> 
     <?php show_articles(); ?>
     
 </div>
 
-<script src="../public/js/filter.js"></script>
+<script src="js/filter.js"></script>

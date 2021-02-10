@@ -73,9 +73,9 @@
 <ul class="list-group mb-5">
     <?php
     for($i=0; $i<count($links); $i++) {
-        echo "<li class='list-group-item d-flex justify-content-between align-items-center'>{$links[$i]['link_name']}<a href='../../public/admin/index.php?delete_link&id={$links[$i]['link_id']}' role='button' class='btn btn-danger'>Elimina</a></li>";
+        echo "<li class='list-group-item d-flex justify-content-between align-items-center'>{$links[$i]['link_name']}<a href='../admin/index.php?delete_link&id={$links[$i]['link_id']}' role='button' class='btn btn-danger'>Elimina</a></li>";
     }
     ?>
 </ul>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

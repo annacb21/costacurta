@@ -50,4 +50,4 @@
     <?php get_quote_thumbnails('5'); ?>
 </div>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

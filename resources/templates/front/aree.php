@@ -54,4 +54,4 @@
     </div>
 </div>
 
-<script src="../public/js/hover.js"></script>
+<script src="js/hover.js"></script>

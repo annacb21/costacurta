@@ -21,7 +21,7 @@
 
     <div class="row mt-5 justify-content-around">
         <div class="col-lg-4 px-0 pro-foto-md">
-            <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img2 shadow" alt="foto Andrea Costacurta">
+            <img src="resources/<?php echo display_image($profile['pro_foto']); ?>" class="profile-img2 animate__animated animate__fadeInLeft shadow" alt="foto Andrea Costacurta">
         </div>
         <div class="col-lg-8">
             <div class="card profile-card shadow">
@@ -32,7 +32,7 @@
 
     <div class="row py-4 align-items-center">
         <div class="col-lg-4 col-md-5 px-0">
-            <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn dark-btn cv-btn btn-lg" target="_blank">Curriculum Vitae</a>
+            <a role="button" href="resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn dark-btn cv-btn btn-lg" target="_blank">Curriculum Vitae</a>
         </div>
         <div class="col-lg-7 col-md-6 profile">
             <p class="mb-0">Psicoanalista formato con il Prof. Arnaldo Petterlini</p>
@@ -60,7 +60,7 @@
                 }
                 else {
                     $url = display_image($pubs[$i]['pub_link']);
-                    $link = "../resources/{$url}";
+                    $link = "resources/{$url}";
                     $target = '_blank';
                 }
                 echo "<li class='pl-3 pb-3'><a href='{$link}' target='{$target}' class='link-light'>{$pubs[$i]['pub_title']}<span class='pub-small pl-2'>({$pubs[$i]['pub_autor']}) {$pubs[$i]['pub_subtitle']}</span></a></li>";

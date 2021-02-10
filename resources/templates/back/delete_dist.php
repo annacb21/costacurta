@@ -6,7 +6,7 @@
         confirm($query);
 
         set_message("Disturbo eliminato con successo", "alert-success");
-        redirect("../../public/admin/index.php?profile");
+        redirect("../admin/index.php?profile");
 
     }
 

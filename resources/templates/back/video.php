@@ -33,4 +33,4 @@
     <?php get_video_thumb(); ?>
 </div>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

@@ -5,7 +5,7 @@
 <div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-lg-2">
-      <img src="../../resources/<?php echo display_image($profile['pro_foto']); ?>" alt="" class="img-thumbnail">
+      <img src="../resources/<?php echo display_image($profile['pro_foto']); ?>" alt="" class="img-thumbnail">
     </div>
     <div class="col-lg-10">
       <div class="card-body">
@@ -15,7 +15,7 @@
         <p class="card-text font-weight-bold">Curriculum</p>
         <p class="card-text"><?php echo $profile['pro_cv']; ?></p>
 
-        <a class="btn btn-primary btn-lg" href="../../public/admin/index.php?edit_profile">Modifica</a>
+        <a class="btn btn-primary btn-lg" href="../admin/index.php?edit_profile">Modifica</a>
       </div>
     </div>
   </div>
@@ -74,7 +74,7 @@
         <ul class="list-group">
           <?php
             for($i=0; $i<count($disturbi); $i++) {
-              echo "<li class='list-group-item d-flex justify-content-between'>{$disturbi[$i]['disturbo_name']}<a href='../../public/admin/index.php?delete_dist&id={$disturbi[$i]['disturbo_id']}' role='button' class='btn btn-danger'>Elimina</a></li>";
+              echo "<li class='list-group-item d-flex justify-content-between'>{$disturbi[$i]['disturbo_name']}<a href='../admin/index.php?delete_dist&id={$disturbi[$i]['disturbo_id']}' role='button' class='btn btn-danger'>Elimina</a></li>";
             }
            ?>
         </ul>
@@ -83,11 +83,11 @@
         <ul class="list-group">
           <?php
             for($i=0; $i<count($servizi); $i++) {
-              echo "<li class='list-group-item d-flex justify-content-between'>{$servizi[$i]['servizio_name']}<a href='../../public/admin/index.php?delete_serv&id={$servizi[$i]['servizio_id']}' role='button' class='btn btn-danger'>Elimina</a></li>";
+              echo "<li class='list-group-item d-flex justify-content-between'>{$servizi[$i]['servizio_name']}<a href='../admin/index.php?delete_serv&id={$servizi[$i]['servizio_id']}' role='button' class='btn btn-danger'>Elimina</a></li>";
             }
            ?>
         </ul>
     </div>
 </div>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

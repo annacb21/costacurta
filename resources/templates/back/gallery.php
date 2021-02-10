@@ -60,4 +60,4 @@
     <?php get_foto_thumb('suggestioni'); ?>
 </div>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

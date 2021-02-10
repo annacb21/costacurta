@@ -9,7 +9,7 @@
         unlink($link_path);
 
         set_message("Pubblicazione eliminata con successo", "alert-success");
-        redirect("../../public/admin/index.php?pubs");
+        redirect("../admin/index.php?pubs");
 
     }
 

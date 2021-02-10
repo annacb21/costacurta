@@ -10,7 +10,7 @@
         unlink($img_path);
 
         set_message("Affiliazione eliminata con successo", "alert-success");
-        redirect("../../public/admin/index.php?aff");
+        redirect("../admin/index.php?aff");
 
     }
 

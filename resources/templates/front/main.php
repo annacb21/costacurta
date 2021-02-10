@@ -1,7 +1,7 @@
 <?php $profile = get_profile(); ?>
 
 <!-- HEADER CAROUSEL -->
-<div id="headerCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="headerCarousel" class="carousel slide carousel-fade animate__animated animate__fadeIn" data-ride="carousel">
     <div class="carousel-inner">
         <?php get_active_quote(); ?>
         <?php get_quotes(); ?>
@@ -19,7 +19,7 @@
 <!-- QUALCOSA SU DI ME -->
 <div class="row py-5 align-items-center justify-content-around borderX main-who">
     <div class="col-xl-4 col-lg-4 col-md-12 px-0 text-center profile-col">
-        <img src="../public/images/profile1.jpg" class="profile-img shadow" alt="foto Andrea Costacurta">
+        <img src="images/profile1.jpg" class="profile-img shadow animate__animated animate__fadeInLeft" alt="foto Andrea Costacurta">
     </div>
     <div class="col-xl-8 col-lg-8 col-md-12 profile-md">
         <div class="text-uppercase pb-5">
@@ -37,10 +37,10 @@
         </p>
         <div class="row justify-content-between pt-3">
             <div class="col-lg-6 col-md-4 px-0">
-                <a role="button" href="../public/index.php?chisono" class="btn btn-lg dark-btn">Approfondisci</a>
+                <a role="button" href="index.php?chisono" class="btn btn-lg dark-btn">Approfondisci</a>
             </div>
             <div class="col-lg-6 col-md-5 profile-btn-md">
-                <a role="button" href="../resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn btn-lg light-btn float-right" target="_blank">Curriculum Vitae</a>
+                <a role="button" href="resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn btn-lg light-btn float-right" target="_blank">Curriculum Vitae</a>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
     <h3 class="text-uppercase section-title-light pb-4 pt-3 text-center">Professionalità - Interdisciplinarità - Empatia</h3>
     <div class="row py-4">
         <div class="col-lg-3 px-2 text-center perc">
-            <img src="../public/images/percorso1.svg" class="pb-5 perc-img" alt="icona percorso 1">
+            <img src="images/percorso1.svg" class="pb-5 perc-img" alt="icona percorso 1">
             <p class="percordo-title pb-3">Profilo diagnostico</p>
             <p class="percorso-desc">Anamnesi, storia personale, identificazione dei sintomi</p>
         </div>
@@ -126,5 +126,5 @@
     </div>
 </div>
 
-<script src="../public/js/validate.js"></script>
+<script src="js/validate.js"></script>
 <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>

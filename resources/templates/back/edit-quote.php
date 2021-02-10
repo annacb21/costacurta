@@ -26,7 +26,7 @@ if(isset($_GET['id'])) {
                 <div class="invalid-feedback">Inserire l'autore della citazione</div>
             </div>
 
-            <img src="../../resources/<?php echo $img; ?>" alt="" class="w-25 img-fluid">
+            <img src="../resources/<?php echo $img; ?>" alt="" class="w-25 img-fluid">
             
             <div class="form-group mb-3">
                 <input type="file" class="form-control-file" id="quoteFoto" name="quoteFoto">
@@ -43,6 +43,6 @@ if(isset($_GET['id'])) {
     </div>
 </div>
 
-<a class="btn btn-dark btn-lg my-5 ml-3" href="../../public/admin/index.php?quotes" role="button">Indietro</a>
+<a class="btn btn-dark btn-lg my-5 ml-3" href="../admin/index.php?quotes" role="button">Indietro</a>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>

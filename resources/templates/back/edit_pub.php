@@ -42,6 +42,6 @@
 </div>
 
 
-<a class="btn btn-dark btn-lg my-5 ml-3" href="../../public/admin/index.php?pubs" role="button">Indietro</a>
+<a class="btn btn-dark btn-lg my-5 ml-3" href="../admin/index.php?pubs" role="button">Indietro</a>
 
-<script src="../../public/js/validate.js"></script>
+<script src="../js/validate.js"></script>
