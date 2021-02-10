@@ -173,6 +173,8 @@ body {
 
 .nav-link {
     color: #888989 !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 
 .active-link {
@@ -325,6 +327,10 @@ footer .fas {
 
 .profile-p {
     margin-top: 10rem !important;
+}
+
+.profile p {
+    font-size: 1.3rem !important;
 }
 
 .servizi {
@@ -641,6 +647,29 @@ footer .fas {
 
     .art-tag {
         margin: 0 !important;
+    }
+
+}
+
+/* medium screen 2 */
+@media (max-width: 1590px) {
+
+    .service-card {
+        height: 8rem !important;
+    }
+
+    .area-card {
+        height: 32rem !important;
+    }
+
+}
+
+/* medium screen */
+@media (max-width: 1300px) {
+
+    .nav-link {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 
 }

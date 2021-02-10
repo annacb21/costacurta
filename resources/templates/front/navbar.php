@@ -14,26 +14,26 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="index.php" class="nav-link px-4">Home</a>
+                <a href="index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?chisono" class="nav-link px-4">Qualcosa su di me</a>
+                <a href="index.php?chisono" class="nav-link">Qualcosa su di me</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?aree" class="nav-link px-4">Aree di intervento</a>
+                <a href="index.php?aree" class="nav-link">Aree di intervento</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?gallery" class="nav-link px-4">Gallery</a>
+                <a href="index.php?gallery" class="nav-link">Gallery</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?articoli&tag=0" class="nav-link px-4">News</a>
+                <a href="index.php?articoli&tag=0" class="nav-link">News</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?contatti" class="nav-link px-4">Contatti</a>
+                <a href="index.php?contatti" class="nav-link">Contatti</a>
             </li>
             <?php
                 if(isset($_SESSION['user'])) {
-                    echo "<li class='nav-item'><a href='admin/index.php' class='nav-link px-4'>Admin</a></li>";
+                    echo "<li class='nav-item'><a href='admin/index.php' class='nav-link'>Admin</a></li>";
                 }
              ?>
         </ul>
