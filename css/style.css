@@ -185,8 +185,8 @@ body {
 /* HEADER */
 
 .quote-image img{
-    height: 32em;
-    padding: 3em 0 !important;
+    height: 25rem;
+    padding: 2.5em 0 !important;
 }
 
 .blockquote {
@@ -481,8 +481,13 @@ footer .fas {
 }
 
 .card-art-image {
-    width: 100% !important;
     height: 17em !important;
+}
+
+.card-art-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-position: left 4% !important;
     object-fit: cover !important;
 }
 

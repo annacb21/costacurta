@@ -724,8 +724,8 @@ $last_art = <<<DELIMETER
 
 <div class="card art-card mb-4 shadow {$row1['art_tag']}">
     <div class="row align-items-center">
-        <div class="col-lg-7">
-            <img src="resources/{$img1}" class="card-img card-art-image" alt="{$row1['art_image']}">
+        <div class="col-lg-7 card-art-image">
+            <img src="resources/{$img1}" class="card-img" alt="{$row1['art_image']}">
         </div>
         <div class="col-lg-5">
             <div class="card-art align-items-end flex-column">
@@ -802,7 +802,9 @@ $art0 = <<<DELIMETER
 
 <div class="col-xl-3 col-lg-4 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
-        <img src="resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+        <div class="card-art-image">
+            <img src="resources/{$img}" class="card-img-top" alt="{$row['art_image']}">
+        </div>
         <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>

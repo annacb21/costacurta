@@ -10,7 +10,7 @@
         </div>
         <div class="col-xl-3 col-lg-4 pb-5">
             <p class="footer-title pb-3 footer-border">Contatti</p>
-            <div class="py-4">
+            <div class="py-4 d-flex">
                 <i class="fas fa-at"></i><p class="d-inline-block pl-4 mb-0"><?php echo $contatti[0]['cont_value']; ?></p>
             </div>
             <div>
