@@ -42,6 +42,7 @@
                         <p class="font-weight-bold mb-1"><?php echo $studi[1]['studio_name']; ?></p>
                         <p class="mb-0"><?php echo $studi[1]['studio_adress']; ?></p>
                         <p class="mb-0">Tel: <?php echo $studi[1]['studio_phone']; ?></p>
+                        <p class="mb-0">Cell: <?php echo $studi[1]['studio_cell']; ?></p>
                     </div>
                 </div>
                 <div class="pb-4 d-flex">

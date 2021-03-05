@@ -16,7 +16,7 @@
     <!-- PROFILE -->
     <div class="desc">
         <p class="title mb-0">Dott. Andrea Costacurta</p>
-        <p class="text-justify"><?php echo html_entity_decode(htmlentities($profile['pro_desc'])); ?></p>
+        <p class="text-justify"><?php echo$profile['pro_desc']; ?></p>
     </div>
 
     <div class="row mt-5 justify-content-around">

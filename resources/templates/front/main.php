@@ -37,7 +37,7 @@
         </p>
         <div class="row justify-content-between pt-3">
             <div class="col-lg-6 col-md-4 px-0">
-                <a role="button" href="index.php?chisono" class="btn btn-lg dark-btn">Approfondisci</a>
+                <a role="button" href="chisono.php" class="btn btn-lg dark-btn">Approfondisci</a>
             </div>
             <div class="col-lg-6 col-md-5 profile-btn-md">
                 <a role="button" href="resources/<?php echo display_image($profile['pro_cv']); ?>" class="btn btn-lg light-btn float-right" target="_blank">Curriculum Vitae</a>
@@ -56,19 +56,19 @@
             <p class="percorso-desc">Anamnesi, storia personale, identificazione dei sintomi</p>
         </div>
         <div class="col-lg-3 px-2 text-center perc">
-            <img src="../public/images/percorso2.svg" class="pb-5 perc-img" alt="icona percorso 2">
+            <img src="images/percorso2.svg" class="pb-5 perc-img" alt="icona percorso 2">
             <p class="percordo-title pb-3">Miglior soluzione</p>
             <p class="percorso-desc">Individuazione congiunta degli obiettivi terapeutici da raggiungere</p>
         </div>
         <div class="col-lg-3 px-2 text-center perc">
-            <img src="../public/images/percorso3.svg" class="pb-5 perc-img" alt="icona percorso 3">
+            <img src="images/percorso3.svg" class="pb-5 perc-img" alt="icona percorso 3">
             <p class="percordo-title pb-3">Programma terapeutico</p>
             <p class="percorso-desc">Scelta degli strumenti terapeutici più idonei e pianificazione del percorso</p>
         </div>
         <div class="col-lg-3 px-2 text-center perc">
-            <img src="../public/images/percorso4.svg" class="pb-5 perc-img" alt="icona percorso 4">
+            <img src="images/percorso4.svg" class="pb-5 perc-img" alt="icona percorso 4">
             <p class="percordo-title pb-3">Valutazione dell’esito</p>
-            <p class="percorso-desc">Riappropriarsi della capacità prospettica,miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
+            <p class="percorso-desc">Riappropriarsi della capacità prospettica, miglioramento e risoluzione del sintomo, aumento della consapevolezza di sè</p>
         </div>
     </div>
 </div>

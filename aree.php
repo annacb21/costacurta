@@ -30,7 +30,7 @@
 
         <div class="pb-5 main">
             <!-- MAIN CONTENT -->
-            <?php include(TEMPLATE_FRONT . DS . "main.php"); ?>
+            <?php include(TEMPLATE_FRONT . DS . "aree.php"); ?>
         </div>
 
         <!-- UP BUTTON -->

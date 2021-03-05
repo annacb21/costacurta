@@ -1,7 +1,6 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 
 //*************************** SYSTEM FUNCTIONS ****************************
 
@@ -305,43 +304,6 @@ function get_links() {
 
 //*************************** FRONT FUNCTIONS ****************************
 
-// mostra il contenuto del body della pagina dinamicamente
-function show_main_content() {
-
-    if($_SERVER['REQUEST_URI'] == "/costacurta/" || $_SERVER['REQUEST_URI'] == "/costacurta/index.php" ) {
-        include(TEMPLATE_FRONT . "/main.php");
-    }
-
-    if(isset($_GET['chisono'])) {
-        include(TEMPLATE_FRONT . "/chisono.php");
-    }
-
-    if(isset($_GET['aree'])) {
-        include(TEMPLATE_FRONT . "/aree.php");
-    }
-
-    if(isset($_GET['gallery'])) {
-        include(TEMPLATE_FRONT . "/gallery.php");
-    }
-
-    if(isset($_GET['articoli'])) {
-        include(TEMPLATE_FRONT . "/articoli.php");
-    }
-
-    if(isset($_GET['contatti'])) {
-        include(TEMPLATE_FRONT . "/contatti.php");
-    }
-
-    if(isset($_GET['login'])) {
-        include(TEMPLATE_FRONT . "/login.php");
-    }
-
-    if(isset($_GET['privacy'])) {
-        include(TEMPLATE_FRONT . "/privacy.php");
-    }
-
-}
-
 // manda una email dal form della pagina dei contatti
 function send_email($page) {
 
@@ -356,11 +318,11 @@ function send_email($page) {
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $message = $_POST['message'];
-        $toEmail = "annacb21@gmail.com"; 
+        $toEmail = "costacurta.andrea@gmail.com"; 
 
         $mail = new PHPMailer();
-
-        $mail->setFrom($email, $name . " " . $cognome);
+        $mail->setFrom('postmaster@andreacostacurta.it', "Andrea Costacurta");
+        $mail->addReplyTo($email, $nome . " " . $cognome);
         $mail->addAddress($toEmail, 'Andrea Costacurta'); 
         $mail->Subject = 'Messaggio da ' . $name . " " . $cognome;
         $mail->Body = "Recapito telefonico: " . $phone . "\n";
@@ -377,7 +339,7 @@ function send_email($page) {
             redirect("index.php#prenotazioni");
         }
         elseif($page == 'contatti') {
-            redirect("index.php?contatti#contatto");
+            redirect("contatti.php#contatto");
         }
     }
 
@@ -398,7 +360,7 @@ function login() {
 
         if(mysqli_num_rows($query) == 0 || password_verify($psw, $row['password']) === false) {
             set_message("La tua password o il tuo username sono sbagliati", "alert-danger");
-            redirect("index.php?login");
+            redirect("login.php");
         }
         else {
             $_SESSION['user'] = $row['user_id'];
@@ -421,7 +383,7 @@ $img = display_image($row['quote_img']);
 
 $quote = <<<DELIMETER
 
-<div class="carousel-item active" data-interval="8000">
+<div class="carousel-item active" data-interval="10000">
     <div class='row bg-color align-items-center'>
         <div class='col-lg-6 col-md-12 blockquote mb-0'>
             <p class="quote">{$row['quote_text']}</p>
@@ -452,7 +414,7 @@ $img = display_image($row['quote_img']);
 
 $quote = <<<DELIMETER
 
-<div class="carousel-item" data-interval="8000">
+<div class="carousel-item" data-interval="10000">
     <div class='row bg-color align-items-center'>
         <div class='col-lg-6 blockquote mb-0'>
             <p class="quote">{$row['quote_text']}</p>
@@ -857,7 +819,9 @@ $art0 = <<<DELIMETER
 
 <div class="col-xl-3 col-lg-4 px-2">
 <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']} card-overlay">
-    <img src="resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+    <div class="card-art-image">
+        <img src="resources/{$img}" class="card-img-top" alt="{$row['art_image']}">
+    </div>
     <div class="card-body">
         <p class="art-data">Pubblicato il {$data}</p>
         <h4 class="art-title pb-2">{$row['art_title']}</h4>
@@ -880,7 +844,9 @@ $art0 = <<<DELIMETER
 
 <div class="col-xl-3 col-lg-4 px-2">
     <div class="card art-card fixed-card mb-4 shadow {$row['art_tag']}">
-        <img src="resources/{$img}" class="card-img-top card-art-image" alt="{$row['art_image']}">
+        <div class="card-art-image">
+            <img src="resources/{$img}" class="card-img-top" alt="{$row['art_image']}">
+        </div>
         <div class="card-body">
             <p class="art-data">Pubblicato il {$data}</p>
             <h4 class="art-title pb-2">{$row['art_title']}</h4>

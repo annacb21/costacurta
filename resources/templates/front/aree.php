@@ -31,7 +31,7 @@
         <div class="col-lg-6 area padding-area">
             <div class="card area-card px-4 py-4" id="psicofarma" onmouseover="cardHover2()" onmouseout="cardUp2()">
                 <h5 class="area-title text-center pb-2" id="psicofarmaTitle">Psicofarmacologia</h5>
-                <p class="px-3 py-3">Terapia medica dei disturbi psicologici e psichiatrici. Le terapie farmacologiche moderne sono sicure ed efficaci e se prescritte correttamente, prive di rischi. Comprendono terapie:</p>
+                <p class="px-3 py-3">Terapia medica dei disturbi psicologici e psichiatrici. Le terapie farmacologiche moderne sono sicure ed efficaci e se prescritte correttamente, sostanzialmente prive di rischi. Comprendono terapie:</p>
                 <ul>
                     <li>dell’ansia (ansiolitici) e di tutte le manifestazioni associate</li>
                     <li>della depressione, anche grave (antidepressivi)</li>
@@ -48,7 +48,7 @@
                     <li>Psicoterapia Interpersonale</li>
                     <li>Psicoanalisi</li>
                 </ul>
-                <p class="px-3 py-3">A seconda del disturbo e delle personali esigenze può essere programmata una psicoterapia breve (20 sedute) oppure una psicoterapia ad indirizzo analitico (oltre 25 sedute) che agisce più in profondità ma con tempi più lunghi.</p>
+                <p class="px-3 py-3">A seconda del disturbo e delle personali esigenze, può essere programmata una psicoterapia breve (20 sedute) oppure una psicoterapia ad indirizzo analitico (oltre 25 sedute), che agisce più in profondità ma con tempi più lunghi.</p>
             </div>
         </div>
     </div>

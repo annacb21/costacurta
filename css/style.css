@@ -102,35 +102,41 @@ body {
 
 .borderX {
     border: solid transparent;
+    -webkit-border-image: url("../images/border-vert.svg") 0 50 0 50 repeat;
     border-image: url("../images/border-vert.svg") 0 50 0 50 repeat;
     margin: 2% 5% !important;
 }
 
 .borderLeft {
     border: solid transparent;
+    -webkit-border-image: url("../images/border-vert.svg") 0 0 0 50 repeat;
     border-image: url("../images/border-vert.svg") 0 0 0 50 repeat;
     padding-bottom: 1% !important;
 }
 
 .borderTop {
     border: solid transparent;
+    -webkit-border-image: url("../images/border-top.svg") 50 0 0 0 repeat;
     border-image: url("../images/border-top.svg") 50 0 0 0 repeat;
     margin: 2% 5% !important;
 }
 
 .borderTopLarge {
     border: solid transparent;
+    -webkit-border-image: url("../images/border-top.svg") 50 0 0 0 repeat;
     border-image: url("../images/border-top.svg") 50 0 0 0 repeat;
     margin: 0 5% 2% 5% !important;
 }
 
 .borderLeftSmall {
     border: solid transparent;
+    -webkit-border-image: url("../images/border-vert.svg") 0 0 0 50 round;
     border-image: url("../images/border-vert.svg") 0 0 0 50 round;
 }
 
 .borderRight {
     border: solid transparent;
+    -webkit-border-image: url("../images/border-vert.svg") 0 50 0 0 round;
     border-image: url("../images/border-vert.svg") 0 50 0 0 round;
 }
 
@@ -185,7 +191,7 @@ body {
 /* HEADER */
 
 .quote-image img{
-    height: 25rem;
+    height: 25em;
     padding: 2.5em 0 !important;
 }
 
@@ -283,8 +289,8 @@ body {
     color: transparent;
 }
 
-footer .fas {
-    color: #FFF;
+footer .fas, .fas-link  {
+    color: #FFF !important;
 }
 
 .footer-title {
@@ -329,7 +335,7 @@ footer .fas {
     margin-top: 10rem !important;
 }
 
-.profile p {
+.profile p{
     font-size: 1.3rem !important;
 }
 
@@ -667,14 +673,16 @@ footer .fas {
         height: 32rem !important;
     }
 
+
 }
 
 /* medium screen */
-@media (max-width: 1300px) {
+@media (max-width: 1410px) and (min-width: 1200px) {
 
     .nav-link {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding-left: 0.8rem !important;
+        padding-right: 0.8rem !important;
+        font-size: 0.9rem !important;
     }
 
 }

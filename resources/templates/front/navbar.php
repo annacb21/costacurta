@@ -2,7 +2,7 @@
 
     <!-- navbar logo -->
     <a class="navbar-brand" href="index.php">
-        <img src="images/logo.svg" alt="logo" class="d-inline-block align-top logo">
+        <img src="images/logo.png" alt="logo" class="d-inline-block align-top logo">
     </a>
 
     <!-- hamburger menu button on smaller screens -->
@@ -17,19 +17,19 @@
                 <a href="index.php" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?chisono" class="nav-link">Qualcosa su di me</a>
+                <a href="chisono.php" class="nav-link">Qualcosa su di me</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?aree" class="nav-link">Aree di intervento</a>
+                <a href="aree.php" class="nav-link">Aree di intervento</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?gallery" class="nav-link">Gallery</a>
+                <a href="gallery.php" class="nav-link">Gallery</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?articoli&tag=0" class="nav-link">News</a>
+                <a href="articoli.php?tag=0" class="nav-link">News</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?contatti" class="nav-link">Contatti</a>
+                <a href="contatti.php" class="nav-link">Contatti</a>
             </li>
             <?php
                 if(isset($_SESSION['user'])) {
