@@ -26,10 +26,13 @@
                 <a href="gallery.php" class="nav-link">Gallery</a>
             </li>
             <li class="nav-item">
-                <a href="articoli.php?tag=0" class="nav-link">News</a>
+                <a href="articoli.php?tag=0" class="nav-link">Eventi e News</a>
             </li>
             <li class="nav-item">
                 <a href="contatti.php" class="nav-link">Contatti</a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova?utm_source=widget&utm_medium=link" class="nav-link" rel="nofollow" target="_blank">Prenota una visita</a>
             </li>
             <?php
                 if(isset($_SESSION['user'])) {

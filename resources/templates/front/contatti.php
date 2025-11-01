@@ -93,20 +93,16 @@
                 <div class="pt-5 pb-2">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11207.518678563705!2d11.864275!3d45.3915981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x332a1f5d3f3c0451!2sDott.%20Giovanni%20B.%20Carollo!5e0!3m2!1sit!2sit!4v1611940221944!5m2!1sit!2sit" width="350" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>                
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11144.158279942412!2d11.471777!3d45.710243!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf63c8d1dcb08eaf9!2zUHNpY2jDqQ!5e0!3m2!1sit!2sit!4v1611939776356!5m2!1sit!2sit" width="350" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11245.938330463512!2d12.2958581!3d45.1975288!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x936cf23f0d3d4051!2sPoliambulatorio%20San%20Giovanni%20S.R.L!5e0!3m2!1sit!2sit!4v1611940349385!5m2!1sit!2sit" width="350" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2811.2785784498633!2d12.277375!3d45.20169799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477e998886e9e7cf%3A0x41514ecd9f822937!2sAmbulatorio%20MMB%20Clodiense!5e0!3m2!1sit!2sit!4v1762008472168!5m2!1sit!2sit" width="350" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>           
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row borderTopLarge align-items-center justify-content-between">
-        <div class="col-xl-8 col-lg-6 px-0 pt-5 borderRight">
+    <div class="borderTopLarge">
+        <div class="px-0 pt-5">
             <p class="contact-title pb-1">Link utili</p>
             <?php link_utili(); ?>
-        </div>
-        <div class="col-xl-4 col-lg-5 px-0 pt-5 text-center">
-            <p class="contact-title pb-5 px-3">Prenota una visita tramite MioDottore</p>
-            <a id="zl-url" class="zl-url" href="https://www.miodottore.it/andrea-costacurta/psichiatra-psicoterapeuta/padova" rel="nofollow" data-zlw-doctor="andrea-costacurta" data-zlw-type="big" data-zlw-opinion="false" data-zlw-hide-branding="true">Andrea Costacurta - MioDottore.it</a>
         </div>
     </div>
 
